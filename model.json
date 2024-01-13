@@ -11,8 +11,7 @@
   ],
   "openai": [
     "version": [
-      "v1",
-      "v1beta"
+      "v1"
     ],
     "model": [
       "gpt-3.5-turbo",
