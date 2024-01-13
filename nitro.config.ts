@@ -5,6 +5,9 @@ export default defineNitroConfig({
         regions: ["cle1", "iad1", "sfo1", "pdx1"]
     },
     routeRules: {
+        '/': {
+            redirect: 'https://genair.gd.edu.kg/'
+        },
         '/google/**': {
             proxy: 'https://generativelanguage.googleapis.com/**'
         },
