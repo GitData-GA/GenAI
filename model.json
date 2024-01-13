@@ -9,8 +9,5 @@
     "gpt-4",
     "gpt-4-32k",
     "gpt-4-vision-preview"
-  ],
-  "yandex": [
-    "yandexgpt"
   ]
 }
