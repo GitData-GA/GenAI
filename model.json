@@ -11,7 +11,6 @@
     "gpt-4-vision-preview"
   ],
   "Yandex": [
-    "yandexgpt",
-    "yandexgpt-lite"
+    "yandexgpt"
   ]
 }
