@@ -6,10 +6,10 @@ export default defineNitroConfig({
     },
     routeRules: {
         '/google/**': {
-            proxy: 'https://generativelanguage.googleapis.com/:splat'
+            proxy: 'https://generativelanguage.googleapis.com/**'
         },
         '/openai/**': {
-            proxy: 'https://api.openai.com/:splat'
+            proxy: 'https://api.openai.com/**'
         }
     }
 });
