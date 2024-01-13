@@ -1,24 +1,11 @@
 {
-  "google": [
-    "version": [
-      "v1",
-      "v1beta"
-    ],
-    "model": [
-      "gemini-pro",
-      "gemini-pro-vision"
-    ]
-  ],
-  "openai": [
-    "version": [
-      "v1"
-    ],
-    "model": [
-      "gpt-3.5-turbo",
-      "gpt-3.5-turbo-16k",
-      "gpt-4",
-      "gpt-4-32k",
-      "gpt-4-vision-preview"
-    ]
-  ]
+  "google": {
+    "version": ["v1", "v1beta"],
+    "model": ["gemini-pro", "gemini-pro-vision"]
+  },
+  "openai": {
+    "version": ["v1"],
+    "model": ["gpt-3.5-turbo", "gpt-3.5-turbo-16k", "gpt-4", "gpt-4-32k", "gpt-4-vision-preview"]
+  }
 }
+
