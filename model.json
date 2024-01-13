@@ -9,5 +9,9 @@
     "gpt-4",
     "gpt-4-32k",
     "gpt-4-vision-preview"
+  ],
+  "Yandex": [
+    "yandexgpt",
+    "yandexgpt-lite"
   ]
 }
