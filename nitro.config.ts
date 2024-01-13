@@ -6,7 +6,7 @@ export default defineNitroConfig({
     },
     routeRules: {
         '/': {
-            redirect: 'https://genair.gd.edu.kg/'
+            redirect: 'https://genai.gd.edu.kg/'
         },
         '/google/**': {
             proxy: 'https://generativelanguage.googleapis.com/**'
