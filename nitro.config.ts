@@ -13,9 +13,6 @@ export default defineNitroConfig({
         },
         '/openai/**': {
             proxy: 'https://api.openai.com/**'
-        },
-        '/yandex/**': {
-            proxy: 'https://llm.api.cloud.yandex.net/**'
         }
     }
 });
