@@ -1,7 +1,7 @@
 {
   "google": {
     "version": ["v1", "v1beta"],
-    "model": ["gemini-pro", "gemini-pro-vision"]
+    "model": ["text-bison-001", "chat-bison-001", "gemini-pro", "gemini-pro-vision"]
   },
   "openai": {
     "version": ["v1"],
