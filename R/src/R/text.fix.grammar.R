@@ -66,8 +66,8 @@
 #'
 #' @importFrom GenAI moderation.openai
 text.fix.grammar = function (model.parameter, temperature, prompt) {
-  if (prompt == "" || is.na(prompt) || class(prompt) != "character") {
-    stop("Input: Prompt is not in correct format.")
+  if (prompt == "" || is.na(prompt) || !inherits(prompt, "character")) {
+    stop("Prompt is not in correct format.")
   }
   switch (model.parameter["provider"],
           google = {
@@ -108,7 +108,7 @@ text.fix.grammar = function (model.parameter, temperature, prompt) {
               stop(responseJSON$error$message)
             }
             if (!is.null(responseJSON$blockReason)) {
-              stop("Safety: The prompt may contain harmful content.")
+              stop("The prompt may contain harmful content.")
             }
             return (as.character(responseJSON$candidates[[1]]$content$parts[[1]]$text))
           },

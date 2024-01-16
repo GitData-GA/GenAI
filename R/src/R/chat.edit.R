@@ -107,13 +107,13 @@ chat.edit = function(model.parameter,
                      history,
                      message.to.edit,
                      prompt) {
-  if (prompt == "" || is.na(prompt) || class(prompt) != "character") {
-    stop("Input: Prompt is not in correct format.")
+  if (prompt == "" || is.na(prompt) || !inherits(prompt, "character")) {
+    stop("Prompt is not in correct format.")
   }
   switch (model.parameter["provider"],
           google = {
             if (message.to.edit == "" || is.na(message.to.edit) ||
-                class(message.to.edit) != "numeric" || message.to.edit %% 2 == 0 || message.to.edit < 1) {
+                !inherits(message.to.edit, "numeric") || message.to.edit %% 2 == 0 || message.to.edit < 1) {
               stop("Input: message.to.edit must be a non-empty even numeric value.")
             }
             api.URL = ifelse(
@@ -153,7 +153,7 @@ chat.edit = function(model.parameter,
               stop(responseJSON$error$message)
             }
             if (!is.null(responseJSON$blockReason)) {
-              stop("Safety: The prompt may contain harmful content.")
+              stop("The prompt may contain harmful content.")
             }
             history$contents = append(history$contents[1:message.to.edit - 1], requestNewContent)
             respondContent = list(list(
@@ -165,7 +165,7 @@ chat.edit = function(model.parameter,
           },
           openai = {
             if (message.to.edit == "" || is.na(message.to.edit) ||
-                class(message.to.edit) != "numeric" || message.to.edit %% 2 == 1 || message.to.edit < 2) {
+                !inherits(message.to.edit, "numeric") || message.to.edit %% 2 == 1 || message.to.edit < 2) {
               stop("Input: message.to.edit must be a non-empty even numeric value.")
             }
             moderation.openai(model.parameter, prompt)

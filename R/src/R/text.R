@@ -56,7 +56,7 @@
 #'
 #' @importFrom GenAI moderation.openai
 text = function (model.parameter, temperature, prompt) {
-  if (prompt == "" || is.na(prompt) || class(prompt) != "character") {
+  if (prompt == "" || is.na(prompt) || !inherits(prompt, "character")) {
     stop("Prompt is not in correct format.")
   }
   switch (model.parameter["provider"],

@@ -87,8 +87,8 @@ chat = function(model.parameter,
                 temperature,
                 history,
                 prompt) {
-  if (prompt == "" || is.na(prompt) || class(prompt) != "character") {
-    stop("Input: Prompt is not in correct format.")
+  if (prompt == "" || is.na(prompt) || !inherits(prompt, "character")) {
+    stop("Prompt is not in correct format.")
   }
   switch (model.parameter["provider"],
           google = {
@@ -127,7 +127,7 @@ chat = function(model.parameter,
               stop(responseJSON$error$message)
             }
             if (!is.null(responseJSON$blockReason)) {
-              stop("Safety: The prompt may contain harmful content.")
+              stop("The prompt may contain harmful content.")
             }
             history$contents = append(history$contents, requestNewContent)
             respondContent = list(list(

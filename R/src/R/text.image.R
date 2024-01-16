@@ -63,11 +63,11 @@ text.image = function(model.parameter,
                       temperature,
                       prompt,
                       image.path) {
-  if (prompt == "" || is.na(prompt) || class(prompt) != "character") {
-    stop("Input: Prompt is not in correct format.")
+  if (prompt == "" || is.na(prompt) || !inherits(prompt, "character")) {
+    stop("Prompt is not in correct format.")
   }
-  if (image.path == "" || is.na(image.path) || class(image.path) != "character") {
-    stop("Input: image.path is not in correct format.")
+  if (image.path == "" || is.na(image.path) || !inherits(image.path, "character")) {
+    stop("image.path is not in correct format.")
   }
   switch (model.parameter["provider"],
           google = {
@@ -121,7 +121,7 @@ text.image = function(model.parameter,
               stop(responseJSON$error$message)
             }
             if (!is.null(responseJSON$blockReason)) {
-              stop("Safety: The prompt may contain harmful content.")
+              stop("The prompt may contain harmful content.")
             }
             return (as.character(responseJSON$candidates[[1]]$content$parts[[1]]$text))
           },

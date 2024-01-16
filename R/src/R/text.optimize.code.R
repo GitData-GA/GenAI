@@ -87,11 +87,11 @@ text.optimize.code = function (model.parameter,
                                prompt,
                                goal,
                                language = "R") {
-  if (prompt == "" || is.na(prompt) || class(prompt) != "character") {
-    stop("Input: Prompt is not in correct format.")
+  if (prompt == "" || is.na(prompt) || !inherits(prompt, "character")) {
+    stop("Prompt is not in correct format.")
   }
-  if (goal == "" || is.na(goal) || class(goal) != "character") {
-    stop("Input: Goal is not in correct format.")
+  if (goal == "" || is.na(goal) || !inherits(goal, "character")) {
+    stop("Goal is not in correct format.")
   }
   switch (model.parameter["provider"],
           google = {
