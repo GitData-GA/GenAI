@@ -1,7 +1,7 @@
 Package: GenAI
 Type: Package
 Title: Toolbox for Generative Artificial Intelligence Models
-Version: 0.1.7
+Version: 0.1.8
 Authors@R: c(
     person(
       given = "Li", family = "Yuan", role = c("aut", "cre"), 
@@ -14,9 +14,9 @@ License: CC BY 4.0
 URL: https://genai.gd.edu.kg/
 BugReports: https://github.com/GitData-GA/GenAI/issues
 Encoding: UTF-8
-RoxygenNote: 7.3.0
 Imports:
   base64enc,
   httr,
   jsonlite,
   tools
+RoxygenNote: 7.3.0
