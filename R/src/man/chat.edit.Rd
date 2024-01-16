@@ -7,6 +7,9 @@
 chat.edit(model.parameter, temperature, history, message.to.edit, prompt)
 }
 \arguments{
+\item{model.parameter}{A character vector containing information about the Generative AI service provider,
+corresponding model, version, API key, and proxy status.}
+
 \item{temperature}{A numeric value. Higher values result in more creative responses,
 while lower values produce more straightforward text.}
 
@@ -15,9 +18,6 @@ while lower values produce more straightforward text.}
 \item{message.to.edit}{An integer representing the index of the message to be edited.}
 
 \item{prompt}{A character string representing the query for text generation.}
-
-\item{model.parameters}{A character vector containing information about the Generative AI service provider,
-corresponding model, version, API key, and proxy status.}
 }
 \value{
 If successful, the full chat history, including the most recent response, will be returned. If

@@ -7,15 +7,15 @@
 chat(model.parameter, temperature, history, prompt)
 }
 \arguments{
+\item{model.parameter}{A character vector containing information about the Generative AI service provider,
+corresponding model, version, API key, and proxy status.}
+
 \item{temperature}{A numeric value. Higher values yield more creative responses,
 while lower values result in more straightforward text.}
 
 \item{history}{A list containing all messages exchanged between the user and the model in a chat session.}
 
 \item{prompt}{A character string representing the query for text generation.}
-
-\item{model.parameters}{A character vector containing information about the Generative AI service provider,
-corresponding model, version, API key, and proxy status.}
 }
 \value{
 If successful, the full chat history, including the most recent response, will be returned. If

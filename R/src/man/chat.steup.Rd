@@ -7,7 +7,7 @@
 chat.steup(model.parameter)
 }
 \arguments{
-\item{model.parameters}{A character vector containing the Generative AI service provider,
+\item{model.parameter}{A character vector containing the Generative AI service provider,
 corresponding model, version, API key, and proxy status.}
 }
 \value{
