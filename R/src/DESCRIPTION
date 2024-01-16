@@ -1,7 +1,7 @@
 Package: GenAI
 Type: Package
 Title: Toolbox for Generative Artificial Intelligence Models
-Version: 0.1.8
+Version: 0.1.10
 Authors@R: c(
     person(
       given = "Li", family = "Yuan", role = c("aut", "cre"), 
@@ -9,14 +9,14 @@ Authors@R: c(
     )
   )
 Maintainer: Li Yuan <lyuan@gd.edu.kg>
-Description: The Generative Artificial Intelligence ('GenAI') toolbox employs models like 'GPT-4' and 'Gemini Pro' as coding and writing assistants for 'R' users. Through these models, GenAI offers a variety of functions, encompassing text generation, code optimization, natural language processing, chat, and image interpretation. The goal is to aid 'R' users in streamlining laborious coding and language processing tasks.
+Description: The Generative Artificial Intelligence (GenAI) toolbox employs models like 'GPT-4' and 'Gemini Pro' as coding and writing assistants for 'R' users. Through these models, GenAI offers a variety of functions, encompassing text generation, code optimization, natural language processing, chat, and image interpretation. The goal is to aid 'R' users in streamlining laborious coding and language processing tasks.
 License: CC BY 4.0
 URL: https://genai.gd.edu.kg/
 BugReports: https://github.com/GitData-GA/GenAI/issues
 Encoding: UTF-8
+LazyData: true
+RoxygenNote: 7.3.0
 Imports:
   base64enc,
   httr,
-  jsonlite,
-  tools
-RoxygenNote: 7.3.0
+  jsonlite
