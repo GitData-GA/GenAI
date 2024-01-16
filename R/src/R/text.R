@@ -3,7 +3,7 @@
 #' This function establishes a connection to a Generative AI model by providing essential
 #' parameters and generates a response based on the prompt.
 #'
-#' @param model.parameters A character vector containing the Generative AI service provider,
+#' @param model.parameter A character vector containing the Generative AI service provider,
 #' corresponding model, version, API key, and proxy status.
 #' @param temperature A numeric value. A higher value results in more creative responses,
 #' while a lower value produces more straightforward text.
@@ -57,7 +57,7 @@
 #' @importFrom GenAI moderation.openai
 text = function (model.parameter, temperature, prompt) {
   if (prompt == "" || is.na(prompt) || class(prompt) != "character") {
-    stop("Input: Prompt is not in correct format.")
+    stop("Prompt is not in correct format.")
   }
   switch (model.parameter["provider"],
           google = {
@@ -95,14 +95,11 @@ text = function (model.parameter, temperature, prompt) {
               stop(responseJSON$error$message)
             }
             if (!is.null(responseJSON$blockReason)) {
-              stop("Safety: The prompt may contain harmful content.")
+              stop("The prompt may contain harmful content.")
             }
             return (as.character(responseJSON$candidates[[1]]$content$parts[[1]]$text))
           },
           openai = {
-            if (temperature < 0.0 || temperature > 2.0) {
-              stop("Temperature must be between 0.0 and 2.0 inclusive.")
-            }
             moderation.openai(model.parameter, prompt)
             api.URL = ifelse(
               model.parameter["proxy"],

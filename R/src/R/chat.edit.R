@@ -4,7 +4,7 @@
 #' parameters. It then edits a specific message in the chat history, generates a new response based on the
 #' prompt, and updates the chat history list.
 #'
-#' @param model.parameters A character vector containing information about the Generative AI service provider,
+#' @param model.parameter A character vector containing information about the Generative AI service provider,
 #' corresponding model, version, API key, and proxy status.
 #' @param temperature A numeric value. Higher values result in more creative responses,
 #' while lower values produce more straightforward text.

@@ -3,7 +3,7 @@
 #' This function establishes a connection to a Generative AI model by providing essential
 #' parameters and generates a code explanation based on the prompt.
 #'
-#' @param model.parameters A character vector containing the Generative AI service provider,
+#' @param model.parameter A character vector containing the Generative AI service provider,
 #' corresponding model, version, API key, and proxy status.
 #' @param temperature A numeric value. A higher value results in more creative responses,
 #' while a lower value produces more straightforward text.
@@ -129,9 +129,6 @@ text.explain.code = function (model.parameter,
             return (as.character(responseJSON$candidates[[1]]$content$parts[[1]]$text))
           },
           openai = {
-            if (temperature < 0.0 || temperature > 2.0) {
-              stop("Temperature must be between 0.0 and 2.0 inclusive.")
-            }
             moderation.openai(model.parameter, prompt)
             api.URL = ifelse(
               model.parameter["proxy"],

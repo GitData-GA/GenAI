@@ -3,7 +3,7 @@
 #' This function establishes a connection to a Generative AI model by providing essential
 #' parameters and generates text based on the prompt and the image.
 #'
-#' @param model.parameters A character vector containing the Generative AI service provider,
+#' @param model.parameter A character vector containing the Generative AI service provider,
 #' corresponding model, version, API key, and proxy status.
 #' @param temperature A numeric value. A higher value results in more creative responses,
 #' while a lower value produces more straightforward text.

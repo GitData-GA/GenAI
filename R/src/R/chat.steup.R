@@ -3,7 +3,7 @@
 #' This function establishes a connection to a Generative AI model by providing essential
 #' parameters and generates an empty chat history list for the model.
 #'
-#' @param model.parameters A character vector containing the Generative AI service provider,
+#' @param model.parameter A character vector containing the Generative AI service provider,
 #' corresponding model, version, API key, and proxy status.
 #'
 #' @return If successful, a chat history list is generated for the Generative AI model.
