@@ -1,176 +1,248 @@
 <!DOCTYPE html>
-
 <html lang="en">
-<head>
-<meta charset="UTF-8" />
-<meta http-equiv="X-UA-Compatible" content="IE=edge">
-<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1.0, shrink-to-fit=no">
-<link rel="icon" type="image/x-icon" href="https://static.gd.edu.kg/images/logo-100-white.png">
-<meta itemprop="image" content="https://www.gd.edu.kg/images/cover.jpg">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1.0, shrink-to-fit=no">
+        <link rel="icon" type="image/x-icon" href="https://static.gd.edu.kg/images/logo.svg">
+        <meta itemprop="image" content="https://www.gd.edu.kg/images/cover.jpg">
+        <title>GenAI - R Documentation</title>
+        <meta name="description" content="This document provides an overview of the GenAI package in the R programming language.">
 
-<title>[First Name] [Last Name]</title>
+        <!-- Google / Search Engine Tags -->
+        <meta itemprop="name" content="GenAI - R Documentation">
+        <meta itemprop="description" content="This document provides an overview of the GenAI package in the R programming language.">
+        <meta itemprop="image" content="https://www.gd.edu.kg/images/cover.jpg">
 
-<meta name="description" content="[Description]">
+        <!-- Facebook Meta Tags -->
+        <meta property="og:url" content="https://genai.gd.edu.kg/R/doc/">
+        <meta property="og:type" content="website">
+        <meta property="og:title" content="GenAI - R Documentation">
+        <meta property="og:description" content="This document provides an overview of the GenAI package in the R programming language.">
+        <meta property="og:image" content="https://www.gd.edu.kg/images/cover.jpg">
 
+        <!-- Twitter Meta Tags -->
+        <meta name="twitter:card" content="summary_large_image">
+        <meta name="twitter:title" content="GenAI - R Documentation">
+        <meta name="twitter:description" content="This document provides an overview of the GenAI package in the R programming language.">
+        <meta name="twitter:image" content="https://www.gd.edu.kg/images/cover.jpg">
 
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-ELSZ3SFQ2D"></script><script>window.dataLayer=window.dataLayer || []; function gtag(){dataLayer.push(arguments);}gtag('js', new Date()); gtag('config', 'G-ELSZ3SFQ2D');</script>
-<link rel="stylesheet" type="text/css" href="https://static.gd.edu.kg/css/kb/bootstrap.min.css" />
-<link rel="stylesheet" type="text/css" href="https://static.gd.edu.kg/css/kb/all.min.css" />
-<link rel="stylesheet" type="text/css" href="https://static.gd.edu.kg/css/kb/magnific-popup.min.css" />
-<link rel="stylesheet" type="text/css" href="https://static.gd.edu.kg/css/kb/github.css" />
-<link rel="stylesheet" type="text/css" href="https://static.gd.edu.kg/css/kb/stylesheet.css" />
-</head>
-<body data-spy="scroll" data-target=".idocs-navigation" data-offset="125">
-<div class="preloader">
-  <div class="lds-ellipsis">
-    <div></div>
-    <div></div>
-    <div></div>
-    <div></div>
-  </div>
-</div>
+        <!-- Analytics -->
+        <script async src="https://www.googletagmanager.com/gtag/js?id=G-ELSZ3SFQ2D"></script><script>window.dataLayer=window.dataLayer || []; function gtag(){dataLayer.push(arguments);}gtag('js', new Date()); gtag('config', 'G-ELSZ3SFQ2D');</script>
 
-
-<div id="main-wrapper"> 
-  
-  <header id="header" class="sticky-top"> 
-    
-    <nav class="primary-menu navbar navbar-expand-lg navbar-dropdown-dark">
-      <div class="container-fluid">
-        
-        <button id="sidebarCollapse" class="navbar-toggler d-block d-md-none" type="button"><span></span><span class="w-75"></span><span class="w-50"></span></button>
-         
-        <a class="logo ml-md-3" href="https://www.gd.edu.kg/"> <img src="https://static.gd.edu.kg/images/logo-100-white.png" width=50px/> </a> 
-        <span class="text-2 ml-2"></span> 
-        
-        
-        <button class="navbar-toggler ml-auto" type="button" data-toggle="collapse" data-target="#header-nav"><span></span><span></span><span></span></button>
-        <div id="header-nav" class="collapse navbar-collapse justify-content-end">
-          <ul class="navbar-nav">
-            <li><a href="/">Home</a>
-            </li>
-            
-            <a href="/">[Item]</a>
-            </li>
-            -->
-          
-          </ul>
+        <!-- CSS -->
+        <link rel="stylesheet" type="text/css" href="https://static.gd.edu.kg/css/kb/bootstrap.min.css" />
+        <link rel="stylesheet" type="text/css" href="https://static.gd.edu.kg/css/kb/all.min.css" />
+        <link rel="stylesheet" type="text/css" href="https://static.gd.edu.kg/css/kb/magnific-popup.min.css" />
+        <link rel="stylesheet" type="text/css" href="https://static.gd.edu.kg/css/kb/github.css" />
+        <link rel="stylesheet" type="text/css" href="https://static.gd.edu.kg/css/kb/stylesheet.css" />
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.9.0/build/styles/default.min.css">
+    </head>
+    <body data-spy="scroll" data-target=".idocs-navigation" data-offset="125">
+        <div class="preloader">
+            <div class="lds-ellipsis">
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+            </div>
         </div>
-      </div>
-    </nav>
-     
-  </header>
-   
-  
-  
-  <div id="content" role="main">
-    
-    
-    <div class="idocs-navigation bg-light">
-      <ul class="nav flex-column ">
-        
-        <li class="nav-item"><a class="nav-link active" href="#start">[First name] [Last name]</a>
-          <ul class="nav flex-column">
-            
-            <li class="nav-item"><a class="nav-link" href="#section-name1">Section 01</a></li>
-            <li class="nav-item"><a class="nav-link" href="#section-name2">Section 02</a></li>
-            <li class="nav-item"><a class="nav-link" href="#section-name3">Section 03</a></li>
-          
-          </ul>
-        </li>
-      </ul>
-    </div>
-   
-    
-    <div class="idocs-content">
-      <div class="container"> 
-        <HR> if needed.
-        -->
-        <section id="start">
-        <h1>[First name] [Last name]</h1>
-        </section><HR>
+        <div id="main-wrapper">
+            <header id="header" class="sticky-top">
+                <nav class="primary-menu navbar navbar-expand-lg navbar-dropdown-dark">
+                    <div class="container-fluid">
+                        <button id="sidebarCollapse" class="navbar-toggler d-block d-md-none" type="button"><span></span><span class="w-75"></span><span class="w-50"></span></button>
+                        <a class="logo ml-md-3" href="https://genai.gd.edu.kg/"> <img src="https://genai.gd.edu.kg/assets/img/logo.svg" height=50px/> </a> 
+                        <span class="text-2 ml-2"></span> 
+                        <button class="navbar-toggler ml-auto" type="button" data-toggle="collapse" data-target="#header-nav"><span></span><span></span><span></span></button>
+                        <div id="header-nav" class="collapse navbar-collapse justify-content-end">
+                            <ul class="navbar-nav">
+                                <li><a href="/">Home</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </nav>
+            </header>
+            <div id="content" role="main">
+                <div class="idocs-navigation bg-light">
+                    <ul class="nav flex-column ">
+                        <li class="nav-item">
+                            <a class="nav-link active" href="#start">GenAI - R Documentation</a>
+                            <ul class="nav flex-column">
+                                <li class="nav-item"><a class="nav-link" href="#installation">Installation</a></li>
+                                <li class="nav-item"><a class="nav-link active" href="#setup">Setup</a>
+                                    <ul class="nav flex-column">
+                                        <li class="nav-item"><a class="nav-link" href="#available_models"><code>available.models</code></a></li>
+                                        <li class="nav-item"><a class="nav-link" href="#connect_genai"><code>connect.genai</code></a></li>
+                                    </ul>
+                                </li>
+                                <li class="nav-item"><a class="nav-link" href="#section-name3">Section 03</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+                <div class="idocs-content">
+                    <div class="container">
+                        <section id="start">
+                            <h1>GenAI - R Documentation</h1>
+                            <p><i>Last update: 2024/01/16</i></p>
+                            <p>
+                                The Generative Artificial Intelligence (GenAI) toolbox employs models like 'GPT-4' and 'Gemini Pro' as coding and writing assistants for 'R' users. Through these models, GenAI offers a variety of functions, encompassing text generation, code optimization, natural language processing, chat, and image interpretation. The goal is to aid 'R' users in streamlining laborious coding and language processing tasks.
+                            </p>
+                        </section>
+                        <hr>
+                        <section id="installation">
+                            <h2>Installation</h2>
+                            <p>You can directly install the package from GenAI official website.</p>
+                            <pre>
+                              <code class="language-r">install.packages("https://genai.gd.edu.kg/release/R/GenAI_latest.tar.gz", repos=NULL, method="libcurl")</code>
+                            </pre>
+                        </section>
+                        <hr>
+                        <section id="setup">
+                            <h2>Setup</h2>
+                            <section id="available_models">
+                                <h4><code>available.models</code><br>
+                                    <a href="https://github.com/GitData-GA/GenAI/blob/main/R/src/R/available.models.R" target="_blank"><img src="https://genai.gd.edu.kg/assets/img/github-badge.svg" alt="Open in GitHub"></a>
+                                </h4>
+                                <h4>Get supported Generative AI models<h4>
+                                <h5>Usage</h5>
+                                <pre><code class="language-r">available.models()</code></pre>
+                                <h5>Value</h5>
+                                <p>
+                                  If successful, the function returns a list containing Generative AI
+                                  service providers and their corresponding models. If the function encounters an error,
+                                  it will halt execution and provide an error message.
+                                </p>
+                                <h5>Description</h5>
+                                <p>
+                                  This function sends a request to <a href="https://genai.gd.edu.kg/model.json" target="_blank">database</a>
+                                  to retrieve information about available Generative AI models.
+                                </p>
+                                <h5>Detail</h5>
+                                <p>
+                                  The function utilizes the GenAI database API to fetch the latest information about available Generative AI models. The retrieved data includes details about different models offered by various service providers.
+                                </p>
+                                <div class="accordion" id="accordionDefault">
+                                  <div class="card">
+                                    <div class="card-header" id="available_models_ex">
+                                      <h5 class="mb-0"> <a href="#" class="collapsed" data-toggle="collapse" data-target="#available_models_ex_collapse" aria-expanded="true">Example</a> </h5>
+                                    </div>
+                                    <div id="available_models_ex_collapse" class="collapse" data-parent="#accordionDefault">
+                                      <div class="card-body">
+                                        <a target="_blank" href="https://colab.research.google.com/github/GitData-GA/GenAI/blob/gh-pages/R/example/available_models.ipynb">
+                                          <img src="https://genai.gd.edu.kg/assets/img/colab-badge.svg" alt="Open In Colab"/>
+                                        </a>
+                                        <pre><code class="language-r">models = available.models()
+models</code></pre>
+                                      </div>
+                                    </div>
+                                  </div>
+                                </div>
+                            </section>
+                            <hr style="border-top: dotted 1px; color: grey;" />
+                            <section id="connect_genai">
+                                <h4><code>connect.genai</code><br>
+                                    <a href="https://github.com/GitData-GA/GenAI/blob/main/R/src/R/connect.genai.R" target="_blank"><img src="https://genai.gd.edu.kg/assets/img/github-badge.svg" alt="Open in GitHub"></a>
+                                </h4>
+                                <h4>Set up and connect to a Generative AI model<h4>
+                                <h5>Usage</h5>
+                                <pre><code class="language-r">connect.genai(provider,
+              model, 
+              version, 
+              api, 
+              proxy = FALSE)</code></pre>
+                                <h5>Arguments</h5>
+                                <ul>
+                                    <li>
+                                        <p><code class="language-r">provider</code>: A character string representing the Generative AI service provider (e.g., <code class="language-r">"google"</code>, <code class="language-r">"openai"</code>).</p>
+                                    </li>
+                                    <li>
+                                        <p><code class="language-r">model</code>: A character string representing the specific model offered by the selected provider (e.g., <code class="language-r">"gpt-3.5-turbo"</code>, <code class="language-r">"gemini-pro"</code>).</p>
+                                    </li>
+                                    <li>
+                                        <p><code class="language-r">version</code>: A character string representing the version of the chosen model.</p>
+                                    </li>
+                                    <li>
+                                        <p><code class="language-r">api</code>: A character string representing the API key required for accessing the model.</p>
+                                    </li>
+                                    <li>
+                                        <p><code class="language-r">proxy</code>: A boolean value indicating whether to use a proxy for accessing the API URL (default is <code class="language-r">FALSE</code>). If your local internet cannot access the APIs, set this parameter to <code class="language-r">TRUE</code>.</p>
+                                    </li>
+                                </ul>
+                                <h5>Value</h5>
+                                <p>
+                                  If successful, the function returns a vector containing information about the
+                                  chosen Generative AI service provider, model, version, API key, and proxy status.
+                                  If the API response indicates an error, the function halts execution and provides
+                                  an error message.
+                                </p>
+                                <h5>Description</h5>
+                                <p>
+                                  This function establishes a connection to a Generative AI model by providing essential
+                                  parameters such as the service provider, model, version, API key, and proxy status.
+                                </p>
+                                <h5>Detail</h5>
+                                <p>
+                                  It is crucial to provide accurate and valid information for each parameter
+                                  to ensure a successful connection to the Generative AI model. If any of the provided
+                                  parameters are incorrect, the function will respond with an error message based on
+                                  the information received from the API. Use the function <a href="#available_models"><code class="language-r">available.models()</code></a> to
+                                  see all supported Generative AI models.
+                                </p>
+                                <div class="accordion" id="accordionDefault">
+                                  <div class="card">
+                                    <div class="card-header" id="available_models_ex">
+                                      <h5 class="mb-0"> <a href="#" class="collapsed" data-toggle="collapse" data-target="#connect_genai_ex_collapse" aria-expanded="true">Example</a> </h5>
+                                    </div>
+                                    <div id="connect_genai_ex_collapse" class="collapse" data-parent="#accordionDefault">
+                                      <div class="card-body">
+                                        <a target="_blank" href="https://colab.research.google.com/github/GitData-GA/GenAI/blob/gh-pages/R/example/connect_genai.ipynb">
+                                          <img src="https://genai.gd.edu.kg/assets/img/colab-badge.svg" alt="Open In Colab"/>
+                                        </a>
+                                        <pre><code class="language-r">models = available.models()
+models
 
-         tag. There are some HTML language examples below. 
-        -->
-        <section id="section-name1">
-          <h2>Section 01</h2>
-          <p>This is a paragraph.<p>
+google.model = connect.genai("google",
+                             models$google$model[1],
+                             models$google$version[1],
+                             "API_KEY",
+                             FALSE)
+google.model
 
-          <p>This is a breaked <br> sentence in HTML.</p>
-
-          
-          <img src="https://upload.wikimedia.org/wikipedia/commons/1/11/Test-Logo.svg" width="200px"/>
-
-          
-          <iframe src="https://pdfviewer.gd.edu.kg/web/viewer?file=https://iasc2023.gd.edu.kg/report/2022%20-%202023%20H5N1%20Bird%20Flu%20Modeling%20and%20Prediction%20in%20the%20United%20States.pdf" loading="lazy" width="100%" height="450pc"></iframe>
-
-          
-          <a href="https://pdfviewer.gd.edu.kg/web/viewer?file=https://iasc2023.gd.edu.kg/report/2022%20-%202023%20H5N1%20Bird%20Flu%20Modeling%20and%20Prediction%20in%20the%20United%20States.pdf" target="_blank">This is a link to a PDF report</a>
-        </section>
-        <HR>    
-
-         tag. There are some HTML language examples below. 
-        -->
-        <section id="section-name2">
-          <h2>Section 02</h2>
-          <p>This is a paragraph.<p>
-            
-          <p>This is a breaked <br> sentence in HTML.</p>
-
-          
-          <img src="https://upload.wikimedia.org/wikipedia/commons/1/11/Test-Logo.svg" width="200px"/>
-
-          
-          <iframe src="https://pdfviewer.gd.edu.kg/web/viewer?file=https://iasc2023.gd.edu.kg/report/2022%20-%202023%20H5N1%20Bird%20Flu%20Modeling%20and%20Prediction%20in%20the%20United%20States.pdf" loading="lazy" width="100%" height="450pc"></iframe>
-
-          
-          <a href="https://pdfviewer.gd.edu.kg/web/viewer?file=https://iasc2023.gd.edu.kg/report/2022%20-%202023%20H5N1%20Bird%20Flu%20Modeling%20and%20Prediction%20in%20the%20United%20States.pdf" target="_blank">This is a link to a PDF report</a>
-        </section>
-        <HR>    
-          
-         tag. There are some HTML language examples below. 
-        -->
-        <section id="section-name3">
-          <h2>Section 03</h2>
-          <p>This is a paragraph.<p>
-            
-          <p>This is a breaked <br> sentence in HTML.</p>
-
-          
-          <img src="https://upload.wikimedia.org/wikipedia/commons/1/11/Test-Logo.svg" width="200px"/>
-
-          
-          <iframe src="https://pdfviewer.gd.edu.kg/web/viewer?file=https://iasc2023.gd.edu.kg/report/2022%20-%202023%20H5N1%20Bird%20Flu%20Modeling%20and%20Prediction%20in%20the%20United%20States.pdf" loading="lazy" width="100%" height="450px"></iframe>
-
-          
-          <a href="https://pdfviewer.gd.edu.kg/web/viewer?file=https://iasc2023.gd.edu.kg/report/2022%20-%202023%20H5N1%20Bird%20Flu%20Modeling%20and%20Prediction%20in%20the%20United%20States.pdf" target="_blank">This is a link to a PDF report</a>
-        </section>
-        <HR>  
-
-        <hr class="divider">
-      </div>
-    </div>
-    
-  </div>
-   
-  
-  
-  <footer id="footer" class="section bg-dark footer-text-light">
-    <div class="container">
-      <p class="text-center">&copy; <script type="text/JavaScript"> document.write(new Date().getFullYear()) </script> GitData</p>
-    </div>
-  </footer>
-  
-  
-</div>
- 
-
-<a id="back-to-top" data-toggle="tooltip" title="Back to Top" href="javascript:void(0)"><i class="fa fa-chevron-up"></i></a> 
-<script src="https://static.gd.edu.kg/js/kb/jquery.min.js"></script> 
-<script src="https://static.gd.edu.kg/js/kb/bootstrap.bundle.min.js"></script> 
-<script src="https://static.gd.edu.kg/js/kb/highlight.min.js"></script> 
-<script src="https://static.gd.edu.kg/js/kb/jquery.easing.min.js"></script> 
-<script src="https://static.gd.edu.kg/js/kb/jquery.magnific-popup.min.js"></script> 
-<script src="https://static.gd.edu.kg/js/kb/theme.js"></script>
-</body>
+openai.model = connect.genai("openai",
+                             models$openai$model[1],
+                             models$openai$version[1],
+                             "API_KEY",
+                             FALSE)
+openai.model</code></pre>
+                                      </div>
+                                    </div>
+                                  </div>
+                                </div>
+                            </section>
+                        </section>
+                    </div>
+                </div>
+            </div>
+            <footer id="footer" class="section bg-dark footer-text-light">
+                <div class="container">
+                    <p class="text-center">
+                        &copy; <script type="text/JavaScript"> document.write(new Date().getFullYear()) </script> GitData
+                    </p>
+                </div>
+            </footer>
+        </div>
+        <a id="back-to-top" data-toggle="tooltip" title="Back to Top" href="javascript:void(0)"><i class="fa fa-chevron-up"></i></a> 
+        <script src="https://static.gd.edu.kg/js/kb/jquery.min.js"></script> 
+        <script src="https://static.gd.edu.kg/js/kb/bootstrap.bundle.min.js"></script> 
+        <script src="https://static.gd.edu.kg/js/kb/highlight.min.js"></script> 
+        <script src="https://static.gd.edu.kg/js/kb/jquery.easing.min.js"></script> 
+        <script src="https://static.gd.edu.kg/js/kb/jquery.magnific-popup.min.js"></script> 
+        <script src="https://static.gd.edu.kg/js/kb/theme.js"></script>
+        <script src="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.9.0/build/highlight.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.9.0/build/languages/r.min.js"></script>
+        <script>hljs.highlightAll();</script>
+    </body>
 </html>
