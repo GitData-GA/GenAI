@@ -35,7 +35,7 @@ parameters such as the service provider, model, version, API key, and proxy stat
 It is crucial to provide accurate and valid information for each parameter
 to ensure a successful connection to the Generative AI model. If any of the provided
 parameters are incorrect, the function will respond with an error message based on
-the information received from the API. Use the function \code{available.models()} to
+the information received from the API. Use the function \code{available.models} to
 see all supported Generative AI models.
 }
 \examples{
@@ -50,7 +50,7 @@ see all supported Generative AI models.
                               "API_KEY",
                               FALSE)
  google.model
- 
+
  # Connect to the model, replace API_KEY with your api key
  openai.model = connect.genai("openai",
                               models$openai$model[1],

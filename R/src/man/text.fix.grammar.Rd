@@ -28,7 +28,7 @@ parameters and generates correct text based on the prompt.
 Providing accurate and valid information for each parameter is crucial
 to ensure successful text generation by the Generative AI model. If any of the
 provided parameters is incorrect, the function will respond with an error message based
-on the information received from the API. Use the function \code{available.models()} to
+on the information received from the API. Use the function \code{available.models} to
 see all supported Generative AI models.
 
 A complete prompt behind the function is as follows:
@@ -38,7 +38,7 @@ Rewrite the following text and fix any grammar issues:
 # Text starts #
 
 \code{prompt}
-   
+
 # Text ends #
 }
 \examples{

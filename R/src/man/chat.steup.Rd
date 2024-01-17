@@ -22,7 +22,7 @@ Providing accurate and valid information for each parameter is crucial
 to ensure successful text generation by the Generative AI model. The chat history will be
 modified by this function. If any of the provided parameters is incorrect, the function
 will respond with an error message based on the information received from the API.
-Use the function \code{available.models()} to see all supported Generative AI models.
+Use the function \code{available.models} to see all supported Generative AI models.
 }
 \examples{
 \dontrun{
