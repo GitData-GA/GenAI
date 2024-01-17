@@ -93,7 +93,7 @@
                                         <li class="nav-item"><a class="nav-link" href="#chat_edit"><code>chat.edit</code></a></li>
                                         <li class="nav-item"><a class="nav-link" href="#chat_recent"><code>chat.recent</code></a></li>
                                         <li class="nav-item"><a class="nav-link" href="#chat_save"><code>chat.save</code></a></li>
-                                        <li class="nav-item"><a class="nav-link" href="#chat_steup"><code>chat.steup</code></a></li>
+                                        <li class="nav-item"><a class="nav-link" href="#chat_setup"><code>chat.setup</code></a></li>
                                     </ul>
                                 </li>
                             </ul>
@@ -733,7 +733,7 @@ cat(optimized.code)</code></pre>
                                     </div>
                                     <div id="chat_ex_collapse" class="collapse" data-parent="#accordionDefault">
                                       <div class="card-body">
-                                        <a target="_blank" href="">
+                                        <a target="_blank" href="https://colab.research.google.com/github/GitData-GA/GenAI/blob/gh-pages/R/example/chat.ipynb">
                                           <img src="https://genai.gd.edu.kg/assets/img/colab-badge.svg" alt="Open In Colab"/>
                                         </a>
                                         <pre><code class="language-r">models = available.models()
@@ -750,8 +750,8 @@ openai.model = connect.genai("openai",
                              "API_KEY",
                              FALSE)
 
-google.history = chat.steup(google.model)
-openai.history = chat.steup(openai.model)
+google.history = chat.setup(google.model)
+openai.history = chat.setup(openai.model)
 
 temperature = 0.9
 prompt = "Write a story about a magic backpack in about 100 words."
@@ -760,29 +760,26 @@ google.history = chat(google.model,
                       temperature,
                       google.history,
                       prompt)
-
 cat(chat.recent(google.model, google.history))
 
 openai.history = chat(openai.model,
                       temperature,
                       openai.history,
                       prompt)
-
 cat(chat.recent(openai.model, openai.history))
 
 prompt = "What is the word count of the story you just wrote?"
+
 google.history = chat(google.model,
                       temperature,
                       google.history,
                       prompt)
-
 cat(chat.recent(google.model, google.history))
 
 openai.history = chat(openai.model,
                       temperature,
                       openai.history,
                       prompt)
-
 cat(chat.recent(openai.model, openai.history))</code></pre>
                                       </div>
                                     </div>
@@ -794,35 +791,112 @@ cat(chat.recent(openai.model, openai.history))</code></pre>
                                 <h4><code>chat.convert</code><br>
                                     <a href="https://github.com/GitData-GA/GenAI/blob/main/R/src/R/chat.convert.R" target="_blank"><img src="https://genai.gd.edu.kg/assets/img/github-badge.svg" alt="Open in GitHub"></a>
                                 </h4>
-                                <h4><h4>
+                                <h4>Convert chat history from one Generative AI model to another<h4>
                                 <h5>Usage</h5>
-                                <pre><code class="language-r"></code></pre>
+                                <pre><code class="language-r">chat.convert(source.model.parameter, 
+             source.history, 
+             target.model.parameter)</code></pre>
                                 <h5>Arguments</h5>
                                 <ul>
                                     <li>
-                                        <p><code class="language-r"></code>: </p>
+                                        <p><code class="language-r">source.model.parameter</code>: A character vector containing essential information about the source Generative AI service provider, model, version, API key, and proxy status.</p>
+                                    </li>
+                                    <li>
+                                        <p><code class="language-r">source.history</code>: A list containing all messages exchanged between the user and the model in a chat session.</p>
+                                    </li>
+                                    <li>
+                                        <p><code class="language-r">target.model.parameter</code>: A character vector containing essential information about the target Generative AI service provider, model, version, API key, and proxy status.</p>
                                     </li>
                                 </ul>
                                 <h5>Value</h5>
                                 <p>
+                                    If the conversion is successful, the function returns the transformed chat history in list format. In case of incorrect input formats, the function halts execution and provides an error message.
                                 </p>
                                 <h5>Description</h5>
                                 <p>
+                                    This function transforms the chat history from one Generative AI model to another, ensuring compatibility and usability across different models.
                                 </p>
                                 <h5>Detail</h5>
                                 <p>
+                                    Providing accurate and valid information for each parameter is crucial for successful text generation by the Generative AI model. This function modifies the chat history accordingly. Incorrect parameters will result in an error message based on the API feedback. To explore supported Generative AI models, use the function <a href="#available_models"><code class="language-r">available.models</code></a>. Additionally, utilize <a href="#chat_setup"><code class="language-r">chat.setup</code></a> to set up a chat history.
                                 </p>
                                 <div class="accordion" id="accordionDefault">
                                   <div class="card">
-                                    <div class="card-header" id="available_models_ex">
-                                      <h5 class="mb-0"> <a href="#" class="collapsed" data-toggle="collapse" data-target="#connect_genai_ex_collapse" aria-expanded="true">Example</a> </h5>
+                                    <div class="card-header" id="chat_convert_ex">
+                                      <h5 class="mb-0"> <a href="#" class="collapsed" data-toggle="collapse" data-target="#chat_convert_ex_collapse" aria-expanded="true">Example</a> </h5>
                                     </div>
-                                    <div id="connect_genai_ex_collapse" class="collapse" data-parent="#accordionDefault">
+                                    <div id="chat_convert_ex_collapse" class="collapse" data-parent="#accordionDefault">
                                       <div class="card-body">
-                                        <a target="_blank" href="">
+                                        <a target="_blank" href="https://colab.research.google.com/github/GitData-GA/GenAI/blob/gh-pages/R/example/chat_convert.ipynb">
                                           <img src="https://genai.gd.edu.kg/assets/img/colab-badge.svg" alt="Open In Colab"/>
                                         </a>
-                                        <pre><code class="language-r"></code></pre>
+                                        <pre><code class="language-r">models = available.models()
+
+google.model = connect.genai("google",
+                             models$google$model[1],
+                             models$google$version[1],
+                             "API_KEY",
+                             FALSE)
+
+openai.model = connect.genai("openai",
+                             models$openai$model[1],
+                             models$openai$version[1],
+                             "API_KEY",
+                             FALSE)
+
+google.history = chat.setup(google.model)
+openai.history = chat.setup(openai.model)
+
+temperature = 0.9
+prompt = "Write a story about a magic backpack in about 100 words."
+
+google.history = chat(google.model,
+                      temperature,
+                      google.history,
+                      prompt)
+cat(chat.recent(google.model, google.history))
+
+openai.history = chat(openai.model,
+                      temperature,
+                      openai.history,
+                      prompt)
+cat(chat.recent(openai.model, openai.history))
+
+prompt = "What is the word count of the story you just wrote?"
+
+google.history = chat(google.model,
+                      temperature,
+                      google.history,
+                      prompt)
+cat(chat.recent(google.model, google.history))
+
+openai.history = chat(openai.model,
+                      temperature,
+                      openai.history,
+                      prompt)
+cat(chat.recent(openai.model, openai.history))
+
+converted.google.history = chat.convert(openai.model,
+                                        openai.history,
+                                        google.model)
+
+converted.openai.history = chat.convert(google.model,
+                                        google.history,
+                                        openai.model)
+
+prompt = "Hello! Could you tell me what you just did?"
+
+converted.google.history = chat(google.model,
+                                temperature,
+                                converted.google.history,
+                                prompt)
+cat(chat.recent(google.model, converted.google.history))
+
+converted.openai.history = chat(openai.model,
+                                temperature,
+                                converted.openai.history,
+                                prompt)
+cat(chat.recent(openai.model, converted.openai.history))</code></pre>
                                       </div>
                                     </div>
                                   </div>
@@ -833,35 +907,114 @@ cat(chat.recent(openai.model, openai.history))</code></pre>
                                 <h4><code>chat.edit</code><br>
                                     <a href="https://github.com/GitData-GA/GenAI/blob/main/R/src/R/chat.edit.R" target="_blank"><img src="https://genai.gd.edu.kg/assets/img/github-badge.svg" alt="Open in GitHub"></a>
                                 </h4>
-                                <h4><h4>
+                                <h4>Modify a message in the chat history of a Generative AI model and generate a new response based on a prompt<h4>
                                 <h5>Usage</h5>
-                                <pre><code class="language-r"></code></pre>
+                                <pre><code class="language-r">chat.edit(model.parameter, 
+          temperature, 
+          history, 
+          message.to.edit, 
+          prompt)</code></pre>
                                 <h5>Arguments</h5>
                                 <ul>
                                     <li>
-                                        <p><code class="language-r"></code>: </p>
+                                        <p><code class="language-r">model.parameter</code>: A character vector containing information about the Generative AI service provider, corresponding model, version, API key, and proxy status.</p>
+                                    </li>
+                                    <li>
+                                        <p><code class="language-r">temperature</code>: A numeric value. Higher values result in more creative responses, while lower values produce more straightforward text.</p>
+                                    </li>
+                                    <li>
+                                        <p><code class="language-r">history</code>: A list containing all messages exchanged between the user and model in a chat session.</p>
+                                    </li>
+                                    <li>
+                                        <p><code class="language-r">message.to.edit</code>: An integer representing the index of the message to be edited.</p>
+                                    </li>
+                                    <li>
+                                        <p><code class="language-r">prompt</code>: A character string representing the query for text generation.</p>
                                     </li>
                                 </ul>
                                 <h5>Value</h5>
                                 <p>
+                                    If successful, the full chat history, including the most recent response, will be returned. If the API response indicates an error, the function halts execution and provides an error message.
                                 </p>
                                 <h5>Description</h5>
                                 <p>
+                                    This function establishes a connection to a Generative AI model by providing essential parameters. It then edits a specific message in the chat history, generates a new response based on the prompt, and updates the chat history list.
                                 </p>
                                 <h5>Detail</h5>
                                 <p>
+                                    Providing accurate and valid information for each parameter is crucial for successful text generation by the Generative AI model. This function modifies the chat history. If any parameter is incorrect, the function responds with an error message based on the API feedback. To view all supported Generative AI models, use the function <a href="#available_models"><code class="language-r">available.models</code></a>. Additionally, utilize <a href="#chat_setup"><code class="language-r">chat.setup</code></a> to set up a chat history. To retrieve the most recent response generated by the model, use the function <a href="#chat_recent"><code class="language-r">chat.recent</code></a>.
                                 </p>
                                 <div class="accordion" id="accordionDefault">
                                   <div class="card">
-                                    <div class="card-header" id="available_models_ex">
-                                      <h5 class="mb-0"> <a href="#" class="collapsed" data-toggle="collapse" data-target="#connect_genai_ex_collapse" aria-expanded="true">Example</a> </h5>
+                                    <div class="card-header" id="chat_edit_ex">
+                                      <h5 class="mb-0"> <a href="#" class="collapsed" data-toggle="collapse" data-target="#chat_edit_ex_collapse" aria-expanded="true">Example</a> </h5>
                                     </div>
-                                    <div id="connect_genai_ex_collapse" class="collapse" data-parent="#accordionDefault">
+                                    <div id="chat_edit_ex_collapse" class="collapse" data-parent="#accordionDefault">
                                       <div class="card-body">
-                                        <a target="_blank" href="">
+                                        <a target="_blank" href="https://colab.research.google.com/github/GitData-GA/GenAI/blob/gh-pages/R/example/chat_edit.ipynb">
                                           <img src="https://genai.gd.edu.kg/assets/img/colab-badge.svg" alt="Open In Colab"/>
                                         </a>
-                                        <pre><code class="language-r"></code></pre>
+                                        <pre><code class="language-r">models = available.models()
+
+google.model = connect.genai("google",
+                             models$google$model[1],
+                             models$google$version[1],
+                             "API_KEY",
+                             FALSE)
+
+openai.model = connect.genai("openai",
+                             models$openai$model[1],
+                             models$openai$version[1],
+                             "API_KEY",
+                             FALSE)
+
+google.history = chat.setup(google.model)
+openai.history = chat.setup(openai.model)
+
+temperature = 0.9
+prompt = "Write a story about a magic backpack in about 100 words."
+
+google.history = chat(google.model,
+                      temperature,
+                      google.history,
+                      prompt)
+cat(chat.recent(google.model, google.history))
+
+openai.history = chat(openai.model,
+                      temperature,
+                      openai.history,
+                      prompt)
+cat(chat.recent(openai.model, openai.history))
+
+prompt = "What is the word count of the story you just wrote?"
+
+google.history = chat(google.model,
+                      temperature,
+                      google.history,
+                      prompt)
+cat(chat.recent(google.model, google.history))
+
+openai.history = chat(openai.model,
+                      temperature,
+                      openai.history,
+                      prompt)
+cat(chat.recent(openai.model, openai.history))
+
+prompt = "Rewrite the story with a word limit of 50 words."
+
+google.history = chat.edit(google.model,
+                           temperature,
+                           google.history,
+                           3,
+                           prompt)
+cat(chat.recent(google.model, google.history))
+
+openai.history = chat.edit(openai.model,
+                           temperature,
+                           openai.history,
+                           4,
+                           prompt)
+cat(chat.recent(openai.model, openai.history))</code></pre>
                                       </div>
                                     </div>
                                   </div>
@@ -872,35 +1025,85 @@ cat(chat.recent(openai.model, openai.history))</code></pre>
                                 <h4><code>chat.recent</code><br>
                                     <a href="https://github.com/GitData-GA/GenAI/blob/main/R/src/R/chat.recent.R" target="_blank"><img src="https://genai.gd.edu.kg/assets/img/github-badge.svg" alt="Open in GitHub"></a>
                                 </h4>
-                                <h4><h4>
+                                <h4>Retrieve the latest message from the chat history of a Generative AI model<h4>
                                 <h5>Usage</h5>
-                                <pre><code class="language-r"></code></pre>
+                                <pre><code class="language-r">chat.recent(model.parameter, history)</code></pre>
                                 <h5>Arguments</h5>
                                 <ul>
                                     <li>
-                                        <p><code class="language-r"></code>: </p>
+                                        <p><code class="language-r">model.parameter</code>: A character vector containing essential information about the Generative AI service provider, model, version, API key, and proxy status.</p>
+                                    </li>
+                                    <li>
+                                        <p><code class="language-r">history</code>: A list containing all messages exchanged between the user and the model in a chat session.</p>
                                     </li>
                                 </ul>
                                 <h5>Value</h5>
                                 <p>
+                                    If successful, the function returns the latest message in the chat history. In case of incorrect input format, the function halts execution and provides an error message.
                                 </p>
                                 <h5>Description</h5>
                                 <p>
+                                    This function fetches the most recent message in the chat history of a Generative AI model.
                                 </p>
                                 <h5>Detail</h5>
                                 <p>
+                                    Providing accurate and valid information for each parameter is crucial for successful text generation by the Generative AI model. This function modifies the chat history. If any parameter is incorrect, the function responds with an error message based on the API feedback. To view all supported Generative AI models, use the function <a href="#available_models"><code class="language-r">available.models</code></a>. Additionally, utilize <a href="#chat_setup"><code class="language-r">chat.setup</code></a> to set up a chat history.
                                 </p>
                                 <div class="accordion" id="accordionDefault">
                                   <div class="card">
-                                    <div class="card-header" id="available_models_ex">
-                                      <h5 class="mb-0"> <a href="#" class="collapsed" data-toggle="collapse" data-target="#connect_genai_ex_collapse" aria-expanded="true">Example</a> </h5>
+                                    <div class="card-header" id="chat_recent_ex">
+                                      <h5 class="mb-0"> <a href="#" class="collapsed" data-toggle="collapse" data-target="#chat_recent_ex_collapse" aria-expanded="true">Example</a> </h5>
                                     </div>
-                                    <div id="connect_genai_ex_collapse" class="collapse" data-parent="#accordionDefault">
+                                    <div id="chat_recent_ex_collapse" class="collapse" data-parent="#accordionDefault">
                                       <div class="card-body">
-                                        <a target="_blank" href="">
+                                        <a target="_blank" href="https://colab.research.google.com/github/GitData-GA/GenAI/blob/gh-pages/R/example/chat.ipynb">
                                           <img src="https://genai.gd.edu.kg/assets/img/colab-badge.svg" alt="Open In Colab"/>
                                         </a>
-                                        <pre><code class="language-r"></code></pre>
+                                        <pre><code class="language-r">models = available.models()
+
+google.model = connect.genai("google",
+                             models$google$model[1],
+                             models$google$version[1],
+                             "API_KEY",
+                             FALSE)
+
+openai.model = connect.genai("openai",
+                             models$openai$model[1],
+                             models$openai$version[1],
+                             "API_KEY",
+                             FALSE)
+
+google.history = chat.setup(google.model)
+openai.history = chat.setup(openai.model)
+
+temperature = 0.9
+prompt = "Write a story about a magic backpack in about 100 words."
+
+google.history = chat(google.model,
+                      temperature,
+                      google.history,
+                      prompt)
+cat(chat.recent(google.model, google.history))
+
+openai.history = chat(openai.model,
+                      temperature,
+                      openai.history,
+                      prompt)
+cat(chat.recent(openai.model, openai.history))
+
+prompt = "What is the word count of the story you just wrote?"
+
+google.history = chat(google.model,
+                      temperature,
+                      google.history,
+                      prompt)
+cat(chat.recent(google.model, google.history))
+
+openai.history = chat(openai.model,
+                      temperature,
+                      openai.history,
+                      prompt)
+cat(chat.recent(openai.model, openai.history))</code></pre>
                                       </div>
                                     </div>
                                   </div>
@@ -911,35 +1114,98 @@ cat(chat.recent(openai.model, openai.history))</code></pre>
                                 <h4><code>chat.save</code><br>
                                     <a href="https://github.com/GitData-GA/GenAI/blob/main/R/src/R/chat.save.R" target="_blank"><img src="https://genai.gd.edu.kg/assets/img/github-badge.svg" alt="Open in GitHub"></a>
                                 </h4>
-                                <h4><h4>
+                                <h4>Save the chat history of a Generative AI model<h4>
                                 <h5>Usage</h5>
-                                <pre><code class="language-r"></code></pre>
+                                <pre><code class="language-r">chat.save(history, 
+          file.name, 
+          format)</code></pre>
                                 <h5>Arguments</h5>
                                 <ul>
                                     <li>
-                                        <p><code class="language-r"></code>: </p>
+                                        <p><code class="language-r">history</code>: A list containing all the messages sent by the user and model in a chat session.</p>
+                                    </li>
+                                    <li>
+                                        <p><code class="language-r">file.name</code>: A character string representing the name of the output file for the chat history.</p>
+                                    </li>
+                                    <li>
+                                        <p><code class="language-r">format</code>: A character string representing the format of the output file for the chat history. It can be either <code>"csv"</code>, <code>"json"</code>, or <code>"txt"</code>.</p>
                                     </li>
                                 </ul>
                                 <h5>Value</h5>
                                 <p>
+                                    If successful, a chat history file with a specific format is exported to the working directory.
                                 </p>
                                 <h5>Description</h5>
                                 <p>
+                                    This function saves the chat history list of a Generative AI model as a CSV, JSON, or TXT file.
                                 </p>
                                 <h5>Detail</h5>
                                 <p>
+                                    This function saves the chat history list of a Generative AI model as a CSV, JSON, or TXT file. To save a chat history, the chat history list must follow the list formats generated by the function <a href="#chat_setup"><code class="language-r">chat.setup</code></a>.
                                 </p>
                                 <div class="accordion" id="accordionDefault">
                                   <div class="card">
-                                    <div class="card-header" id="available_models_ex">
-                                      <h5 class="mb-0"> <a href="#" class="collapsed" data-toggle="collapse" data-target="#connect_genai_ex_collapse" aria-expanded="true">Example</a> </h5>
+                                    <div class="card-header" id="chat_save_ex">
+                                      <h5 class="mb-0"> <a href="#" class="collapsed" data-toggle="collapse" data-target="#chat_save_ex_collapse" aria-expanded="true">Example</a> </h5>
                                     </div>
-                                    <div id="connect_genai_ex_collapse" class="collapse" data-parent="#accordionDefault">
+                                    <div id="chat_save_ex_collapse" class="collapse" data-parent="#accordionDefault">
                                       <div class="card-body">
-                                        <a target="_blank" href="">
+                                        <a target="_blank" href="https://colab.research.google.com/github/GitData-GA/GenAI/blob/gh-pages/R/example/chat_save.ipynb">
                                           <img src="https://genai.gd.edu.kg/assets/img/colab-badge.svg" alt="Open In Colab"/>
                                         </a>
-                                        <pre><code class="language-r"></code></pre>
+                                        <pre><code class="language-r">models = available.models()
+
+google.model = connect.genai("google",
+                             models$google$model[1],
+                             models$google$version[1],
+                             "API_KEY",
+                             FALSE)
+
+openai.model = connect.genai("openai",
+                             models$openai$model[1],
+                             models$openai$version[1],
+                             "API_KEY",
+                             FALSE)
+
+google.history = chat.setup(google.model)
+openai.history = chat.setup(openai.model)
+
+temperature = 0.9
+prompt = "Write a story about a magic backpack in about 100 words."
+
+google.history = chat(google.model,
+                      temperature,
+                      google.history,
+                      prompt)
+cat(chat.recent(google.model, google.history))
+
+openai.history = chat(openai.model,
+                      temperature,
+                      openai.history,
+                      prompt)
+cat(chat.recent(openai.model, openai.history))
+
+prompt = "What is the word count of the story you just wrote?"
+
+google.history = chat(google.model,
+                      temperature,
+                      google.history,
+                      prompt)
+cat(chat.recent(google.model, google.history))
+
+openai.history = chat(openai.model,
+                      temperature,
+                      openai.history,
+                      prompt)
+cat(chat.recent(openai.model, openai.history))
+
+chat.save(google.history,
+          "google_history",
+          "json")
+
+chat.save(openai.history,
+          "openai_history",
+          "json")</code></pre>
                                       </div>
                                     </div>
                                   </div>
@@ -950,35 +1216,82 @@ cat(chat.recent(openai.model, openai.history))</code></pre>
                                 <h4><code>chat.setup</code><br>
                                     <a href="https://github.com/GitData-GA/GenAI/blob/main/R/src/R/chat.setup.R" target="_blank"><img src="https://genai.gd.edu.kg/assets/img/github-badge.svg" alt="Open in GitHub"></a>
                                 </h4>
-                                <h4><h4>
+                                <h4>Generate an empty chat history list for a Generative AI model<h4>
                                 <h5>Usage</h5>
-                                <pre><code class="language-r"></code></pre>
+                                <pre><code class="language-r">chat.setup(model.parameter)</code></pre>
                                 <h5>Arguments</h5>
                                 <ul>
                                     <li>
-                                        <p><code class="language-r"></code>: </p>
+                                        <p><code class="language-r">model.parameter</code>: A character vector containing the Generative AI service provider, corresponding model, version, API key, and proxy status.</p>
                                     </li>
                                 </ul>
                                 <h5>Value</h5>
                                 <p>
+                                    If successful, a chat history list is generated for the Generative AI model.
                                 </p>
                                 <h5>Description</h5>
                                 <p>
+                                    This function establishes a connection to a Generative AI model by providing essential parameters and generates an empty chat history list for the model.
                                 </p>
                                 <h5>Detail</h5>
                                 <p>
+                                    Providing accurate and valid information for each parameter is crucial to ensure successful text generation by the Generative AI model. The chat history will be modified by this function. If any of the provided parameters is incorrect, the function will respond with an error message based on the information received from the API. Use the function <a href="#available_models"><code class="language-r">available.models</code></a> to see all supported Generative AI models.
                                 </p>
                                 <div class="accordion" id="accordionDefault">
                                   <div class="card">
-                                    <div class="card-header" id="available_models_ex">
-                                      <h5 class="mb-0"> <a href="#" class="collapsed" data-toggle="collapse" data-target="#connect_genai_ex_collapse" aria-expanded="true">Example</a> </h5>
+                                    <div class="card-header" id="chat_setup_ex">
+                                      <h5 class="mb-0"> <a href="#" class="collapsed" data-toggle="collapse" data-target="#chat_setup_ex_collapse" aria-expanded="true">Example</a> </h5>
                                     </div>
-                                    <div id="connect_genai_ex_collapse" class="collapse" data-parent="#accordionDefault">
+                                    <div id="chat_setup_ex_collapse" class="collapse" data-parent="#accordionDefault">
                                       <div class="card-body">
-                                        <a target="_blank" href="">
+                                        <a target="_blank" href="https://colab.research.google.com/github/GitData-GA/GenAI/blob/gh-pages/R/example/chat.ipynb">
                                           <img src="https://genai.gd.edu.kg/assets/img/colab-badge.svg" alt="Open In Colab"/>
                                         </a>
-                                        <pre><code class="language-r"></code></pre>
+                                        <pre><code class="language-r">models = available.models()
+
+google.model = connect.genai("google",
+                             models$google$model[1],
+                             models$google$version[1],
+                             "API_KEY",
+                             FALSE)
+
+openai.model = connect.genai("openai",
+                             models$openai$model[1],
+                             models$openai$version[1],
+                             "API_KEY",
+                             FALSE)
+
+google.history = chat.setup(google.model)
+openai.history = chat.setup(openai.model)
+
+temperature = 0.9
+prompt = "Write a story about a magic backpack in about 100 words."
+
+google.history = chat(google.model,
+                      temperature,
+                      google.history,
+                      prompt)
+cat(chat.recent(google.model, google.history))
+
+openai.history = chat(openai.model,
+                      temperature,
+                      openai.history,
+                      prompt)
+cat(chat.recent(openai.model, openai.history))
+
+prompt = "What is the word count of the story you just wrote?"
+
+google.history = chat(google.model,
+                      temperature,
+                      google.history,
+                      prompt)
+cat(chat.recent(google.model, google.history))
+
+openai.history = chat(openai.model,
+                      temperature,
+                      openai.history,
+                      prompt)
+cat(chat.recent(openai.model, openai.history))</code></pre>
                                       </div>
                                     </div>
                                   </div>
