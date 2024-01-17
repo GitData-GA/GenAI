@@ -1,6 +1,6 @@
 #' Get supported Generative AI models
 #'
-#' This function sends a request to \href{https://genai.gd.edu.kg/model.json}{database}
+#' This function sends a request to GenAI database API
 #' to retrieve information about available Generative AI models.
 #'
 #' @return If successful, the function returns a list containing Generative AI
