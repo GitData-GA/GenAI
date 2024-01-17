@@ -1,7 +1,7 @@
 Package: GenAI
 Type: Package
 Title: 'Generative Artificial Intelligence'
-Version: 0.1.12
+Version: 0.1.13
 Authors@R: c(
     person(
       given = "Li", family = "Yuan", role = c("aut", "cre"), 
@@ -14,8 +14,10 @@ License: CC BY 4.0
 URL: https://genai.gd.edu.kg/
 BugReports: https://github.com/GitData-GA/GenAI/issues
 Encoding: UTF-8
+LazyData: true
 RoxygenNote: 7.3.0
-Imports: base64enc, httr, jsonlite, tools
-NeedsCompilation: no
-Packaged: 2024-01-17 00:09:11 UTC; lp130
-Author: Li Yuan [aut, cre]
+Imports:
+  base64enc,
+  httr,
+  jsonlite,
+  tools
