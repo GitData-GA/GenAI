@@ -1,7 +1,7 @@
 Package: GenAI
 Type: Package
 Title: 'Generative Artificial Intelligence'
-Version: 0.1.13
+Version: 0.1.14
 Authors@R: c(
     person(
       given = "Li", family = "Yuan", role = c("aut", "cre"), 
