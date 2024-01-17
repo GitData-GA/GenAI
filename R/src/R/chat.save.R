@@ -32,8 +32,8 @@
 #'                               "API_KEY",
 #'                               FALSE)
 #'  # Setup an empty chat history
-#'  google.history = chat.steup(google.model)
-#'  openai.history = chat.steup(openai.model)
+#'  google.history = chat.setup(google.model)
+#'  openai.history = chat.setup(openai.model)
 #'
 #'  # Start chat
 #'  temperature = 0.9
