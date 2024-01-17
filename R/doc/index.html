@@ -77,7 +77,25 @@
                                         <li class="nav-item"><a class="nav-link" href="#connect_genai"><code>connect.genai</code></a></li>
                                     </ul>
                                 </li>
-                                <li class="nav-item"><a class="nav-link" href="#section-name3">Section 03</a></li>
+                                <li class="nav-item"><a class="nav-link active" href="#text_generation">Text Generation</a>
+                                    <ul class="nav flex-column">
+                                        <li class="nav-item"><a class="nav-link" href="#text"><code>text</code></a></li>
+                                        <li class="nav-item"><a class="nav-link" href="#text_explain_code"><code>text.explain.code</code></a></li>
+                                        <li class="nav-item"><a class="nav-link" href="#text_fix_grammar"><code>text.fix.grammar</code></a></li>
+                                        <li class="nav-item"><a class="nav-link" href="#text_image"><code>text.image</code></a></li>
+                                        <li class="nav-item"><a class="nav-link" href="#text_optimize_code"><code>text.optimize.code</code></a></li>
+                                    </ul>
+                                </li>
+                                <li class="nav-item"><a class="nav-link active" href="#chat_generation">Chat Generation</a>
+                                    <ul class="nav flex-column">
+                                        <li class="nav-item"><a class="nav-link" href="#chat"><code>chat</code></a></li>
+                                        <li class="nav-item"><a class="nav-link" href="#chat_convert"><code>chat.convert</code></a></li>
+                                        <li class="nav-item"><a class="nav-link" href="#chat_edit"><code>chat.edit</code></a></li>
+                                        <li class="nav-item"><a class="nav-link" href="#chat_recent"><code>chat.recent</code></a></li>
+                                        <li class="nav-item"><a class="nav-link" href="#chat_save"><code>chat.save</code></a></li>
+                                        <li class="nav-item"><a class="nav-link" href="#chat_steup"><code>chat.steup</code></a></li>
+                                    </ul>
+                                </li>
                             </ul>
                         </li>
                     </ul>
@@ -95,9 +113,7 @@
                         <section id="installation">
                             <h2>Installation</h2>
                             <p>You can directly install the package from GenAI official website.</p>
-                            <pre>
-                              <code class="language-r">install.packages("https://genai.gd.edu.kg/release/R/GenAI_latest.tar.gz", repos=NULL, method="libcurl")</code>
-                            </pre>
+                            <pre><code class="language-r">install.packages("https://genai.gd.edu.kg/release/R/GenAI_latest.tar.gz", repos=NULL, method="libcurl")</code></pre>
                         </section>
                         <hr>
                         <section id="setup">
@@ -188,12 +204,12 @@ models</code></pre>
                                   It is crucial to provide accurate and valid information for each parameter
                                   to ensure a successful connection to the Generative AI model. If any of the provided
                                   parameters are incorrect, the function will respond with an error message based on
-                                  the information received from the API. Use the function <a href="#available_models"><code class="language-r">available.models()</code></a> to
+                                  the information received from the API. Use the function <a href="#available_models"><code class="language-r">available.models</code></a> to
                                   see all supported Generative AI models.
                                 </p>
                                 <div class="accordion" id="accordionDefault">
                                   <div class="card">
-                                    <div class="card-header" id="available_models_ex">
+                                    <div class="card-header" id="connect_genai_ex">
                                       <h5 class="mb-0"> <a href="#" class="collapsed" data-toggle="collapse" data-target="#connect_genai_ex_collapse" aria-expanded="true">Example</a> </h5>
                                     </div>
                                     <div id="connect_genai_ex_collapse" class="collapse" data-parent="#accordionDefault">
@@ -217,6 +233,752 @@ openai.model = connect.genai("openai",
                              "API_KEY",
                              FALSE)
 openai.model</code></pre>
+                                      </div>
+                                    </div>
+                                  </div>
+                                </div>
+                            </section>
+                        </section>
+                        <hr>
+                        <section id="text_generation">
+                            <h2>Text Generation</h2>
+                            <section id="text">
+                                <h4><code>text</code><br>
+                                    <a href="https://github.com/GitData-GA/GenAI/blob/main/R/src/R/text.R" target="_blank"><img src="https://genai.gd.edu.kg/assets/img/github-badge.svg" alt="Open in GitHub"></a>
+                                </h4>
+                                <h4>Generate text using the Generative AI model based on a prompt<h4>
+                                <h5>Usage</h5>
+                                <pre><code class="language-r">text(model.parameter, 
+     temperature, 
+     prompt)</code></pre>
+                                <h5>Arguments</h5>
+                                <ul>
+                                    <li>
+                                        <p><code class="language-r">model.parameter</code>: A character vector containing the Generative AI service provider, corresponding model, version, API key, and proxy status.</p>
+                                    </li>
+                                    <li>
+                                        <p><code class="language-r">temperature</code>: A numeric value. A higher value results in more creative responses, while a lower value produces more straightforward text.</p>
+                                    </li>
+                                    <li>
+                                        <p><code class="language-r">prompt</code>: A character string representing the query for text generation.</p>
+                                    </li>
+                                </ul>
+                                <h5>Value</h5>
+                                <p>
+                                    If successful, a character string generated by the Generative AI model based on the provided query and parameters. If the API response indicates an error, the function halts execution and provides an error message.
+                                </p>
+                                <h5>Description</h5>
+                                <p>
+                                    This function establishes a connection to a Generative AI model by providing essential parameters and generates a response based on the prompt.
+                                </p>
+                                <h5>Detail</h5>
+                                <p>
+                                    Providing accurate and valid information for each parameter is crucial to ensure successful text generation by the Generative AI model. If any of the provided parameters is incorrect, the function will respond with an error message based on the information received from the API. Use the function <a href="#available_models"><code class="language-r">available.models</code></a> to see all supported Generative AI models.
+                                </p>
+                                <div class="accordion" id="accordionDefault">
+                                  <div class="card">
+                                    <div class="card-header" id="text_ex">
+                                      <h5 class="mb-0"> <a href="#" class="collapsed" data-toggle="collapse" data-target="#text_ex_collapse" aria-expanded="true">Example</a> </h5>
+                                    </div>
+                                    <div id="text_ex_collapse" class="collapse" data-parent="#accordionDefault">
+                                      <div class="card-body">
+                                        <a target="_blank" href="https://colab.research.google.com/github/GitData-GA/GenAI/blob/gh-pages/R/example/text.ipynb">
+                                          <img src="https://genai.gd.edu.kg/assets/img/colab-badge.svg" alt="Open In Colab"/>
+                                        </a>
+                                    <pre><code class="language-r">models = available.models()
+
+google.model = connect.genai("google",
+                             models$google$model[1],
+                             models$google$version[1],
+                             "API_KEY",
+                             FALSE)
+
+openai.model = connect.genai("openai",
+                             models$openai$model[1],
+                             models$openai$version[1],
+                             "API_KEY",
+                             FALSE)
+
+temperature = 0.9
+prompt = "Write a story about a magic backpack. 100 words is enough."
+
+google.text = text(google.model,
+                   temperature,
+                   prompt)
+cat(google.text)
+
+openai.text = text(openai.model,
+                   temperature,
+                   prompt)
+cat(openai.text)</code></pre>
+                                      </div>
+                                    </div>
+                                  </div>
+                                </div>
+                            </section>
+                            <hr style="border-top: dotted 1px; color: grey;" />
+                            <section id="text_explain_code">
+                                <h4><code>text.explain.code</code><br>
+                                    <a href="https://github.com/GitData-GA/GenAI/blob/main/R/src/R/text.explain.code.R" target="_blank"><img src="https://genai.gd.edu.kg/assets/img/github-badge.svg" alt="Open in GitHub"></a>
+                                </h4>
+                                <h4>Generate code explanation using the Generative AI model based on a prompt<h4>
+                                <h5>Usage</h5>
+                                <pre><code class="language-r">text.explain.code(model.parameter, 
+                  temperature, 
+                  prompt, 
+                  language = "R")</code></pre>
+                                <h5>Arguments</h5>
+                                <ul>
+                                    <li>
+                                        <p><code class="language-r">model.parameter</code>: A character vector containing the Generative AI service provider, corresponding model, version, API key, and proxy status.</p>
+                                    </li>
+                                    <li>
+                                        <p><code class="language-r">temperature</code>: A numeric value. A higher value results in more creative responses, while a lower value produces more straightforward text.</p>
+                                    </li>
+                                    <li>
+                                        <p><code class="language-r">prompt</code>: A character string representing the query for text generation.</p>
+                                    </li>
+                                    <li>
+                                        <p><code class="language-r">language</code>: A character string representing the programming language of the code in the prompt.</p>
+                                    </li>
+                                </ul>
+                                <h5>Value</h5>
+                                <p>
+                                    If successful, a character string (code explanation) generated by the Generative AI model based on the provided query and parameters. If the API response indicates an error, the function halts execution and provides an error message.
+                                </p>
+                                <h5>Description</h5>
+                                <p>
+                                    This function establishes a connection to a Generative AI model by providing essential parameters and generates a code explanation based on the prompt.
+                                </p>
+                                <h5>Detail</h5>
+                                <p>
+                                    Providing accurate and valid information for each parameter is crucial to ensure successful text generation by the Generative AI model. If any of the provided parameters is incorrect, the function will respond with an error message based on the information received from the API. Use the function <a href="#available_models"><code class="language-r">available.models</code></a> to see all supported Generative AI models.
+                                </p>
+                                <p>
+                                    A complete prompt behind the function is as follows:
+                                </p>
+                                <p>
+                                    Explain the following <code>language</code> code:<br>
+                                    # Code starts #<br>
+                                    <code>prompt</code><br>
+                                    # Code ends #
+                                </p>
+                                <div class="accordion" id="accordionDefault">
+                                  <div class="card">
+                                    <div class="card-header" id="text_explain_code_ex">
+                                      <h5 class="mb-0"> <a href="#" class="collapsed" data-toggle="collapse" data-target="#text_explain_code_ex_collapse" aria-expanded="true">Example</a> </h5>
+                                    </div>
+                                    <div id="text_explain_code_ex_collapse" class="collapse" data-parent="#accordionDefault">
+                                      <div class="card-body">
+                                        <a target="_blank" href="https://colab.research.google.com/github/GitData-GA/GenAI/blob/gh-pages/R/example/text_explain_code.ipynb">
+                                          <img src="https://genai.gd.edu.kg/assets/img/colab-badge.svg" alt="Open In Colab"/>
+                                        </a>
+                                        <pre><code class="language-r">models = available.models()
+
+google.model = connect.genai("google",
+                             models$google$model[1],
+                             models$google$version[1],
+                             "API_KEY",
+                             FALSE)
+
+openai.model = connect.genai("openai",
+                             models$openai$model[1],
+                             models$openai$version[1],
+                             "API_KEY",
+                             FALSE)
+
+temperature = 0.9
+prompt = "foo <- function(n) {
+            if (n <= 0) {
+              return(0)
+            } else if (n == 1) {
+              return(1)
+            } else {
+              return(foo(n - 1) + foo(n - 2))
+            }
+          }"
+
+code.explanation = text.explain.code(google.model,
+                                     temperature,
+                                     prompt,
+                                     language = "R")
+cat(code.explanation)
+
+code.explanation = text.explain.code(openai.model,
+                                     temperature,
+                                     prompt,
+                                     language = "R")
+cat(code.explanation)</code></pre>
+                                      </div>
+                                    </div>
+                                  </div>
+                                </div>
+                            </section>
+                            <hr style="border-top: dotted 1px; color: grey;" />
+                            <section id="text_fix_grammar">
+                                <h4><code>text.fix.grammar</code><br>
+                                    <a href="https://github.com/GitData-GA/GenAI/blob/main/R/src/R/text.fix.grammar.R" target="_blank"><img src="https://genai.gd.edu.kg/assets/img/github-badge.svg" alt="Open in GitHub"></a>
+                                </h4>
+                                <h4>Generate correct text using the Generative AI model based on a prompt<h4>
+                                <h5>Usage</h5>
+                                <pre><code class="language-r">text.fix.grammar(model.parameter, 
+                 temperature, 
+                 prompt)</code></pre>
+                                <h5>Arguments</h5>
+                                <ul>
+                                    <li>
+                                        <p><code class="language-r">model.parameter</code>: A character vector containing the Generative AI service provider, corresponding model, version, API key, and proxy status.</p>
+                                    </li>
+                                    <li>
+                                        <p><code class="language-r">temperature</code>: A numeric value. A higher value results in more creative responses, while a lower value produces more straightforward text.</p>
+                                    </li>
+                                    <li>
+                                        <p><code class="language-r">prompt</code>: A character string representing the query for text generation.</p>
+                                    </li>
+                                </ul>
+                                <h5>Value</h5>
+                                <p>
+                                    If successful, a character string (correct text) generated by the Generative AI model based on the provided query and parameters. If the API response indicates an error, the function halts execution and provides an error message.
+                                </p>
+                                <h5>Description</h5>
+                                <p>
+                                    This function establishes a connection to a Generative AI model by providing essential parameters and generates correct text based on the prompt.
+                                </p>
+                                <h5>Detail</h5>
+                                <p>
+                                    Providing accurate and valid information for each parameter is crucial to ensure successful text generation by the Generative AI model. If any of the provided parameters is incorrect, the function will respond with an error message based on the information received from the API. Use the function <a href="#available_models"><code class="language-r">available.models</code></a> to see all supported Generative AI models.
+                                </p>
+                                <p>
+                                    A complete prompt behind the function is as follows:
+                                </p>
+                                <p>
+                                    Rewrite the following text and fix any grammar issues:<br>
+                                    # Text starts #<br>
+                                    <code>prompt</code><br>
+                                    # Text ends #
+                                </p>
+                                <div class="accordion" id="accordionDefault">
+                                  <div class="card">
+                                    <div class="card-header" id="text_fix_grammar_ex">
+                                      <h5 class="mb-0"> <a href="#" class="collapsed" data-toggle="collapse" data-target="#text_fix_grammar_ex_collapse" aria-expanded="true">Example</a> </h5>
+                                    </div>
+                                    <div id="text_fix_grammar_ex_collapse" class="collapse" data-parent="#accordionDefault">
+                                      <div class="card-body">
+                                        <a target="_blank" href="https://colab.research.google.com/github/GitData-GA/GenAI/blob/gh-pages/R/example/text_fix_grammar.ipynb">
+                                          <img src="https://genai.gd.edu.kg/assets/img/colab-badge.svg" alt="Open In Colab"/>
+                                        </a>
+                                        <pre><code class="language-r">models = available.models()
+
+google.model = connect.genai("google",
+                             models$google$model[1],
+                             models$google$version[1],
+                             "API_KEY",
+                             FALSE)
+
+openai.model = connect.genai("openai",
+                             models$openai$model[1],
+                             models$openai$version[1],
+                             "API_KEY",
+                             FALSE)
+temperature = 0.9
+prompt = "Yesterday, I will buy a book for my younger sister as his birthday gift.
+         They were very happen when seeing this gift earlier today."
+
+correct.text = text.fix.grammar(google.model,
+                                temperature,
+                                prompt)
+cat(correct.text)
+
+correct.text = text.fix.grammar(openai.model,
+                                temperature,
+                                prompt)
+cat(correct.text)</code></pre>
+                                      </div>
+                                    </div>
+                                  </div>
+                                </div>
+                            </section>
+                            <hr style="border-top: dotted 1px; color: grey;" />
+                            <section id="text_image">
+                                <h4><code>text.image</code><br>
+                                    <a href="https://github.com/GitData-GA/GenAI/blob/main/R/src/R/text.image.R" target="_blank"><img src="https://genai.gd.edu.kg/assets/img/github-badge.svg" alt="Open in GitHub"></a>
+                                </h4>
+                                <h4>Generate text using the Generative AI model based on a prompt and an image<h4>
+                                <h5>Usage</h5>
+                                <pre><code class="language-r">text.image(model.parameter, 
+           temperature, 
+           prompt, 
+           image.path)</code></pre>
+                                <h5>Arguments</h5>
+                                <ul>
+                                    <li>
+                                        <p><code class="language-r">model.parameter</code>: A character vector containing the Generative AI service provider, corresponding model, version, API key, and proxy status.</p>
+                                    </li>
+                                    <li>
+                                        <p><code class="language-r">temperature</code>: A numeric value. A higher value results in more creative responses, while a lower value produces more straightforward text.</p>
+                                    </li>
+                                    <li>
+                                        <p><code class="language-r">prompt</code>: A character string representing the query for text generation.</p>
+                                    </li>
+                                    <li>
+                                        <p><code class="language-r">image.path</code>: A character string representing the path to the image. It should be a link starting with <code>https</code> or a file path of the local machine.</p>
+                                    </li>
+                                </ul>
+                                <h5>Value</h5>
+                                <p>
+                                    If successful, a character string generated by the Generative AI model based on the provided query and parameters. If the API response indicates an error, the function halts execution and provides an error message.
+                                </p>
+                                <h5>Description</h5>
+                                <p>
+                                    This function establishes a connection to a Generative AI model by providing essential parameters and generates text based on the prompt and the image.
+                                </p>
+                                <h5>Detail</h5>
+                                <p>
+                                    Providing accurate and valid information for each parameter is crucial to ensure successful text generation by the Generative AI model. If any of the provided parameters is incorrect, the function will respond with an error message based on the information received from the API. Use the function <a href="#available_models"><code class="language-r">available.models</code></a> to see all supported Generative AI models.
+                                </p>
+                                <div class="accordion" id="accordionDefault">
+                                  <div class="card">
+                                    <div class="card-header" id="available_models_ex">
+                                      <h5 class="mb-0"> <a href="#" class="collapsed" data-toggle="collapse" data-target="#connect_genai_ex_collapse" aria-expanded="true">Example</a> </h5>
+                                    </div>
+                                    <div id="connect_genai_ex_collapse" class="collapse" data-parent="#accordionDefault">
+                                      <div class="card-body">
+                                        <a target="_blank" href="https://colab.research.google.com/github/GitData-GA/GenAI/blob/gh-pages/R/example/text_image.ipynb">
+                                          <img src="https://genai.gd.edu.kg/assets/img/colab-badge.svg" alt="Open In Colab"/>
+                                        </a>
+                                        <pre><code class="language-r">models = available.models()
+
+google.model = connect.genai("google",
+                             models$google$model[2],
+                             models$google$version[2],
+                             "API_KEY",
+                             FALSE)
+
+openai.model = connect.genai("openai",
+                             models$openai$model[5],
+                             models$openai$version[1],
+                             "API_KEY",
+                             FALSE)
+
+temperature = 0.9
+prompt = "What is this picture?"
+image.path = "https://storage.googleapis.com/generativeai-downloads/images/scones.jpg"
+
+image.description = text.image(google.model,
+                               temperature,
+                               prompt,
+                               image.path)
+cat(image.description)
+
+image.description = text.image(openai.model,
+                               temperature,
+                               prompt,
+                               image.path)
+cat(image.description)</code></pre>
+                                      </div>
+                                    </div>
+                                  </div>
+                                </div>
+                            </section>
+                            <hr style="border-top: dotted 1px; color: grey;" />
+                            <section id="text_optimize_code">
+                                <h4><code>text.optimize.code</code><br>
+                                    <a href="https://github.com/GitData-GA/GenAI/blob/main/R/src/R/text.optimize.code.R" target="_blank"><img src="https://genai.gd.edu.kg/assets/img/github-badge.svg" alt="Open in GitHub"></a>
+                                </h4>
+                                <h4>Generate optimized code using the Generative AI model based on a prompt<h4>
+                                <h5>Usage</h5>
+                                <pre><code class="language-r">text.optimize.code(model.parameter, 
+                   temperature, 
+                   prompt, 
+                   goal, 
+                   language = "R")</code></pre>
+                                <h5>Arguments</h5>
+                                <ul>
+                                    <li>
+                                        <p><code class="language-r">model.parameter</code>: A character vector containing the Generative AI service provider, corresponding model, version, API key, and proxy status.</p>
+                                    </li>
+                                    <li>
+                                        <p><code class="language-r">temperature</code>: A numeric value. A higher value results in more creative responses, while a lower value produces more straightforward text.</p>
+                                    </li>
+                                    <li>
+                                        <p><code class="language-r">prompt</code>: A character string representing the query for text generation.</p>
+                                    </li>
+                                    <li>
+                                        <p><code class="language-r">goal</code>: A character string representing the goal for code optimization.</p>
+                                    </li>
+                                    <li>
+                                        <p><code class="language-r">language</code>: A character string representing the programming language of the code in the prompt.</p>
+                                    </li>
+                                </ul>
+                                <h5>Value</h5>
+                                <p>
+                                    If successful, a character string (optimized code) generated by the Generative AI model based on the provided query and parameters. If the API response indicates an error, the function halts execution and provides an error message.
+                                </p>
+                                <h5>Description</h5>
+                                <p>
+                                    This function establishes a connection to a Generative AI model by providing essential parameters and generates optimized code based on the prompt.
+                                </p>
+                                <h5>Detail</h5>
+                                <p>
+                                    Providing accurate and valid information for each parameter is crucial to ensure successful text generation by the Generative AI model. If any of the provided parameters is incorrect, the function will respond with an error message based on the information received from the API. Use the function <a href="#available_models"><code class="language-r">available.models</code></a> to see all supported Generative AI models.
+                                </p>
+                                <p>
+                                    A complete prompt behind the function is as follows:
+                                </p>
+                                <p>
+                                    Optimize the following <code>language</code> code.<br>
+                                    The goal is: <code>goal</code><br>
+                                    # Code starts #<br>
+                                    <code>prompt</code><br>
+                                    # Code ends #
+                                </p>
+                                <div class="accordion" id="accordionDefault">
+                                  <div class="card">
+                                    <div class="card-header" id="text_optimize_code_ex">
+                                      <h5 class="mb-0"> <a href="#" class="collapsed" data-toggle="collapse" data-target="#text_optimize_code_ex_collapse" aria-expanded="true">Example</a> </h5>
+                                    </div>
+                                    <div id="text_optimize_code_ex_collapse" class="collapse" data-parent="#accordionDefault">
+                                      <div class="card-body">
+                                        <a target="_blank" href="https://colab.research.google.com/github/GitData-GA/GenAI/blob/gh-pages/R/example/text_optimize_code.ipynb">
+                                          <img src="https://genai.gd.edu.kg/assets/img/colab-badge.svg" alt="Open In Colab"/>
+                                        </a>
+                                        <pre><code class="language-r">models = available.models()
+
+google.model = connect.genai("google",
+                             models$google$model[1],
+                             models$google$version[1],
+                             "API_KEY",
+                             FALSE)
+
+openai.model = connect.genai("openai",
+                             models$openai$model[1],
+                             models$openai$version[1],
+                             "API_KEY",
+                             FALSE)
+temperature = 0.9
+prompt = "foo <- function(n) {
+            if (n <= 0) {
+              return(0)
+            } else if (n == 1) {
+              return(1)
+            } else {
+              return(foo(n - 1) + foo(n - 2))
+            }
+          }"
+goal = "Improve the runtime of the function"
+
+optimized.code = text.optimize.code(google.model,
+                                    temperature,
+                                    prompt,
+                                    goal,
+                                    language = "R")
+cat(optimized.code)
+
+optimized.code = text.optimize.code(openai.model,
+                                    temperature,
+                                    prompt,
+                                    goal,
+                                    language = "R")
+cat(optimized.code)</code></pre>
+                                      </div>
+                                    </div>
+                                  </div>
+                                </div>
+                            </section>
+                        </section>
+                        <hr>
+                        <section id="chat_generation">
+                            <h2>Chat Generation</h2>
+                            <section id="chat">
+                                <h4><code>chat</code><br>
+                                    <a href="https://github.com/GitData-GA/GenAI/blob/main/R/src/R/chat.R" target="_blank"><img src="https://genai.gd.edu.kg/assets/img/github-badge.svg" alt="Open in GitHub"></a>
+                                </h4>
+                                <h4>Initiate a conversation with a Generative AI model using a prompt<h4>
+                                <h5>Usage</h5>
+                                <pre><code class="language-r">chat(model.parameter, 
+     temperature, 
+     history, 
+     prompt)</code></pre>
+                                <h5>Arguments</h5>
+                                <ul>
+                                    <li>
+                                        <p><code class="language-r">model.parameter</code>: A character vector containing information about the Generative AI service provider, corresponding model, version, API key, and proxy status.</p>
+                                    </li>
+                                    <li>
+                                        <p><code class="language-r">temperature</code>: A numeric value. Higher values yield more creative responses, while lower values result in more straightforward text.</p>
+                                    </li>
+                                    <li>
+                                        <p><code class="language-r">history</code>: A list containing all messages exchanged between the user and the model in a chat session.</p>
+                                    </li>
+                                    <li>
+                                        <p><code class="language-r">prompt</code>: A character string representing the query for text generation.</p>
+                                    </li>
+                                </ul>
+                                <h5>Value</h5>
+                                <p>
+                                    If successful, the full chat history, including the most recent response, will be returned. If the API response indicates an error, the function halts execution and provides an error message.
+                                </p>
+                                <h5>Description</h5>
+                                <p>
+                                    This function establishes a connection to a Generative AI model by providing essential parameters. It generates a chat response based on the provided prompt and stores it in the history list.
+                                </p>
+                                <h5>Detail</h5>
+                                <p>
+                                    Providing accurate and valid information for each parameter is crucial for successful text generation by the Generative AI model. This function modifies the chat history. If any parameter is incorrect, the function responds with an error message based on the API feedback. To view all supported Generative AI models, use the function <a href="#available_models"><code class="language-r">available.models</code></a>. Additionally, utilize <a href="#chat_setup"><code class="language-r">chat.setup</code></a> to set up a chat history. To retrieve the most recent response generated by the model, use the function <a href="#chat_recent"><code class="language-r">chat.recent</code></a>.
+                                </p>
+                                <div class="accordion" id="accordionDefault">
+                                  <div class="card">
+                                    <div class="card-header" id="chat_ex">
+                                      <h5 class="mb-0"> <a href="#" class="collapsed" data-toggle="collapse" data-target="#chat_ex_collapse" aria-expanded="true">Example</a> </h5>
+                                    </div>
+                                    <div id="chat_ex_collapse" class="collapse" data-parent="#accordionDefault">
+                                      <div class="card-body">
+                                        <a target="_blank" href="">
+                                          <img src="https://genai.gd.edu.kg/assets/img/colab-badge.svg" alt="Open In Colab"/>
+                                        </a>
+                                        <pre><code class="language-r">models = available.models()
+
+google.model = connect.genai("google",
+                             models$google$model[1],
+                             models$google$version[1],
+                             "API_KEY",
+                             FALSE)
+
+openai.model = connect.genai("openai",
+                             models$openai$model[1],
+                             models$openai$version[1],
+                             "API_KEY",
+                             FALSE)
+
+google.history = chat.steup(google.model)
+openai.history = chat.steup(openai.model)
+
+temperature = 0.9
+prompt = "Write a story about a magic backpack in about 100 words."
+
+google.history = chat(google.model,
+                      temperature,
+                      google.history,
+                      prompt)
+
+cat(chat.recent(google.model, google.history))
+
+openai.history = chat(openai.model,
+                      temperature,
+                      openai.history,
+                      prompt)
+
+cat(chat.recent(openai.model, openai.history))
+
+prompt = "What is the word count of the story you just wrote?"
+google.history = chat(google.model,
+                      temperature,
+                      google.history,
+                      prompt)
+
+cat(chat.recent(google.model, google.history))
+
+openai.history = chat(openai.model,
+                      temperature,
+                      openai.history,
+                      prompt)
+
+cat(chat.recent(openai.model, openai.history))</code></pre>
+                                      </div>
+                                    </div>
+                                  </div>
+                                </div>
+                            </section>
+                            <hr style="border-top: dotted 1px; color: grey;" />
+                            <section id="chat_convert">
+                                <h4><code>chat.convert</code><br>
+                                    <a href="https://github.com/GitData-GA/GenAI/blob/main/R/src/R/chat.convert.R" target="_blank"><img src="https://genai.gd.edu.kg/assets/img/github-badge.svg" alt="Open in GitHub"></a>
+                                </h4>
+                                <h4><h4>
+                                <h5>Usage</h5>
+                                <pre><code class="language-r"></code></pre>
+                                <h5>Arguments</h5>
+                                <ul>
+                                    <li>
+                                        <p><code class="language-r"></code>: </p>
+                                    </li>
+                                </ul>
+                                <h5>Value</h5>
+                                <p>
+                                </p>
+                                <h5>Description</h5>
+                                <p>
+                                </p>
+                                <h5>Detail</h5>
+                                <p>
+                                </p>
+                                <div class="accordion" id="accordionDefault">
+                                  <div class="card">
+                                    <div class="card-header" id="available_models_ex">
+                                      <h5 class="mb-0"> <a href="#" class="collapsed" data-toggle="collapse" data-target="#connect_genai_ex_collapse" aria-expanded="true">Example</a> </h5>
+                                    </div>
+                                    <div id="connect_genai_ex_collapse" class="collapse" data-parent="#accordionDefault">
+                                      <div class="card-body">
+                                        <a target="_blank" href="">
+                                          <img src="https://genai.gd.edu.kg/assets/img/colab-badge.svg" alt="Open In Colab"/>
+                                        </a>
+                                        <pre><code class="language-r"></code></pre>
+                                      </div>
+                                    </div>
+                                  </div>
+                                </div>
+                            </section>
+                            <hr style="border-top: dotted 1px; color: grey;" />
+                            <section id="chat_edit">
+                                <h4><code>chat.edit</code><br>
+                                    <a href="https://github.com/GitData-GA/GenAI/blob/main/R/src/R/chat.edit.R" target="_blank"><img src="https://genai.gd.edu.kg/assets/img/github-badge.svg" alt="Open in GitHub"></a>
+                                </h4>
+                                <h4><h4>
+                                <h5>Usage</h5>
+                                <pre><code class="language-r"></code></pre>
+                                <h5>Arguments</h5>
+                                <ul>
+                                    <li>
+                                        <p><code class="language-r"></code>: </p>
+                                    </li>
+                                </ul>
+                                <h5>Value</h5>
+                                <p>
+                                </p>
+                                <h5>Description</h5>
+                                <p>
+                                </p>
+                                <h5>Detail</h5>
+                                <p>
+                                </p>
+                                <div class="accordion" id="accordionDefault">
+                                  <div class="card">
+                                    <div class="card-header" id="available_models_ex">
+                                      <h5 class="mb-0"> <a href="#" class="collapsed" data-toggle="collapse" data-target="#connect_genai_ex_collapse" aria-expanded="true">Example</a> </h5>
+                                    </div>
+                                    <div id="connect_genai_ex_collapse" class="collapse" data-parent="#accordionDefault">
+                                      <div class="card-body">
+                                        <a target="_blank" href="">
+                                          <img src="https://genai.gd.edu.kg/assets/img/colab-badge.svg" alt="Open In Colab"/>
+                                        </a>
+                                        <pre><code class="language-r"></code></pre>
+                                      </div>
+                                    </div>
+                                  </div>
+                                </div>
+                            </section>
+                            <hr style="border-top: dotted 1px; color: grey;" />
+                            <section id="chat_recent">
+                                <h4><code>chat.recent</code><br>
+                                    <a href="https://github.com/GitData-GA/GenAI/blob/main/R/src/R/chat.recent.R" target="_blank"><img src="https://genai.gd.edu.kg/assets/img/github-badge.svg" alt="Open in GitHub"></a>
+                                </h4>
+                                <h4><h4>
+                                <h5>Usage</h5>
+                                <pre><code class="language-r"></code></pre>
+                                <h5>Arguments</h5>
+                                <ul>
+                                    <li>
+                                        <p><code class="language-r"></code>: </p>
+                                    </li>
+                                </ul>
+                                <h5>Value</h5>
+                                <p>
+                                </p>
+                                <h5>Description</h5>
+                                <p>
+                                </p>
+                                <h5>Detail</h5>
+                                <p>
+                                </p>
+                                <div class="accordion" id="accordionDefault">
+                                  <div class="card">
+                                    <div class="card-header" id="available_models_ex">
+                                      <h5 class="mb-0"> <a href="#" class="collapsed" data-toggle="collapse" data-target="#connect_genai_ex_collapse" aria-expanded="true">Example</a> </h5>
+                                    </div>
+                                    <div id="connect_genai_ex_collapse" class="collapse" data-parent="#accordionDefault">
+                                      <div class="card-body">
+                                        <a target="_blank" href="">
+                                          <img src="https://genai.gd.edu.kg/assets/img/colab-badge.svg" alt="Open In Colab"/>
+                                        </a>
+                                        <pre><code class="language-r"></code></pre>
+                                      </div>
+                                    </div>
+                                  </div>
+                                </div>
+                            </section>
+                            <hr style="border-top: dotted 1px; color: grey;" />
+                            <section id="chat_save">
+                                <h4><code>chat.save</code><br>
+                                    <a href="https://github.com/GitData-GA/GenAI/blob/main/R/src/R/chat.save.R" target="_blank"><img src="https://genai.gd.edu.kg/assets/img/github-badge.svg" alt="Open in GitHub"></a>
+                                </h4>
+                                <h4><h4>
+                                <h5>Usage</h5>
+                                <pre><code class="language-r"></code></pre>
+                                <h5>Arguments</h5>
+                                <ul>
+                                    <li>
+                                        <p><code class="language-r"></code>: </p>
+                                    </li>
+                                </ul>
+                                <h5>Value</h5>
+                                <p>
+                                </p>
+                                <h5>Description</h5>
+                                <p>
+                                </p>
+                                <h5>Detail</h5>
+                                <p>
+                                </p>
+                                <div class="accordion" id="accordionDefault">
+                                  <div class="card">
+                                    <div class="card-header" id="available_models_ex">
+                                      <h5 class="mb-0"> <a href="#" class="collapsed" data-toggle="collapse" data-target="#connect_genai_ex_collapse" aria-expanded="true">Example</a> </h5>
+                                    </div>
+                                    <div id="connect_genai_ex_collapse" class="collapse" data-parent="#accordionDefault">
+                                      <div class="card-body">
+                                        <a target="_blank" href="">
+                                          <img src="https://genai.gd.edu.kg/assets/img/colab-badge.svg" alt="Open In Colab"/>
+                                        </a>
+                                        <pre><code class="language-r"></code></pre>
+                                      </div>
+                                    </div>
+                                  </div>
+                                </div>
+                            </section>
+                            <hr style="border-top: dotted 1px; color: grey;" />
+                            <section id="chat_setup">
+                                <h4><code>chat.setup</code><br>
+                                    <a href="https://github.com/GitData-GA/GenAI/blob/main/R/src/R/chat.setup.R" target="_blank"><img src="https://genai.gd.edu.kg/assets/img/github-badge.svg" alt="Open in GitHub"></a>
+                                </h4>
+                                <h4><h4>
+                                <h5>Usage</h5>
+                                <pre><code class="language-r"></code></pre>
+                                <h5>Arguments</h5>
+                                <ul>
+                                    <li>
+                                        <p><code class="language-r"></code>: </p>
+                                    </li>
+                                </ul>
+                                <h5>Value</h5>
+                                <p>
+                                </p>
+                                <h5>Description</h5>
+                                <p>
+                                </p>
+                                <h5>Detail</h5>
+                                <p>
+                                </p>
+                                <div class="accordion" id="accordionDefault">
+                                  <div class="card">
+                                    <div class="card-header" id="available_models_ex">
+                                      <h5 class="mb-0"> <a href="#" class="collapsed" data-toggle="collapse" data-target="#connect_genai_ex_collapse" aria-expanded="true">Example</a> </h5>
+                                    </div>
+                                    <div id="connect_genai_ex_collapse" class="collapse" data-parent="#accordionDefault">
+                                      <div class="card-body">
+                                        <a target="_blank" href="">
+                                          <img src="https://genai.gd.edu.kg/assets/img/colab-badge.svg" alt="Open In Colab"/>
+                                        </a>
+                                        <pre><code class="language-r"></code></pre>
                                       </div>
                                     </div>
                                   </div>
