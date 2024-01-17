@@ -12,7 +12,7 @@ service providers and their corresponding models. If the function encounters an 
 it will halt execution and provide an error message.
 }
 \description{
-This function sends a request to \href{https://genai.gd.edu.kg/model.json}{database}
+This function sends a request to GenAI database API
 to retrieve information about available Generative AI models.
 }
 \details{

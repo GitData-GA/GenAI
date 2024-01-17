@@ -42,6 +42,7 @@ Use the function \code{available.models} to see all supported Generative AI mode
                               models$openai$version[1],
                               "API_KEY",
                               FALSE)
+
  # Setup an empty chat history
  google.history = chat.setup(google.model)
  print(google.history)
