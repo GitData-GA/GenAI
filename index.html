@@ -138,7 +138,42 @@
                         <section>
                         <hr>
                         <section id="api-service">
-                            
+                            <h2>API Proxy Service</h2>
+                            <p>
+                                As some Generative AI service providers apply API usage location restrictions to some counties / regions. This service is designed for people 
+                                who has an eligible API key but leave their home countries for traveling, work, or study in a country that does not in service areas of 
+                                some Generative AI service providers.
+                            </p>
+                            <p>
+                                How this works? By using GenAI's API proxy service, your request will first be sent to our sever located in a country / region that is eligible 
+                                for some Generative AI services. Then, GenAI's server will send your request to the Generative AI service provider's offical server. As the 
+                                Generative AI service provider's offical server finish processing the request, the response will send back to GenAI's server. Then GenAI's server 
+                                will send the response back to the user's device. The process is demonstrated as the following image.
+                            </p>
+                            <center>
+                                <a class="popup-img" href="https://genai.gd.edu.kg/assets/img/proxy.svg">
+                                  <img src="https://genai.gd.edu.kg/assets/img/proxy.svg" width="75%" class="img-fluid img-thumbnail" alt="How GenAI proxy service works">
+                                </a>
+                            </center>
+                            <p>
+                                How to use this service?
+                                <ul>
+                                    <li>
+                                        <p>GenAI package in R: Pass <code>TRUE</code> to <code>proxy</code> in function <a href="https://genai.gd.edu.kg/r/documentation/#connect_genai"><code>connect.genai</code></a>.</p>
+                                    </li>
+                                    <li>
+                                        <p>Use the proxy URL directly:</p>
+                                        <ul>
+                                            <li>To proxy an API request for Google's models: Replace the original URL <code>https://generativelanguage.googleapis.com/</code> with the proxied URL <code>https://api.genai.gd.edu.kg/google/</code>.</li>
+                                            <li>To proxy an API request for OpenAI's models: Replace the original URL <code>https://api.openai.com/</code> with the proxied URL <code>https://api.genai.gd.edu.kg/openai/</code>.</li>
+                                        </ul>
+                                    </li>
+                                </ul>
+                            </p>
+                            <p>
+                                GenAI and its corresponding organization do not collect any information from the user. However, GenAI's server provider and the Generative AI service 
+                                provider may do so. Moreover, the connection speed using the proxy service is not guarnteed. Please use this service at your own risk.
+                            </p>
                         <section>
                     </div>
                 </div>
