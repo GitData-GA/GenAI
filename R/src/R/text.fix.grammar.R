@@ -16,31 +16,31 @@
 #' @details Providing accurate and valid information for each parameter is crucial
 #' to ensure successful text generation by the Generative AI model. If any of the
 #' provided parameters is incorrect, the function will respond with an error message based
-#' on the information received from the API. Use the function \code{available.models()} to
+#' on the information received from the API. Use the function \code{available.models} to
 #' see all supported Generative AI models.
 #'
 #' A complete prompt behind the function is as follows:
 #'
 #' Rewrite the following text and fix any grammar issues:
-#' 
+#'
 #' # Text starts #
-#' 
+#'
 #' \code{prompt}
-#'    
+#'
 #' # Text ends #
 #'
 #' @examples
 #' \dontrun{
 #'  # Get available models
 #'  models = available.models()
-#' 
+#'
 #'  # Connect to the model, replace API_KEY with your api key
 #'  google.model = connect.genai("google",
 #'                               models$google$model[1],
 #'                               models$google$version[1],
 #'                               "API_KEY",
 #'                               FALSE)
-#' 
+#'
 #'  # Connect to the model, replace API_KEY with your api key
 #'  openai.model = connect.genai("openai",
 #'                               models$openai$model[1],
@@ -55,7 +55,7 @@
 #'                                  temperature,
 #'                                  prompt)
 #'  cat(correct.text)
-#' 
+#'
 #'  correct.text = text.fix.grammar(openai.model,
 #'                                  temperature,
 #'                                  prompt)

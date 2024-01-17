@@ -12,20 +12,20 @@
 #' to ensure successful text generation by the Generative AI model. The chat history will be
 #' modified by this function. If any of the provided parameters is incorrect, the function
 #' will respond with an error message based on the information received from the API.
-#' Use the function \code{available.models()} to see all supported Generative AI models.
+#' Use the function \code{available.models} to see all supported Generative AI models.
 #'
 #' @examples
 #' \dontrun{
 #'  # Get available models
 #'  models = available.models()
-#' 
+#'
 #'  # Connect to the model, replace API_KEY with your api key
 #'  google.model = connect.genai("google",
 #'                               models$google$model[1],
 #'                               models$google$version[1],
 #'                               "API_KEY",
 #'                               FALSE)
-#' 
+#'
 #'  # Connect to the model, replace API_KEY with your api key
 #'  openai.model = connect.genai("openai",
 #'                               models$openai$model[1],
@@ -35,7 +35,7 @@
 #'  # Setup an empty chat history
 #'  google.history = chat.steup(google.model)
 #'  print(google.history)
-#' 
+#'
 #'  openai.history = chat.steup(openai.model)
 #'  print(openai.history)
 #' }
