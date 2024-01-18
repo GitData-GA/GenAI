@@ -18,8 +18,11 @@
 #' @details Providing accurate and valid information for each parameter is crucial
 #' to ensure successful text generation by the Generative AI model. If any of the
 #' provided parameters is incorrect, the function will respond with an error message based
-#' on the information received from the API. Use the function \code{available.models} to
+#' on the information received from the API. Use the function \code{\link{available.models}} to
 #' see all supported Generative AI models.
+#'
+#' @seealso
+#' \href{https://genai.gd.edu.kg/r/documentation/}{GenAI - R Documentation}
 #'
 #' @examples
 #' \dontrun{
@@ -57,16 +60,20 @@
 #'
 #' @export
 #'
-#' @importFrom GenAI moderation.openai
-#' @importFrom GenAI image.to.data.uri
+#' @importFrom jsonlite toJSON
+#' @importFrom httr GET POST add_headers content
+#' @importFrom base64enc base64encode
+#' @importFrom tools file_ext
 text.image = function(model.parameter,
                       temperature,
                       prompt,
                       image.path) {
-  if (prompt == "" || is.na(prompt) || !inherits(prompt, "character")) {
+  if (prompt == "" ||
+      is.na(prompt) || !inherits(prompt, "character")) {
     stop("Prompt is not in correct format.")
   }
-  if (image.path == "" || is.na(image.path) || !inherits(image.path, "character")) {
+  if (image.path == "" ||
+      is.na(image.path) || !inherits(image.path, "character")) {
     stop("image.path is not in correct format.")
   }
   switch (model.parameter["provider"],
@@ -95,19 +102,13 @@ text.image = function(model.parameter,
               img.info[1] = "jpeg"
             }
             requestBody = list(
-              contents = list(
-                parts = list(
-                  list(
-                    text = prompt
-                  ),
-                  list(
-                    inline_data = list(
-                      mime_type = paste0("image/", img.info[1]),
-                      data = img.info[2]
-                    )
-                  )
-                )
-              ),
+              contents = list(parts = list(
+                list(text = prompt),
+                list(inline_data = list(
+                  mime_type = paste0("image/", img.info[1]),
+                  data = img.info[2]
+                ))
+              )),
               generationConfig = list(temperature = temperature)
             )
             requestBodyJSON = jsonlite::toJSON(requestBody, auto_unbox = TRUE)
@@ -143,23 +144,17 @@ text.image = function(model.parameter,
             img.info = image.to.data.uri(image.path)
             requestBody = list(
               model = model.parameter["model"],
-              messages = list(
-                list(
-                  role = "user",
-                  content = list(
-                    list(
-                      type = "text",
-                      text = prompt
-                    ),
-                    list(
-                      type = "image_url",
-                      image_url = list(
-                        url = paste0("data:image/", img.info[1], ";base64,", img.info[2])
-                      )
-                    )
-                  )
+              messages = list(list(
+                role = "user",
+                content = list(
+                  list(type = "text",
+                       text = prompt),
+                  list(type = "image_url",
+                       image_url = list(
+                         url = paste0("data:image/", img.info[1], ";base64,", img.info[2])
+                       ))
                 )
-              ),
+              )),
               temperature = temperature,
               max_tokens = 4096
             )

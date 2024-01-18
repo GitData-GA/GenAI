@@ -16,8 +16,11 @@
 #' @details Providing accurate and valid information for each parameter is crucial
 #' to ensure successful text generation by the Generative AI model. If any of the
 #' provided parameters is incorrect, the function will respond with an error message based
-#' on the information received from the API. Use the function \code{available.models()} to
+#' on the information received from the API. Use the function \code{\link{available.models}} to
 #' see all supported Generative AI models.
+#'
+#' @seealso
+#' \href{https://genai.gd.edu.kg/r/documentation/}{GenAI - R Documentation}
 #'
 #' @examples
 #' \dontrun{
@@ -54,9 +57,11 @@
 #'
 #' @export
 #'
-#' @importFrom GenAI moderation.openai
+#' @importFrom jsonlite toJSON
+#' @importFrom httr POST add_headers content
 text = function (model.parameter, temperature, prompt) {
-  if (prompt == "" || is.na(prompt) || !inherits(prompt, "character")) {
+  if (prompt == "" ||
+      is.na(prompt) || !inherits(prompt, "character")) {
     stop("Prompt is not in correct format.")
   }
   switch (model.parameter["provider"],

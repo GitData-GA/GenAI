@@ -62,9 +62,7 @@ chat.convert.openai.to.google = function(openai.history, google.model) {
   contents = lapply(openai.history$messages, function(entry) {
     list(
       role = ifelse(entry$role == "assistant", "model", "user"),
-      parts = list(
-        text = entry$content
-      )
+      parts = list(text = entry$content)
     )
   })
   google.history = list(contents = c(contents))

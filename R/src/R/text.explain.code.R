@@ -18,7 +18,7 @@
 #' @details Providing accurate and valid information for each parameter is crucial
 #' to ensure successful text generation by the Generative AI model. If any of the
 #' provided parameters is incorrect, the function will respond with an error message based
-#' on the information received from the API. Use the function \code{available.models} to
+#' on the information received from the API. Use the function \code{\link{available.models}} to
 #' see all supported Generative AI models.
 #'
 #' A complete prompt behind the function is as follows:
@@ -30,6 +30,9 @@
 #' \code{prompt}
 #'
 #' # Code ends #
+#'
+#' @seealso
+#' \href{https://genai.gd.edu.kg/r/documentation/}{GenAI - R Documentation}
 #'
 #' @examples
 #' \dontrun{
@@ -76,12 +79,14 @@
 #'
 #' @export
 #'
-#' @importFrom GenAI moderation.openai
+#' @importFrom jsonlite toJSON
+#' @importFrom httr POST add_headers content
 text.explain.code = function (model.parameter,
                               temperature,
                               prompt,
                               language = "R") {
-  if (prompt == "" || is.na(prompt) || !inherits(prompt, "character")) {
+  if (prompt == "" ||
+      is.na(prompt) || !inherits(prompt, "character")) {
     stop("Prompt is not in correct format.")
   }
   switch (model.parameter["provider"],
@@ -106,11 +111,17 @@ text.explain.code = function (model.parameter,
               )
             )
             requestBody = list(
-              contents = list(parts = list(text = paste("Explain the following",
-                                                        language, "code:\n",
-                                                        "# Code starts #\n",
-                                                        prompt, "\n",
-                                                        "# Code ends #\n"))),
+              contents = list(parts = list(
+                text = paste(
+                  "Explain the following",
+                  language,
+                  "code:\n",
+                  "# Code starts #\n",
+                  prompt,
+                  "\n",
+                  "# Code ends #\n"
+                )
+              )),
               generationConfig = list(temperature = temperature)
             )
             requestBodyJSON = jsonlite::toJSON(requestBody, auto_unbox = TRUE)
@@ -148,12 +159,18 @@ text.explain.code = function (model.parameter,
               messages = list(
                 list(role = "system",
                      content = "You are a helpful assistant."),
-                list(role = "user",
-                     content = paste("Explain the following",
-                                     language, "code:\n",
-                                     "# Code starts #\n",
-                                     prompt, "\n",
-                                     "# Code ends #\n"))
+                list(
+                  role = "user",
+                  content = paste(
+                    "Explain the following",
+                    language,
+                    "code:\n",
+                    "# Code starts #\n",
+                    prompt,
+                    "\n",
+                    "# Code ends #\n"
+                  )
+                )
               ),
               temperature = temperature
             )

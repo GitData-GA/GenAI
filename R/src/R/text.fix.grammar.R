@@ -16,7 +16,7 @@
 #' @details Providing accurate and valid information for each parameter is crucial
 #' to ensure successful text generation by the Generative AI model. If any of the
 #' provided parameters is incorrect, the function will respond with an error message based
-#' on the information received from the API. Use the function \code{available.models} to
+#' on the information received from the API. Use the function \code{\link{available.models}} to
 #' see all supported Generative AI models.
 #'
 #' A complete prompt behind the function is as follows:
@@ -28,6 +28,9 @@
 #' \code{prompt}
 #'
 #' # Text ends #
+#'
+#' @seealso
+#' \href{https://genai.gd.edu.kg/r/documentation/}{GenAI - R Documentation}
 #'
 #' @examples
 #' \dontrun{
@@ -64,9 +67,11 @@
 #'
 #' @export
 #'
-#' @importFrom GenAI moderation.openai
+#' @importFrom jsonlite toJSON
+#' @importFrom httr POST add_headers content
 text.fix.grammar = function (model.parameter, temperature, prompt) {
-  if (prompt == "" || is.na(prompt) || !inherits(prompt, "character")) {
+  if (prompt == "" ||
+      is.na(prompt) || !inherits(prompt, "character")) {
     stop("Prompt is not in correct format.")
   }
   switch (model.parameter["provider"],
@@ -91,10 +96,15 @@ text.fix.grammar = function (model.parameter, temperature, prompt) {
               )
             )
             requestBody = list(
-              contents = list(parts = list(text = paste("Rewrite the following text and fix any grammar issues:\n ",
-                                                        "# Text starts #\n",
-                                                        prompt, "\n",
-                                                        "# Text ends #\n"))),
+              contents = list(parts = list(
+                text = paste(
+                  "Rewrite the following text and fix any grammar issues:\n ",
+                  "# Text starts #\n",
+                  prompt,
+                  "\n",
+                  "# Text ends #\n"
+                )
+              )),
               generationConfig = list(temperature = temperature)
             )
             requestBodyJSON = jsonlite::toJSON(requestBody, auto_unbox = TRUE)
@@ -132,11 +142,16 @@ text.fix.grammar = function (model.parameter, temperature, prompt) {
               messages = list(
                 list(role = "system",
                      content = "You are a helpful assistant."),
-                list(role = "user",
-                     content = paste("Rewrite the following text and fix any grammar issues:\n ",
-                                     "# Text starts #\n",
-                                     prompt, "\n",
-                                     "# Text ends #\n"))
+                list(
+                  role = "user",
+                  content = paste(
+                    "Rewrite the following text and fix any grammar issues:\n ",
+                    "# Text starts #\n",
+                    prompt,
+                    "\n",
+                    "# Text ends #\n"
+                  )
+                )
               ),
               temperature = temperature
             )

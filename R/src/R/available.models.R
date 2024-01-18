@@ -12,6 +12,9 @@
 #' available Generative AI models. The retrieved data includes details about different models
 #' offered by various service providers.
 #'
+#' @seealso
+#' \href{https://genai.gd.edu.kg/r/documentation/}{GenAI - R Documentation}
+#'
 #' @examples
 #' \dontrun{
 #'  models = available.models()
@@ -19,6 +22,8 @@
 #' }
 #'
 #' @export
+#'
+#' @importFrom jsonlite toJSON
 available.models = function () {
   json.data = jsonlite::fromJSON("https://genai.gd.edu.kg/model.json")
   return (json.data)

@@ -21,8 +21,13 @@
 #' @details It is crucial to provide accurate and valid information for each parameter
 #' to ensure a successful connection to the Generative AI model. If any of the provided
 #' parameters are incorrect, the function will respond with an error message based on
-#' the information received from the API. Use the function \code{available.models} to
+#' the information received from the API. Use the function \code{\link{available.models}} to
 #' see all supported Generative AI models.
+#'
+#' @seealso
+#' \href{https://genai.gd.edu.kg/r/documentation/}{GenAI - R Documentation}
+#'
+#' \href{https://genai.gd.edu.kg/#api-proxy-service}{GenAI - API Proxy Service}
 #'
 #' @examples
 #' \dontrun{
@@ -47,6 +52,8 @@
 #' }
 #'
 #' @export
+#' @importFrom jsonlite toJSON
+#' @importFrom httr GET POST add_headers content
 connect.genai = function (provider,
                           model,
                           version,
