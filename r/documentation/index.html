@@ -80,11 +80,11 @@
                                 </li>
                                 <li class="nav-item"><a class="nav-link active" href="#text_generation">Text Generation</a>
                                     <ul class="nav flex-column">
-                                        <li class="nav-item"><a class="nav-link" href="#text"><code>text</code></a></li>
-                                        <li class="nav-item"><a class="nav-link" href="#text_explain_code"><code>text.explain.code</code></a></li>
-                                        <li class="nav-item"><a class="nav-link" href="#text_fix_grammar"><code>text.fix.grammar</code></a></li>
-                                        <li class="nav-item"><a class="nav-link" href="#text_image"><code>text.image</code></a></li>
-                                        <li class="nav-item"><a class="nav-link" href="#text_optimize_code"><code>text.optimize.code</code></a></li>
+                                        <li class="nav-item"><a class="nav-link" href="#txt"><code>txt</code></a></li>
+                                        <li class="nav-item"><a class="nav-link" href="#txt_explain_code"><code>txt.explain.code</code></a></li>
+                                        <li class="nav-item"><a class="nav-link" href="#txt_fix_grammar"><code>txt.fix.grammar</code></a></li>
+                                        <li class="nav-item"><a class="nav-link" href="#txt_image"><code>txt.image</code></a></li>
+                                        <li class="nav-item"><a class="nav-link" href="#txt_optimize_code"><code>txt.optimize.code</code></a></li>
                                     </ul>
                                 </li>
                                 <li class="nav-item"><a class="nav-link active" href="#chat_generation">Chat Generation</a>
@@ -243,13 +243,13 @@ openai.model</code></pre>
                         <hr>
                         <section id="text_generation">
                             <h2>Text Generation</h2>
-                            <section id="text">
-                                <h4><code>text</code><br>
-                                    <a href="https://github.com/GitData-GA/GenAI/blob/main/R/src/R/text.R" target="_blank"><img src="https://genai.gd.edu.kg/assets/img/github-badge.svg" alt="Open in GitHub"></a>
+                            <section id="txt">
+                                <h4><code>txt</code><br>
+                                    <a href="https://github.com/GitData-GA/GenAI/blob/main/R/src/R/txt.R" target="_blank"><img src="https://genai.gd.edu.kg/assets/img/github-badge.svg" alt="Open in GitHub"></a>
                                 </h4>
                                 <h4>Generate text using the Generative AI model based on a prompt<h4>
                                 <h5>Usage</h5>
-                                <pre><code class="language-r">text(model.parameter, 
+                                <pre><code class="language-r">txt(model.parameter, 
      temperature, 
      prompt)</code></pre>
                                 <h5>Arguments</h5>
@@ -278,12 +278,12 @@ openai.model</code></pre>
                                 </p>
                                 <div class="accordion" id="accordionDefault">
                                   <div class="card">
-                                    <div class="card-header" id="text_ex">
-                                      <h5 class="mb-0"> <a href="#" class="collapsed" data-toggle="collapse" data-target="#text_ex_collapse" aria-expanded="true">Example</a> </h5>
+                                    <div class="card-header" id="txt_ex">
+                                      <h5 class="mb-0"> <a href="#" class="collapsed" data-toggle="collapse" data-target="#txt_ex_collapse" aria-expanded="true">Example</a> </h5>
                                     </div>
-                                    <div id="text_ex_collapse" class="collapse" data-parent="#accordionDefault">
+                                    <div id="txt_ex_collapse" class="collapse" data-parent="#accordionDefault">
                                       <div class="card-body">
-                                        <a target="_blank" href="https://colab.research.google.com/github/GitData-GA/GenAI/blob/gh-pages/r/example/text.ipynb">
+                                        <a target="_blank" href="https://colab.research.google.com/github/GitData-GA/GenAI/blob/gh-pages/r/example/txt.ipynb">
                                           <img src="https://genai.gd.edu.kg/assets/img/colab-badge.svg" alt="Open In Colab"/>
                                         </a>
                                     <pre><code class="language-r">models = available.models()
@@ -303,14 +303,14 @@ openai.model = connect.genai("openai",
 temperature = 0.9
 prompt = "Write a story about a magic backpack. 100 words is enough."
 
-google.text = text(google.model,
-                   temperature,
-                   prompt)
+google.text = txt(google.model,
+                  temperature,
+                  prompt)
 cat(google.text)
 
-openai.text = text(openai.model,
-                   temperature,
-                   prompt)
+openai.text = txt(openai.model,
+                  temperature,
+                  prompt)
 cat(openai.text)</code></pre>
                                       </div>
                                     </div>
@@ -318,13 +318,13 @@ cat(openai.text)</code></pre>
                                 </div>
                             </section>
                             <hr style="border-top: dotted 1px; color: grey;" />
-                            <section id="text_explain_code">
-                                <h4><code>text.explain.code</code><br>
-                                    <a href="https://github.com/GitData-GA/GenAI/blob/main/R/src/R/text.explain.code.R" target="_blank"><img src="https://genai.gd.edu.kg/assets/img/github-badge.svg" alt="Open in GitHub"></a>
+                            <section id="txt_explain_code">
+                                <h4><code>txt.explain.code</code><br>
+                                    <a href="https://github.com/GitData-GA/GenAI/blob/main/R/src/R/txt.explain.code.R" target="_blank"><img src="https://genai.gd.edu.kg/assets/img/github-badge.svg" alt="Open in GitHub"></a>
                                 </h4>
                                 <h4>Generate code explanation using the Generative AI model based on a prompt<h4>
                                 <h5>Usage</h5>
-                                <pre><code class="language-r">text.explain.code(model.parameter, 
+                                <pre><code class="language-r">txt.explain.code(model.parameter, 
                   temperature, 
                   prompt, 
                   language = "R")</code></pre>
@@ -366,12 +366,12 @@ cat(openai.text)</code></pre>
                                 </p>
                                 <div class="accordion" id="accordionDefault">
                                   <div class="card">
-                                    <div class="card-header" id="text_explain_code_ex">
-                                      <h5 class="mb-0"> <a href="#" class="collapsed" data-toggle="collapse" data-target="#text_explain_code_ex_collapse" aria-expanded="true">Example</a> </h5>
+                                    <div class="card-header" id="txt_explain_code_ex">
+                                      <h5 class="mb-0"> <a href="#" class="collapsed" data-toggle="collapse" data-target="#txt_explain_code_ex_collapse" aria-expanded="true">Example</a> </h5>
                                     </div>
-                                    <div id="text_explain_code_ex_collapse" class="collapse" data-parent="#accordionDefault">
+                                    <div id="txt_explain_code_ex_collapse" class="collapse" data-parent="#accordionDefault">
                                       <div class="card-body">
-                                        <a target="_blank" href="https://colab.research.google.com/github/GitData-GA/GenAI/blob/gh-pages/r/example/text_explain_code.ipynb">
+                                        <a target="_blank" href="https://colab.research.google.com/github/GitData-GA/GenAI/blob/gh-pages/r/example/txt_explain_code.ipynb">
                                           <img src="https://genai.gd.edu.kg/assets/img/colab-badge.svg" alt="Open In Colab"/>
                                         </a>
                                         <pre><code class="language-r">models = available.models()
@@ -399,16 +399,16 @@ prompt = "foo <- function(n) {
             }
           }"
 
-code.explanation = text.explain.code(google.model,
-                                     temperature,
-                                     prompt,
-                                     language = "R")
+code.explanation = txt.explain.code(google.model,
+                                    temperature,
+                                    prompt,
+                                    language = "R")
 cat(code.explanation)
 
-code.explanation = text.explain.code(openai.model,
-                                     temperature,
-                                     prompt,
-                                     language = "R")
+code.explanation = txt.explain.code(openai.model,
+                                    temperature,
+                                    prompt,
+                                    language = "R")
 cat(code.explanation)</code></pre>
                                       </div>
                                     </div>
@@ -416,13 +416,13 @@ cat(code.explanation)</code></pre>
                                 </div>
                             </section>
                             <hr style="border-top: dotted 1px; color: grey;" />
-                            <section id="text_fix_grammar">
-                                <h4><code>text.fix.grammar</code><br>
-                                    <a href="https://github.com/GitData-GA/GenAI/blob/main/R/src/R/text.fix.grammar.R" target="_blank"><img src="https://genai.gd.edu.kg/assets/img/github-badge.svg" alt="Open in GitHub"></a>
+                            <section id="txt_fix_grammar">
+                                <h4><code>txt.fix.grammar</code><br>
+                                    <a href="https://github.com/GitData-GA/GenAI/blob/main/R/src/R/txt.fix.grammar.R" target="_blank"><img src="https://genai.gd.edu.kg/assets/img/github-badge.svg" alt="Open in GitHub"></a>
                                 </h4>
                                 <h4>Generate correct text using the Generative AI model based on a prompt<h4>
                                 <h5>Usage</h5>
-                                <pre><code class="language-r">text.fix.grammar(model.parameter, 
+                                <pre><code class="language-r">txt.fix.grammar(model.parameter, 
                  temperature, 
                  prompt)</code></pre>
                                 <h5>Arguments</h5>
@@ -460,12 +460,12 @@ cat(code.explanation)</code></pre>
                                 </p>
                                 <div class="accordion" id="accordionDefault">
                                   <div class="card">
-                                    <div class="card-header" id="text_fix_grammar_ex">
-                                      <h5 class="mb-0"> <a href="#" class="collapsed" data-toggle="collapse" data-target="#text_fix_grammar_ex_collapse" aria-expanded="true">Example</a> </h5>
+                                    <div class="card-header" id="txt_fix_grammar_ex">
+                                      <h5 class="mb-0"> <a href="#" class="collapsed" data-toggle="collapse" data-target="#txt_fix_grammar_ex_collapse" aria-expanded="true">Example</a> </h5>
                                     </div>
-                                    <div id="text_fix_grammar_ex_collapse" class="collapse" data-parent="#accordionDefault">
+                                    <div id="txt_fix_grammar_ex_collapse" class="collapse" data-parent="#accordionDefault">
                                       <div class="card-body">
-                                        <a target="_blank" href="https://colab.research.google.com/github/GitData-GA/GenAI/blob/gh-pages/r/example/text_fix_grammar.ipynb">
+                                        <a target="_blank" href="https://colab.research.google.com/github/GitData-GA/GenAI/blob/gh-pages/r/example/txt_fix_grammar.ipynb">
                                           <img src="https://genai.gd.edu.kg/assets/img/colab-badge.svg" alt="Open In Colab"/>
                                         </a>
                                         <pre><code class="language-r">models = available.models()
@@ -485,14 +485,14 @@ temperature = 0.9
 prompt = "Yesterday, I will buy a book for my younger sister as his birthday gift.
          They were very happen when seeing this gift earlier today."
 
-correct.text = text.fix.grammar(google.model,
-                                temperature,
-                                prompt)
+correct.text = txt.fix.grammar(google.model,
+                               temperature,
+                               prompt)
 cat(correct.text)
 
-correct.text = text.fix.grammar(openai.model,
-                                temperature,
-                                prompt)
+correct.text = txt.fix.grammar(openai.model,
+                               temperature,
+                               prompt)
 cat(correct.text)</code></pre>
                                       </div>
                                     </div>
@@ -500,13 +500,13 @@ cat(correct.text)</code></pre>
                                 </div>
                             </section>
                             <hr style="border-top: dotted 1px; color: grey;" />
-                            <section id="text_image">
-                                <h4><code>text.image</code><br>
-                                    <a href="https://github.com/GitData-GA/GenAI/blob/main/R/src/R/text.image.R" target="_blank"><img src="https://genai.gd.edu.kg/assets/img/github-badge.svg" alt="Open in GitHub"></a>
+                            <section id="txt_image">
+                                <h4><code>txt.image</code><br>
+                                    <a href="https://github.com/GitData-GA/GenAI/blob/main/R/src/R/txt.image.R" target="_blank"><img src="https://genai.gd.edu.kg/assets/img/github-badge.svg" alt="Open in GitHub"></a>
                                 </h4>
                                 <h4>Generate text using the Generative AI model based on a prompt and an image<h4>
                                 <h5>Usage</h5>
-                                <pre><code class="language-r">text.image(model.parameter, 
+                                <pre><code class="language-r">txt.image(model.parameter, 
            temperature, 
            prompt, 
            image.path)</code></pre>
@@ -539,12 +539,12 @@ cat(correct.text)</code></pre>
                                 </p>
                                 <div class="accordion" id="accordionDefault">
                                   <div class="card">
-                                    <div class="card-header" id="text_image_ex">
-                                      <h5 class="mb-0"> <a href="#" class="collapsed" data-toggle="collapse" data-target="#text_image_ex_collapse" aria-expanded="true">Example</a> </h5>
+                                    <div class="card-header" id="txt_image_ex">
+                                      <h5 class="mb-0"> <a href="#" class="collapsed" data-toggle="collapse" data-target="#txt_image_ex_collapse" aria-expanded="true">Example</a> </h5>
                                     </div>
-                                    <div id="text_image_ex_collapse" class="collapse" data-parent="#accordionDefault">
+                                    <div id="txt_image_ex_collapse" class="collapse" data-parent="#accordionDefault">
                                       <div class="card-body">
-                                        <a target="_blank" href="https://colab.research.google.com/github/GitData-GA/GenAI/blob/gh-pages/r/example/text_image.ipynb">
+                                        <a target="_blank" href="https://colab.research.google.com/github/GitData-GA/GenAI/blob/gh-pages/r/example/txt_image.ipynb">
                                           <img src="https://genai.gd.edu.kg/assets/img/colab-badge.svg" alt="Open In Colab"/>
                                         </a>
                                         <pre><code class="language-r">models = available.models()
@@ -565,16 +565,16 @@ temperature = 0.9
 prompt = "What is this picture?"
 image.path = "https://storage.googleapis.com/generativeai-downloads/images/scones.jpg"
 
-image.description = text.image(google.model,
-                               temperature,
-                               prompt,
-                               image.path)
+image.description = txt.image(google.model,
+                              temperature,
+                              prompt,
+                              image.path)
 cat(image.description)
 
-image.description = text.image(openai.model,
-                               temperature,
-                               prompt,
-                               image.path)
+image.description = txt.image(openai.model,
+                              temperature,
+                              prompt,
+                              image.path)
 cat(image.description)</code></pre>
                                       </div>
                                     </div>
@@ -582,13 +582,13 @@ cat(image.description)</code></pre>
                                 </div>
                             </section>
                             <hr style="border-top: dotted 1px; color: grey;" />
-                            <section id="text_optimize_code">
-                                <h4><code>text.optimize.code</code><br>
-                                    <a href="https://github.com/GitData-GA/GenAI/blob/main/R/src/R/text.optimize.code.R" target="_blank"><img src="https://genai.gd.edu.kg/assets/img/github-badge.svg" alt="Open in GitHub"></a>
+                            <section id="txt_optimize_code">
+                                <h4><code>txt.optimize.code</code><br>
+                                    <a href="https://github.com/GitData-GA/GenAI/blob/main/R/src/R/txt.optimize.code.R" target="_blank"><img src="https://genai.gd.edu.kg/assets/img/github-badge.svg" alt="Open in GitHub"></a>
                                 </h4>
                                 <h4>Generate optimized code using the Generative AI model based on a prompt<h4>
                                 <h5>Usage</h5>
-                                <pre><code class="language-r">text.optimize.code(model.parameter, 
+                                <pre><code class="language-r">txt.optimize.code(model.parameter, 
                    temperature, 
                    prompt, 
                    goal, 
@@ -635,12 +635,12 @@ cat(image.description)</code></pre>
                                 </p>
                                 <div class="accordion" id="accordionDefault">
                                   <div class="card">
-                                    <div class="card-header" id="text_optimize_code_ex">
-                                      <h5 class="mb-0"> <a href="#" class="collapsed" data-toggle="collapse" data-target="#text_optimize_code_ex_collapse" aria-expanded="true">Example</a> </h5>
+                                    <div class="card-header" id="txt_optimize_code_ex">
+                                      <h5 class="mb-0"> <a href="#" class="collapsed" data-toggle="collapse" data-target="#txt_optimize_code_ex_collapse" aria-expanded="true">Example</a> </h5>
                                     </div>
-                                    <div id="text_optimize_code_ex_collapse" class="collapse" data-parent="#accordionDefault">
+                                    <div id="txt_optimize_code_ex_collapse" class="collapse" data-parent="#accordionDefault">
                                       <div class="card-body">
-                                        <a target="_blank" href="https://colab.research.google.com/github/GitData-GA/GenAI/blob/gh-pages/r/example/text_optimize_code.ipynb">
+                                        <a target="_blank" href="https://colab.research.google.com/github/GitData-GA/GenAI/blob/gh-pages/r/example/txt_optimize_code.ipynb">
                                           <img src="https://genai.gd.edu.kg/assets/img/colab-badge.svg" alt="Open In Colab"/>
                                         </a>
                                         <pre><code class="language-r">models = available.models()
@@ -668,18 +668,18 @@ prompt = "foo <- function(n) {
           }"
 goal = "Improve the runtime of the function"
 
-optimized.code = text.optimize.code(google.model,
-                                    temperature,
-                                    prompt,
-                                    goal,
-                                    language = "R")
+optimized.code = txt.optimize.code(google.model,
+                                   temperature,
+                                   prompt,
+                                   goal,
+                                   language = "R")
 cat(optimized.code)
 
-optimized.code = text.optimize.code(openai.model,
-                                    temperature,
-                                    prompt,
-                                    goal,
-                                    language = "R")
+optimized.code = txt.optimize.code(openai.model,
+                                   temperature,
+                                   prompt,
+                                   goal,
+                                   language = "R")
 cat(optimized.code)</code></pre>
                                       </div>
                                     </div>
