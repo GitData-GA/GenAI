@@ -5,6 +5,7 @@
 *Last update: 2024/01/18*
 
 [![](https://www.r-pkg.org/badges/version-last-release/GenAI)](https://cran.r-project.org/package=GenAI)
+![](https://cranlogs.r-pkg.org/badges/grand-total/GenAI)
 
 [GenAI for R](https://cran.r-project.org/package=GenAI)   |    [GenAI Doc for R](https://genai.gd.edu.kg/r/documentation/)
 
