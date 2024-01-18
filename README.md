@@ -44,9 +44,9 @@ For individuals utilizing Generative AI service providers with API usage locatio
 
 - Use the proxy URL directly:
 
-  - To proxy an API request for Google's models, substitute the original URL: Replace the original URL https://generativelanguage.googleapis.com/ with the proxied URL https://api.genai.gd.edu.kg/google/.
+  - To proxy an API request for Google's models, substitute the original URL: Replace the original URL `https://generativelanguage.googleapis.com/` with the proxied URL `https://api.genai.gd.edu.kg/google/`.
 
-  - To proxy an API request for OpenAI's models, substitute the original URL: Replace the original URL https://api.openai.com/ with the proxied URL https://api.genai.gd.edu.kg/openai/.
+  - To proxy an API request for OpenAI's models, substitute the original URL: Replace the original URL `https://api.openai.com/` with the proxied URL `https://api.genai.gd.edu.kg/openai/`.
 
 It's important to note that while GenAI and its associated organization do not collect user information, the server providers for GenAI and the Generative AI service provider may do so. Additionally, the connection speed using the proxy service is not guaranteed. Users are advised to use this service at their own risk.
 
