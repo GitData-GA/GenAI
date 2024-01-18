@@ -265,6 +265,16 @@ openai.model</code></pre>
                         <hr>
                         <section id="text_generation">
                             <h2>Text Generation</h2>
+                            <p>
+                                The "Text Generation" section comprises functions for generating text using Generative AI models. The <code>txt</code> function 
+                                allows users to generate text based on a provided prompt and model parameters, with options to adjust creativity using 
+                                the <code>temperature</code> parameter. Additionally, specialized functions like <code>txt.explain.code</code>, 
+                                <code>txt.fix.grammar</code>, <code>txt.image</code>, and <code>txt.optimize.code</code> cater to specific text generation 
+                                needs, such as explaining code, fixing grammar issues, incorporating images into text generation, and optimizing code 
+                                based on a goal. Each function establishes a connection to a Generative AI model and returns the generated text, 
+                                emphasizing the importance of accurate parameter input for successful text generation. Users can explore supported 
+                                models using the <code>available.models</code> function.
+                            </p>
                             <section id="txt">
                                 <h4><code>txt</code><br>
                                     <a href="https://github.com/GitData-GA/GenAI/blob/main/R/src/R/txt.R" target="_blank"><img src="https://genai.gd.edu.kg/assets/img/github-badge.svg" alt="Open in GitHub"></a>
