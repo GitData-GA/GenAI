@@ -177,6 +177,9 @@
                                     </ul>
                                     <div class="tab-content my-3" id="quickstart_3_content">
                                       <div class="tab-pane fade show active" id="google-code" role="tabpanel" aria-labelledby="google-tab">
+                                          <a target="_blank" href="https://colab.research.google.com/github/GitData-GA/GenAI/blob/gh-pages/r/example/quickstart_google.ipynb">
+                                              <img src="https://genai.gd.edu.kg/assets/img/colab-badge.svg" alt="Open In Colab"/>
+                                          </a>
                                           <pre><code class="language-r"># Import the library
 library("GenAI")
 
@@ -197,17 +200,17 @@ google.text = txt(google.model,
 cat(google.text)
 
 # Chat generation                                            
-## Setup a chat session
+# Setup a chat session
 google.history = chat.setup(google.model)
 
-## Send the first message and get the response
+# Send the first message and get the response
 google.history = chat(google.model,
                       0.9,
                       google.history,
                       "Write a story about a magic backpack")
 cat(chat.recent(google.model, google.history))
 
-## Send the second message and get the response
+# Send the second message and get the response
 google.history = chat(google.model,
                       0.9,
                       google.history,
@@ -215,6 +218,9 @@ google.history = chat(google.model,
 cat(chat.recent(google.model, google.history))</code></pre>
                                       </div>
                                       <div class="tab-pane fade" id="openai-code" role="tabpanel" aria-labelledby="openai-tab">
+                                          <a target="_blank" href="https://colab.research.google.com/github/GitData-GA/GenAI/blob/gh-pages/r/example/quickstart_openai.ipynb">
+                                              <img src="https://genai.gd.edu.kg/assets/img/colab-badge.svg" alt="Open In Colab"/>
+                                          </a>
                                           <pre><code class="language-r"># Import the library
 library("GenAI")
 
@@ -235,17 +241,17 @@ openai.text = txt(openai.model,
 cat(openai.text)
 
 # Chat generation                                            
-## Setup a chat session
+# Setup a chat session
 openai.history = chat.setup(openai.model)
 
-## Send the first message and get the response
+# Send the first message and get the response
 openai.history = chat(openai.model,
                       0.9,
                       openai.history,
                       "Write a story about a magic backpack")
 cat(chat.recent(openai.model, openai.history))
 
-## Send the second message and get the response
+# Send the second message and get the response
 openai.history = chat(google.model,
                       0.9,
                       openai.history,
