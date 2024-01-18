@@ -4,6 +4,9 @@
 
 *Last update: 2024/01/18*
 
+![](https://www.r-pkg.org/badges/version-last-release/GenAI)
+<a href="https://cran.r-project.org/package=GenAI" target="_blank"><img src=""></a>
+
 [GenAI for R](https://cran.r-project.org/package=GenAI)   |    [GenAI Doc for R](https://genai.gd.edu.kg/r/documentation/)
 
 Now, you can seamlessly utilize both ChatGPT from OpenAI and Gemini Pro from Google! Enjoy enhanced chat conversion and the ability to engage in multiple chat sessions with ease.
