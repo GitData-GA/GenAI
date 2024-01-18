@@ -27,3 +27,6 @@ offered by various service providers.
 }
 
 }
+\seealso{
+\href{https://genai.gd.edu.kg/r/documentation/}{GenAI - R Documentation}
+}

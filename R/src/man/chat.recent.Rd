@@ -23,8 +23,8 @@ This function fetches the most recent message in the chat history of a Generativ
 Providing accurate and valid information for each parameter is crucial for successful
 text generation by the Generative AI model. This function modifies the chat history. If any
 parameter is incorrect, the function responds with an error message based on the API feedback.
-To view all supported Generative AI models, use the function \code{available.models}.
-Additionally, utilize \code{chat.setup} to set up a chat history.
+To view all supported Generative AI models, use the function \code{\link{available.models}}.
+Additionally, utilize \code{\link{chat.setup}} to set up a chat history.
 }
 \examples{
 \dontrun{
@@ -85,4 +85,7 @@ Additionally, utilize \code{chat.setup} to set up a chat history.
  cat(chat.recent(openai.model, openai.history))
 }
 
+}
+\seealso{
+\href{https://genai.gd.edu.kg/r/documentation/}{GenAI - R Documentation}
 }

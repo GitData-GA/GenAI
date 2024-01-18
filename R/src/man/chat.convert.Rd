@@ -28,8 +28,8 @@ ensuring compatibility and usability across different models.
 Providing accurate and valid information for each parameter is crucial for successful
 text generation by the Generative AI model. This function modifies the chat history accordingly.
 Incorrect parameters will result in an error message based on the API feedback.
-To explore supported Generative AI models, use the function \code{available.models}.
-Additionally, utilize \code{chat.setup} to set up a chat history.
+To explore supported Generative AI models, use the function \code{\link{available.models}}.
+Additionally, utilize \code{\link{chat.setup}} to set up a chat history.
 }
 \examples{
 \dontrun{
@@ -112,4 +112,7 @@ Additionally, utilize \code{chat.setup} to set up a chat history.
  cat(chat.recent(openai.model, converted.openai.history))
 }
 
+}
+\seealso{
+\href{https://genai.gd.edu.kg/r/documentation/}{GenAI - R Documentation}
 }
