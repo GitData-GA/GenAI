@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://genai.gd.edu.kg/sitemap.xml
