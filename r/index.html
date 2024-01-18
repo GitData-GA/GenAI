@@ -252,7 +252,7 @@ openai.history = chat(openai.model,
 cat(chat.recent(openai.model, openai.history))
 
 # Send the second message and get the response
-openai.history = chat(google.model,
+openai.history = chat(openai.model,
                       0.9,
                       openai.history,
                       "What is the word count of the story you just wrote?")
