@@ -1,0 +1,15 @@
+Metadata-Version: 2.1
+Name: GeAI
+Version: 0.1.8
+Summary: Generative Artificial Intelligence
+Home-page: https://genai.gd.edu.kg/
+Author: Li Yuan
+Author-email: <lyuan@gd.edu.kg>
+Keywords: Generative AI,LLM,API
+Classifier: Development Status :: 3 - Alpha
+Classifier: Intended Audience :: Education
+Classifier: Programming Language :: Python :: 3
+Classifier: Operating System :: MacOS :: MacOS X
+Classifier: Operating System :: Microsoft :: Windows
+
+Utilizing Generative Artificial Intelligence models like "GPT-4" and "Gemini Pro" as coding and writing assistants for "Python" users. Through these models, "GenAIPy" offers a variety of functions, encompassing text generation, code optimization, natural language processing, chat, and image interpretation. The goal is to aid "Python" users in streamlining laborious coding and language processing tasks.
