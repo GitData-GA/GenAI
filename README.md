@@ -11,7 +11,7 @@
 
 [Python Package "GeAI" Info](https://genai.gd.edu.kg/python/)   |    [Python Package "GeAI" Doc](https://genai.gd.edu.kg/python/documentation/)
 
-[![](https://img.shields.io/pypi/v/geai.svg?color=green)](https://pypi.org/project/GeAI/)
+[![](https://img.shields.io/pypi/v/geai.svg?color=lightgreen)](https://pypi.org/project/GeAI/)
 ![](https://img.shields.io/pepy/dt/geai.svg?color=blue)
 
 Now, you can seamlessly utilize both ChatGPT from OpenAI and Gemini Pro from Google! Enjoy enhanced chat conversion and the ability to engage in multiple chat sessions with ease.
