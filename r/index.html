@@ -74,6 +74,26 @@
                                 <li>
                                     <a href="https://github.com/GitData-GA/GenAI/tree/main/" target="_blank"><i class="fa-brands fa-github"></i></a>
                                 </li>
+                                <li class="dropdown"> 
+                                    <a class="dropdown-toggle"><i class="fa-solid fa-globe"></i><i class="arrow"></i></a>
+                                    <ul class="dropdown-menu">
+                                        <li>
+                                            <a id="en-switch" class="dropdown-item">
+                                                <img src="https://static.sampledu.com/emoji/svg/1f1fa-1f1f8.svg" width="17px">&nbsp;English
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a id="ru-switch" class="dropdown-item">
+                                                <img src="https://static.gd.edu.kg/emoji/svg/1f1f7-1f1fa.svg" width="17px">&nbsp;Русский
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a id="cn-switch" class="dropdown-item">
+                                                <img src="https://static.sampledu.com/emoji/svg/1f1e8-1f1f3.svg" width="17px">&nbsp;中文
+                                            </a>
+                                        </li>
+                                    </ul>
+                                </li>
                             </ul>
                         </div>
                     </div>
@@ -287,5 +307,22 @@ cat(chat.recent(openai.model, openai.history))</code></pre>
         <script src="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.9.0/build/highlight.min.js"></script>
         <script src="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.9.0/build/languages/r.min.js"></script>
         <script>hljs.highlightAll();</script>
+        <srcipt>
+            var currentPath = window.location.pathname;
+            var finalPath;
+            if (currentPath.startsWith('/ru/')) {
+                finalPath = currentPath.replace('/ru/', '');
+            } else if (currentPath.startsWith('/cn/')) {
+                finalPath = currentPath.replace('/cn/', '');
+            } else {
+                finalPath = currentPath;
+            }
+            var enlink = document.getElementById("en-switch");
+            enlink.href = "https://genai.gd.edu.kg" + finalPath;
+            var rulink = document.getElementById("ru-switch");
+            rulink.href = "https://genai.gd.edu.kg/ru" + finalPath;
+            var cnlink = document.getElementById("cn-switch");
+            cnlink.href = "https://genai.gd.edu.kg/cn" + finalPath;
+        </srcipt>
     </body>
 </html>
