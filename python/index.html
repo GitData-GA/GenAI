@@ -1,1 +1,251 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1.0, shrink-to-fit=no">
+        <link rel="icon" type="image/x-icon" href="https://static.gd.edu.kg/images/logo.svg">
+        <meta itemprop="image" content="https://genai.gd.edu.kg/assets/img/bg.png">
+        <title>GenAI - Python Package Overview</title>
+        <meta name="description" content="This document provides an overview of the GenAI package in the Python programming language.">
 
+        <!-- Google / Search Engine Tags -->
+        <meta itemprop="name" content="GenAI - Python Package Overview">
+        <meta itemprop="description" content="This document provides an overview of the GenAI package in the Python programming language.">
+        <meta itemprop="image" content="https://genai.gd.edu.kg/assets/img/bg.png">
+        
+        <!-- Facebook Meta Tags -->
+        <meta property="og:url" content="https://genai.gd.edu.kg/r/">
+        <meta property="og:type" content="website">
+        <meta property="og:title" content="GenAI - Python Package Overview">
+        <meta property="og:description" content="This document provides an overview of the GenAI package in the Python programming language.">
+        <meta property="og:image" content="https://genai.gd.edu.kg/assets/img/bg.png">
+        
+        <!-- Twitter Meta Tags -->
+        <meta name="twitter:card" content="summary_large_image">
+        <meta name="twitter:title" content="GenAI - Python Package Overview">
+        <meta name="twitter:description" content="This document provides an overview of the GenAI package in the Python programming language.">
+        <meta name="twitter:image" content="https://genai.gd.edu.kg/assets/img/bg.png">
+
+        <!-- Analytics -->
+        <script async src="https://www.googletagmanager.com/gtag/js?id=G-ELSZ3SFQ2D"></script><script>window.dataLayer=window.dataLayer || []; function gtag(){dataLayer.push(arguments);}gtag('js', new Date()); gtag('config', 'G-ELSZ3SFQ2D');</script>
+
+        <!-- CSS -->
+        <link rel="stylesheet" type="text/css" href="https://static.gd.edu.kg/css/kb/bootstrap.min.css" />
+        <link rel="stylesheet" type="text/css" href="https://static.gd.edu.kg/css/kb/all.min.css" />
+        <link rel="stylesheet" type="text/css" href="https://static.gd.edu.kg/css/kb/magnific-popup.min.css" />
+        <link rel="stylesheet" type="text/css" href="https://static.gd.edu.kg/css/kb/github.css" />
+        <link rel="stylesheet" type="text/css" href="https://static.gd.edu.kg/css/kb/stylesheet.css" />
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.9.0/build/styles/default.min.css">
+    </head>
+    <body data-spy="scroll" data-target=".idocs-navigation" data-offset="125">
+        <div class="preloader">
+            <div class="lds-ellipsis">
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+            </div>
+        </div>
+        <div id="main-wrapper">
+            <header id="header" class="sticky-top">
+                <nav class="primary-menu navbar navbar-expand-lg navbar-dropdown-dark">
+                    <div class="container-fluid">
+                        <button id="sidebarCollapse" class="navbar-toggler d-block d-md-none" type="button"><span></span><span class="w-75"></span><span class="w-50"></span></button>
+                        <a class="logo ml-md-3" href="https://genai.gd.edu.kg/"> <img src="https://genai.gd.edu.kg/assets/img/logo.svg" height=50px/> </a> 
+                        <span class="text-2 ml-2"></span> 
+                        <button class="navbar-toggler ml-auto" type="button" data-toggle="collapse" data-target="#header-nav"><span></span><span></span><span></span></button>
+                        <div id="header-nav" class="collapse navbar-collapse justify-content-end">
+                            <ul class="navbar-nav">
+                                <li class="dropdown"> 
+                                    <a class="dropdown-toggle"><i class="fa-brands fa-r-project"></i><i class="arrow"></i></a>
+                                    <ul class="dropdown-menu">
+                                        <li><a class="dropdown-item" href="https://genai.gd.edu.kg/r/">Overview</a></li>
+                                        <li><a class="dropdown-item" href="https://genai.gd.edu.kg/r/documentation/">Documentation</a></li>
+                                    </ul>
+                                </li>
+                                <li class="dropdown"> 
+                                    <a class="dropdown-toggle"><i class="fa-brands fa-python"></i><i class="arrow"></i></a>
+                                    <ul class="dropdown-menu">
+                                        <li><a class="dropdown-item" href="https://genai.gd.edu.kg/python/">Overview</a></li>
+                                        <li><a class="dropdown-item" href="https://genai.gd.edu.kg/python/documentation/">Documentation</a></li>
+                                    </ul>
+                                </li>
+                                <li>
+                                    <a href="https://github.com/GitData-GA/GenAI/tree/main/" target="_blank"><i class="fa-brands fa-github"></i></a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </nav>
+            </header>
+            <div id="content" role="main">
+                <div class="idocs-navigation bg-light">
+                    <ul class="nav flex-column ">
+                        <li class="nav-item">
+                            <a class="nav-link active" href="#start">GenAI - Python Package Overview</a>
+                            <ul class="nav flex-column">
+                                <li class="nav-item"><a class="nav-link" href="#basic_info">Basic Information</a></li>
+                                <li class="nav-item"><a class="nav-link" href="#quickstart">Quickstart</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+                <div class="idocs-content">
+                    <div class="container">
+                        <section id="start">
+                            <h1>GenAI - Python Package Overview</h1>
+                            <p>
+                                <a href="https://pypi.org/project/GeAI/" target="_blank"><img src="https://img.shields.io/pypi/v/geai.svg" alt="PyPI Version"></a>
+                                <img src="https://img.shields.io/pepy/dt/geai.svg" alt="download count">
+                            </p>
+                            <p class="alert alert-info">The <code>txt</code> module of Python package "GeAI" is available for now. However, the <code>chat</code> module is still under development.</p>
+                        </section>
+                        <hr>
+                        <section id="basic_info">
+                            <h2>Basic Information</h2>
+                            <p><b>GeAI: Generative Artificial Intelligence</b></p>
+                            <p>
+                                Utilizing Generative Artificial Intelligence models like "GPT-4" and "Gemini Pro" as coding and writing assistants for "Python" users. Through these models, "GeAI" offers a variety of functions, encompassing text generation, code optimization, natural language processing, chat, and image interpretation. The goal is to aid "Python" users in streamlining laborious coding and language processing tasks.
+                            </p>
+                            <p><b>Author</b>: Li Yuan</p>
+                            <p><b>Maintainer</b>: Li Yuan &lt;lyuan@gd.edu.kg&gt;</p>
+                            <p><b>BugReports</b>: <a href="https://github.com/GitData-GA/GenAI/issues" target="_blank">https://github.com/GitData-GA/GenAI/issues</a></p>
+                            <p><b>License</b>: <a href="https://creativecommons.org/licenses/by/4.0/" target="_blank">CC BY 4.0</a></p>
+                            <p><b>URL</b>: <a href="https://genai.gd.edu.kg/" target="_blank">https://genai.gd.edu.kg/</a></p>
+                            <p><b>Python version</b>: 3</p>
+                        </section>
+                        <hr>
+                        <section id="quickstart">
+                            <h2>Quickstart</h2>
+                            <ol>
+                                <li>
+                                    <p>Prior to utilizing the GenAI package, several prerequisites must be met.</p>
+                                    <ol>
+                                        <li>
+                                            <p>Ensure that you possess an eligible device equipped with Python.</p>
+                                        </li>
+                                        <li>
+                                            <p>Access to the internet is essential to generate text or engage in chat through GenAI.</p>
+                                        </li>
+                                        <li>
+                                            <p>Obtain an API key from the selected Generative AI service provider. GenAI currently supports Generative AI models from both Google and OpenAI.</p>
+                                            <ul>
+                                                <li>To acquire an API key for Google's models, refer to: <a href="https://ai.google.dev/tutorials/setup" target="_blank">Get an API key</a></li>
+                                                <li>To acquire an API key for OpenAI's models, refer to: <a href="https://platform.openai.com/docs/quickstart/account-setup" target="_blank">Account setup</a></li>
+                                            </ul>
+                                        </li>
+                                    </ol>
+                                </li>
+                                <li>
+                                    <p>Installation (2 options)</p>
+                                    <ol>
+                                        <li>
+                                            <p>
+                                                Install the package from <a href="https://pypi.org/project/GeAI/" target="_blank">The Python Package Index (PyPI)</a>.
+                                            </p>
+                                            <p>
+                                                <pre><code class="language-python">pip install GeAI</code></pre>
+                                            </p>
+                                        </li>
+                                        <li>
+                                            <p>
+                                                Install the package from GenAI official website</a>.
+                                            </p>
+                                            <p>
+                                                <pre><code class="language-python">pip install -i https://genai.gd.edu.kg/release/Python/GeAI-latest-py3-none-any.whl GeAI</code></pre>
+                                            </p>
+                                        </li>
+                                    </ol>
+                                </li>
+                                <li>
+                                    <p>Setup and get your first AI generated response using GeAI</p>
+                                    <ul class="nav nav-tabs" id="quickstart_3" role="tablist">
+                                        <li class="nav-item" role="presentation">
+                                            <a class="nav-link active" id="google-tab" data-toggle="tab" href="#google-code" role="tab" aria-controls="google-code" aria-selected="true">Google Models</a>
+                                          </li>
+                                          <li class="nav-item" role="presentation">
+                                            <a class="nav-link" id="openai-tab" data-toggle="tab" href="#openai-code" role="tab" aria-controls="openai-code" aria-selected="false">OpenAI Models</a>
+                                          </li>
+                                    </ul>
+                                    <div class="tab-content my-3" id="quickstart_3_content">
+                                      <div class="tab-pane fade show active" id="google-code" role="tabpanel" aria-labelledby="google-tab">
+                                          <a target="_blank" href="https://colab.research.google.com/github/GitData-GA/GenAI/blob/gh-pages/python/example/quickstart_google.ipynb">
+                                              <img src="https://genai.gd.edu.kg/assets/img/colab-badge.svg" alt="Open In Colab"/>
+                                          </a>
+                                          <pre><code class="language-python"># Import the library
+import GeAI as ga
+
+# Get supported models
+models = ga.available_models()
+
+# Select a model and connect, replace API_KEY with your api key
+google_model = ga.connect('google',
+                          models['google']['model'][0],
+                          models['google']['version'][0],
+                          'API_KEY',
+                          proxy = False)
+
+# Text generation
+google_text = ga.txt(google_model,
+                     0.9,
+                     "Write a story about a magic backpack.")
+print(google_text)</code></pre>
+                                      </div>
+                                      <div class="tab-pane fade" id="openai-code" role="tabpanel" aria-labelledby="openai-tab">
+                                          <a target="_blank" href="https://colab.research.google.com/github/GitData-GA/GenAI/blob/gh-pages/python/example/quickstart_openai.ipynb">
+                                              <img src="https://genai.gd.edu.kg/assets/img/colab-badge.svg" alt="Open In Colab"/>
+                                          </a>
+                                          <pre><code class="language-python"># Import the library
+import GeAI as ga
+
+# Get supported models
+models = ga.available_models()
+
+# Select a model and connect, replace API_KEY with your api key
+openai_model = ga.connect('openai',
+                          models['openai']['model'][0],
+                          models['openai']['version'][0],
+                          'API_KEY',
+                          proxy = False)
+
+# Text generation
+openai_text = ga.txt(openai_model,
+                     0.9,
+                     "Write a story about a magic backpack.")
+print(openai_text)</code></pre>
+                                      </div>
+                                    </div>
+                                </li>
+                                <li>
+                                    <p>See the documentation for more functions.</p>
+                                    <p>
+                                        <a href="https://genai.gd.edu.kg/python/documentation/"><button style="width: 200px; height: 35px; font-size: 15px; border: none; border-radius: 15px; color: black; background-color: #FFD43B; margin-bottom: 5px; margin-left: 5px; margin-right: 5px;"><i class="fa-brands fa-python"></i>&nbsp;&nbsp;Package "GeAI" Doc</button></a>
+                                    </p>
+                                </li>
+                            </ol>
+                        </section>
+                    </div>
+                </div>
+            </div>
+            <footer id="footer" class="section bg-dark footer-text-light">
+                <div class="container">
+                    <p class="text-center">
+                        &copy; <script type="text/JavaScript"> document.write(new Date().getFullYear()) </script> GitData
+                    </p>
+                </div>
+            </footer>
+        </div>
+        <a id="back-to-top" data-toggle="tooltip" title="Back to Top" href="javascript:void(0)"><i class="fa fa-chevron-up"></i></a> 
+        <script src="https://static.gd.edu.kg/js/kb/jquery.min.js"></script> 
+        <script src="https://static.gd.edu.kg/js/kb/bootstrap.bundle.min.js"></script> 
+        <script src="https://static.gd.edu.kg/js/kb/highlight.min.js"></script> 
+        <script src="https://static.gd.edu.kg/js/kb/jquery.easing.min.js"></script> 
+        <script src="https://static.gd.edu.kg/js/kb/jquery.magnific-popup.min.js"></script> 
+        <script src="https://static.gd.edu.kg/js/kb/theme.js"></script>
+        <script src="https://static.gd.edu.kg/js/fontawesome.js"></script>
+        <script src="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.9.0/build/highlight.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.9.0/build/languages/python.min.js"></script>
+        <script>hljs.highlightAll();</script>
+    </body>
+</html>
