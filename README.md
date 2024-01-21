@@ -2,7 +2,7 @@
 
 <img src="https://genai.gd.edu.kg/assets/img/logo.jpg" width="300px" alt="Logo">
 
-*Last update: 2024/01/18*
+*Last update: 2024/01/21*
 
 [R Package "GenAI" Info](https://genai.gd.edu.kg/r/)   |    [R Package "GenAI" Doc](https://genai.gd.edu.kg/r/documentation/)
 
