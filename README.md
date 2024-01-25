@@ -6,7 +6,7 @@
 
 [R Package "GenAI" Info](https://genai.gd.edu.kg/r/)   |    [R Package "GenAI" Doc](https://genai.gd.edu.kg/r/documentation/)
 
-[![](https://www.r-pkg.org/badges/version/GenAI?color=green)](https://cran.r-project.org/package=GenAI)
+[![](https://img.shields.io/cran/v/GenAI?color=green)](https://cran.r-project.org/package=GenAI)
 ![](https://cranlogs.r-pkg.org/badges/grand-total/GenAI)
 
 [Python Package "GeAI" Info](https://genai.gd.edu.kg/python/)   |    [Python Package "GeAI" Doc](https://genai.gd.edu.kg/python/documentation/)
