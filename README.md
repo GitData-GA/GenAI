@@ -6,19 +6,17 @@
 
 | R Package "GenAI"                                  | Python Package "GeAI"                                         |
 |----------------------------------------------------|---------------------------------------------------------------|
-|[![](https://img.shields.io/cran/v/GenAI?color=green)](https://cran.r-project.org/package=GenAI)![](https://cranlogs.r-pkg.org/badges/grand-total/GenAI) | [![](https://img.shields.io/pypi/v/geai.svg?color=green)](https://pypi.org/project/GeAI/) ![](https://img.shields.io/pepy/dt/geai.svg?color=blue) |
+| [![](https://img.shields.io/cran/v/GenAI?color=green)](https://cran.r-project.org/package=GenAI) ![](https://cranlogs.r-pkg.org/badges/grand-total/GenAI) | [![](https://img.shields.io/pypi/v/geai.svg?color=green)](https://pypi.org/project/GeAI/) ![](https://img.shields.io/pepy/dt/geai.svg?color=blue) |
 | [Overview](https://genai.gd.edu.kg/r/) | [Overview](https://genai.gd.edu.kg/python/) |
 | [Documentation](https://genai.gd.edu.kg/r/documentation/) | [Documentation](https://genai.gd.edu.kg/python/documentation/) |
 
 
-
-> 💡 Upcoming update 💡
+> 💡 Upcoming update for R package "GenAI" 💡
 >
 > We are enhancing the structure of the R package to enhance its user-friendliness. The upcoming version is scheduled for release on CRAN in the coming weeks.
 
 
-
-> ⚠️ NOTICE ⚠️
+> ⚠️ NOTICE for Python package "GeAI" ⚠️
 >
 > The Python package is currently in the development phase. Please exercise caution when using it, as it may not be entirely stable or free of potential issues.
 
