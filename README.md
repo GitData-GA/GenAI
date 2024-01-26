@@ -9,10 +9,18 @@
 [![](https://img.shields.io/cran/v/GenAI?color=green)](https://cran.r-project.org/package=GenAI)
 ![](https://cranlogs.r-pkg.org/badges/grand-total/GenAI)
 
+> 💡 Upcoming update 💡
+>
+> We are enhancing the structure of the R package to enhance its user-friendliness. The upcoming version is scheduled for release on CRAN in the coming weeks.
+
 [Python Package "GeAI" Info](https://genai.gd.edu.kg/python/)   |    [Python Package "GeAI" Doc](https://genai.gd.edu.kg/python/documentation/)
 
 [![](https://img.shields.io/pypi/v/geai.svg?color=green)](https://pypi.org/project/GeAI/)
 ![](https://img.shields.io/pepy/dt/geai.svg?color=blue)
+
+> ⚠️ NOTICE ⚠️
+>
+> The Python package is currently in the development phase. Please exercise caution when using it, as it may not be entirely stable or free of potential issues.
 
 Now, you can seamlessly utilize both ChatGPT from OpenAI and Gemini Pro from Google! Enjoy enhanced chat conversion and the ability to engage in multiple chat sessions with ease.
 
