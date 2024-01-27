@@ -113,9 +113,9 @@
                                 <li class="nav-item"><a class="nav-link" href="#endpoints">Endpoints</a></li>
                                 <li class="nav-item"><a class="nav-link active" href="#usage">Usage</a>
                                     <ul class="nav flex-column">
-                                        <li class="nav-item"><a class="nav-link" href="#general"><code>Generate usage</code></a></li>
-                                        <li class="nav-item"><a class="nav-link" href="#r-package"><code>R package "GenAI"</code></a></li>
-                                        <li class="nav-item"><a class="nav-link" href="#python-pacakge"><code>Python package "GeAI"</code></a></li>
+                                        <li class="nav-item"><a class="nav-link" href="#general">Generate usage</a></li>
+                                        <li class="nav-item"><a class="nav-link" href="#r-package">R package "GenAI"</a></li>
+                                        <li class="nav-item"><a class="nav-link" href="#python-pacakge">Python package "GeAI"</a></li>
                                     </ul>
                                 </li>
                             </ul>
@@ -233,18 +233,18 @@
                             <h2>Usage</h2>
                             <ol>
                                 <li>
-                                    <strong><p>General usage</p></strong><br>
+                                    <strong><p id="general">General usage</p></strong>
                                     <ul>
                                         <li>To proxy an API request for Google's models, substitute the original URL <code>https://generativelanguage.googleapis.com/</code> with the proxied URL <code>https://api.genai.gd.edu.kg/google/</code>.</li>
                                         <li>To proxy an API request for OpenAI's models, substitute the original URL <code>https://api.openai.com/</code> with the proxied URL <code>https://api.genai.gd.edu.kg/openai/</code>.</li>
                                     </ul>
                                 </li>
                                 <li>
-                                    <strong><p>R package "GenAI"</p></strong><br>
+                                    <strong><p id="r-package">R package "GenAI"</p></strong>
                                     <p>Set <code>TRUE</code> to parameter <code>proxy</code> in function <a href="https://genai.gd.edu.kg/r/documentation/#connect_genai"><code>connect.genai</code></a> and use the returned model parameter for text generations and chat generations.</p>
                                 </li>
                                 <li>
-                                    <strong><p>Python package "GeAI"</p></strong><br>
+                                    <strong><p id="python-package">Python package "GeAI"</p></strong>
                                     <p>Set <code>True</code> to parameter <code>proxy</code> in function <a href="https://genai.gd.edu.kg/python/documentation/#connect"><code>connect</code></a> under module GeAI and use the returned model parameter for text generations and chat generations.</p>
                                 </li>
                             </ol>
