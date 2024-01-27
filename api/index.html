@@ -6,24 +6,24 @@
         <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1.0, shrink-to-fit=no">
         <link rel="icon" type="image/x-icon" href="https://static.gd.edu.kg/images/logo.svg">
         <meta itemprop="image" content="https://genai.gd.edu.kg/assets/img/bg.png">
-        <title>GenAI - API Proxy Service</title>
+        <title>GenAI - Generative Artificial Intelligence API Proxy Service</title>
         <meta name="description" content="This document provides an overview of the GenAI API Proxy Service.">
 
         <!-- Google / Search Engine Tags -->
-        <meta itemprop="name" content='GenAI - API Proxy Service'>
+        <meta itemprop="name" content='GenAI - Generative Artificial Intelligence API Proxy Service'>
         <meta itemprop="description" content="This document provides an overview of the GenAI API Proxy Service.">
         <meta itemprop="image" content="https://genai.gd.edu.kg/assets/img/bg.png">
         
         <!-- Facebook Meta Tags -->
         <meta property="og:url" content="https://genai.gd.edu.kg/api/">
         <meta property="og:type" content="website">
-        <meta property="og:title" content='GenAI - API Proxy Service'>
+        <meta property="og:title" content='GenAI - Generative Artificial Intelligence API Proxy Service'>
         <meta property="og:description" content="This document provides an overview of the GenAI API Proxy Service.">
         <meta property="og:image" content="https://genai.gd.edu.kg/assets/img/bg.png">
         
         <!-- Twitter Meta Tags -->
         <meta name="twitter:card" content="summary_large_image">
-        <meta name="twitter:title" content='GenAI - API Proxy Service'>
+        <meta name="twitter:title" content='GenAI - Generative Artificial Intelligence API Proxy Service'>
         <meta name="twitter:description" content="This document provides an overview of the GenAI API Proxy Service.">
         <meta name="twitter:image" content="https://genai.gd.edu.kg/assets/img/bg.png">
 
@@ -103,7 +103,7 @@
                 <div class="idocs-navigation bg-light">
                     <ul class="nav flex-column ">
                         <li class="nav-item">
-                            <a class="nav-link active" href="#start">GenAI - API Proxy Service</a>
+                            <a class="nav-link active" href="#start">GenAI - Generative Artificial Intelligence API Proxy Service</a>
                             <ul class="nav flex-column">
                                 <li class="nav-item"><a class="nav-link" href="#basic_info">Basic Information</a></li>
                                 <li class="nav-item"><a class="nav-link" href="#quickstart">Quickstart</a></li>
@@ -114,16 +114,52 @@
                 <div class="idocs-content">
                     <div class="container">
                         <section id="start">
-                            <h1>GenAI - API Proxy Service</h1>
+                            <h1>GenAI - Generative Artificial Intelligence API Proxy Service</h1>
                             <p class="alert alert-info">
-                              Please be aware that although GenAI and its affiliated organization - GitData - do not gather user information, the server 
-                              providers for GenAI API proxy service and the Generative AI service providers may engage in such data collection. Furthermore, the 
-                              proxy service cannot guarantee a consistent connection speed. Users are strongly encouraged to utilize this 
-                              service with caution and at their own discretion.
+                                NOTICE:<br>
+                                Please be aware that although GenAI and its affiliated organization - GitData - do not gather user information, the server 
+                                providers for GenAI API proxy service and the Generative AI service providers may engage in such data collection. Furthermore, the 
+                                proxy service cannot guarantee a consistent connection speed. Users are strongly encouraged to utilize this 
+                                service with caution and at their own discretion.
                             </p>
                         </section>
                         <hr>
-
+                        <section>
+                            <p>
+                                For individuals utilizing Generative AI service providers with API usage location restrictions in certain countries/regions, 
+                                this service is tailored for those who possess a valid API key but find themselves outside their home countries/regions due to travel, 
+                                work, or study in regions not covered by some Generative AI service providers.
+                            </p>
+                            <p>
+                                How does it work? GenAI's API proxy service functions by directing your request initially to our server located in a 
+                                country/region eligible for specific Generative AI services. Subsequently, GenAI's server forwards your request to the official 
+                                server of the Generative AI service provider. Once the provider's server completes processing the request, the response is 
+                                sent back to GenAI's server, which then relays it back to the user's device. This process is illustrated in the accompanying image.
+                            </p>
+                            <center>
+                                <a class="popup-img" href="https://genai.gd.edu.kg/assets/img/proxy.svg">
+                                  <img src="https://genai.gd.edu.kg/assets/img/proxy.svg" width="75%" class="img-fluid img-thumbnail" alt="How GenAI proxy service works">
+                                </a>
+                            </center>
+                            <p>
+                                How to use this service?
+                                <ul>
+                                    <li>
+                                        <p>GenAI package "GenAI" in R: Set <code>TRUE</code> to parameter <code>proxy</code> in function <a href="https://genai.gd.edu.kg/r/documentation/#connect_genai"><code>connect.genai</code></a> and use the returned model parameter for text generations and chat generations.</p>
+                                    </li>
+                                    <li>
+                                        <p>GenAI package "GeAI" in Python: Set <code>True</code> to parameter <code>proxy</code> in function <a href="https://genai.gd.edu.kg/python/documentation/#connect"><code>connect</code></a> under module GeAI and use the returned model parameter for text generations and chat generations.</p>
+                                    </li>
+                                    <li>
+                                        <p>Use the proxy URL directly:</p>
+                                        <ul>
+                                            <li>To proxy an API request for Google's models, substitute the original URL: Replace the original URL <code>https://generativelanguage.googleapis.com/</code> with the proxied URL <code>https://api.genai.gd.edu.kg/google/</code>.</li>
+                                            <li>To proxy an API request for OpenAI's models, substitute the original URL: Replace the original URL <code>https://api.openai.com/</code> with the proxied URL <code>https://api.genai.gd.edu.kg/openai/</code>.</li>
+                                        </ul>
+                                    </li>
+                                </ul>
+                            </p>
+                        </section>
                     </div>
                 </div>
             </div>
