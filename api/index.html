@@ -131,10 +131,6 @@
                         <section id="motivation">
                             <h2>Motivation</h2>
                             <p>
-                                This service caters specifically to individuals encountering geographical restrictions imposed by Generative AI service providers 
-                                with limitations on API usage in certain countries or regions. 
-                            </p>
-                            <p>
                                 According to <a href="https://ai.google.dev/available_regions" target="_blank">Google</a>, its generative AI API is accessible 
                                 in 180 regions, while for <a href="https://platform.openai.com/docs/supported-countries" target="_blank">OpenAI</a>, it spans 
                                 188 regions.
@@ -153,6 +149,10 @@
                                 </center>
                             </p>
                             <p>
+                                This service caters specifically to individuals encountering geographical restrictions imposed by Generative AI service providers 
+                                with limitations on API usage in certain countries or regions. 
+                            </p>
+                            <p>
                                 It is designed to address the needs of users who hold a valid 
                                 API key but find themselves outside their home countries or regions due to reasons such as travel, work, or study in locations 
                                 that may not be covered by certain Generative AI service providers. Whether you are a professional on a business trip, an 
@@ -162,18 +162,36 @@
                             </p>
                         </section>
                         <hr>
-                        <section>
-                            <p>
-                                How does it work? GenAI's API proxy service functions by directing your request initially to our server located in a 
-                                country/region eligible for specific Generative AI services. Subsequently, GenAI's server forwards your request to the official 
-                                server of the Generative AI service provider. Once the provider's server completes processing the request, the response is 
-                                sent back to GenAI's server, which then relays it back to the user's device. This process is illustrated in the accompanying image.
-                            </p>
+                        <section id="workflow">
+                            <h2>Workflow</h2>
+                            <ol>
+                                <li>
+                                    <strong>Request Initiation:</strong><br>
+                                    GenAI's API proxy service initiates the process by directing the user's request to its server, strategically located in a country or region that meets the eligibility criteria for specific Generative AI services. This initial step ensures seamless interaction with the Generative AI platform.
+                                </li>
+                                <li>
+                                    <strong>Server Handoff:</strong><br>
+                                    Subsequently, GenAI's server takes charge of the request, acting as an intermediary between the user and the official server of the Generative AI service provider. This intermediary role allows for the optimization of the request's journey, enhancing efficiency and reliability.
+                                </li>
+                                <li>
+                                    <strong>Provider's Server Processing:</strong><br>
+                                    The user's request then reaches the official server of the Generative AI service provider. This server, equipped with the necessary resources and capabilities, meticulously processes the request, leveraging the power of Generative AI algorithms to generate the desired outcome.
+                                </li>
+                                <li>
+                                    <strong>Response Transmission:</strong><br>
+                                    Upon completion of the processing phase, the Generative AI service provider's server generates a response. This response is promptly sent back to GenAI's server, encapsulating the outcomes of the Generative AI computations.
+                                </li>
+                                <li>
+                                    <strong>Relay to User's Device:</strong><br>
+                                    GenAI's server takes on the responsibility of relaying the processed response back to the user's device. This final step ensures that the user receives the generated content, thereby completing the cycle of interaction between the user, GenAI's server, and the Generative AI service provider.
+                                </li>
+                            </ol>
                             <center>
                                 <a class="popup-img" href="https://genai.gd.edu.kg/assets/img/proxy.svg">
-                                  <img src="https://genai.gd.edu.kg/assets/img/proxy.svg" width="75%" class="img-fluid img-thumbnail" alt="How GenAI proxy service works">
+                                  <img src="https://genai.gd.edu.kg/assets/img/proxy.svg" loading="lazy" width="75%" class="img-fluid img-thumbnail" alt="How GenAI proxy service works">
                                 </a>
                             </center>
+                        </section>
                             <p>
                                 How to use this service?
                                 <ul>
