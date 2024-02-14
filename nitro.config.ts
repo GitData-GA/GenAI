@@ -13,6 +13,9 @@ export default defineNitroConfig({
         },
         '/openai/**': {
             proxy: 'https://api.openai.com/**'
+        },
+        '/moonshot/**': {
+            proxy: 'https://api.moonshot.cn/**'
         }
     }
 });
