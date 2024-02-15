@@ -117,7 +117,8 @@
                                 language processing, chat, and image interpretation. The goal is to aid 'R' users in streamlining laborious coding and language 
                                 processing tasks.
                             </p>
-                            <p><b>Imports</b>: base64enc, httr, jsonlite, tools</p>
+                            <p><b>Depends</b>: magrittr</p>
+                            <p><b>Imports</b>: base64enc, httr, jsonlite, tools, R6, listenv, magick, ggplotify</p>
                             <p><b>Author</b>: Li Yuan</p>
                             <p><b>Maintainer</b>: Li Yuan &lt;lyuan@gd.edu.kg&gt;</p>
                             <p><b>BugReports</b>: <a href="https://github.com/GitData-GA/GenAI/issues" target="_blank">https://github.com/GitData-GA/GenAI/issues</a></p>
@@ -140,10 +141,11 @@
                                             <p>Access to the internet is essential to generate text or engage in chat through GenAI.</p>
                                         </li>
                                         <li>
-                                            <p>Obtain an API key from the selected Generative AI service provider. GenAI currently supports Generative AI models from both Google and OpenAI.</p>
+                                            <p>Obtain an API key from the selected Generative AI service provider. GenAI currently supports Generative AI models from Google, Moonshot AI, and OpenAI.</p>
                                             <ul>
-                                                <li>To acquire an API key for Google's models, refer to: <a href="https://ai.google.dev/tutorials/setup" target="_blank">Get an API key</a></li>
-                                                <li>To acquire an API key for OpenAI's models, refer to: <a href="https://platform.openai.com/docs/quickstart/account-setup" target="_blank">Account setup</a></li>
+                                                <li>To acquire an API key for Google's models, refer to: <a href="https://ai.google.dev/tutorials/setup" target="_blank">Google Generative AI - API key</a></li>
+                                                <li>To acquire an API key for Moonshot AI's models, refer to: <a href="https://platform.moonshot.cn/console/api-keys" target="_blank">Moonshot AI - API Key</a></li>
+                                                <li>To acquire an API key for OpenAI's models, refer to: <a href="https://platform.openai.com/api-keys" target="_blank">OpenAI - API Key</a></li>
                                             </ul>
                                         </li>
                                     </ol>
@@ -164,7 +166,9 @@
                                                 Install the package from GenAI official website</a>.
                                             </p>
                                             <p>
-                                                <pre><code class="language-r">install.packages("https://genai.gd.edu.kg/release/R/GenAI_latest.tar.gz", repos=NULL, method="libcurl")</code></pre>
+                                                <pre><code class="language-r">remotes::install_url("https://genai.gd.edu.kg/release/R/GenAI_latest.tar.gz",
+                     dependencies = TRUE,
+                     method = "libcurl")</code></pre>
                                             </p>
                                         </li>
                                     </ol>
