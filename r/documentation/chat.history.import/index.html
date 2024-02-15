@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1.0, shrink-to-fit=no">
+        <link rel="icon" type="image/x-icon" href="https://static.gd.edu.kg/images/logo.svg">
+        <meta itemprop="image" content="https://genai.gd.edu.kg/assets/img/bg.png">
+        <title>GenAI - chat.history.import | R Package "GenAI" Documentation</title>
+        <meta name="description" content="This document provides detailed function reference manual of the GenAI package in the R programming language.">
+
+        <!-- Google / Search Engine Tags -->
+        <meta itemprop="name" content='GenAI - chat.history.import | R Package "GenAI" Documentation'>
+        <meta itemprop="description" content="This document provides detailed function reference manual of the GenAI package in the R programming language.">
+        <meta itemprop="image" content="https://genai.gd.edu.kg/assets/img/bg.png">
+        
+        <!-- Facebook Meta Tags -->
+        <meta property="og:url" content="https://genai.gd.edu.kg/r/documentation/">
+        <meta property="og:type" content="website">
+        <meta property="og:title" content='GenAI - chat.history.import | R Package "GenAI" Documentation'>
+        <meta property="og:description" content="This document provides detailed function reference manual of the GenAI package in the R programming language.">
+        <meta property="og:image" content="https://genai.gd.edu.kg/assets/img/bg.png">
+        
+        <!-- Twitter Meta Tags -->
+        <meta name="twitter:card" content="summary_large_image">
+        <meta name="twitter:title" content='GenAI - chat.history.import | R Package "GenAI" Documentation'>
+        <meta name="twitter:description" content="This document provides detailed function reference manual of the GenAI package in the R programming language.">
+        <meta name="twitter:image" content="https://genai.gd.edu.kg/assets/img/bg.png">
+
+        <!-- Analytics -->
+        <script async src="https://www.googletagmanager.com/gtag/js?id=G-ELSZ3SFQ2D"></script><script>window.dataLayer=window.dataLayer || []; function gtag(){dataLayer.push(arguments);}gtag('js', new Date()); gtag('config', 'G-ELSZ3SFQ2D');</script>
+
+        <!-- CSS -->
+        <link rel="stylesheet" type="text/css" href="https://static.gd.edu.kg/css/kb/bootstrap.min.css" />
+        <link rel="stylesheet" type="text/css" href="https://static.gd.edu.kg/css/kb/all.min.css" />
+        <link rel="stylesheet" type="text/css" href="https://static.gd.edu.kg/css/kb/magnific-popup.min.css" />
+        <link rel="stylesheet" type="text/css" href="https://static.gd.edu.kg/css/kb/github.css" />
+        <link rel="stylesheet" type="text/css" href="https://static.gd.edu.kg/css/kb/stylesheet.css" />
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.9.0/build/styles/default.min.css">
+    </head>
+    <body data-spy="scroll" data-target=".idocs-navigation" data-offset="125">
+        <div class="preloader">
+            <div class="lds-ellipsis">
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+            </div>
+        </div>
+        <div id="main-wrapper">
+            <header id="header" class="sticky-top">
+                <nav class="primary-menu navbar navbar-expand-lg navbar-dropdown-dark">
+                    <div class="container-fluid">
+                        <button id="sidebarCollapse" class="navbar-toggler d-block d-md-none" type="button"><span></span><span class="w-75"></span><span class="w-50"></span></button>
+                        <a class="logo ml-md-3" href="https://genai.gd.edu.kg/"> <img src="https://genai.gd.edu.kg/assets/img/logo.svg" height=50px/> </a> 
+                        <span class="text-2 ml-2"></span> 
+                        <button class="navbar-toggler ml-auto" type="button" data-toggle="collapse" data-target="#header-nav"><span></span><span></span><span></span></button>
+                        <div id="header-nav" class="collapse navbar-collapse justify-content-end">
+                            <ul class="navbar-nav">
+                                <li>
+                                    <a href="https://genai.gd.edu.kg/api/">API Proxy Service</a>
+                                </li>
+                                <li class="dropdown"> 
+                                    <a class="dropdown-toggle"><i class="fa-brands fa-r-project"></i></a>
+                                    <ul class="dropdown-menu">
+                                        <li><a class="dropdown-item" href="https://genai.gd.edu.kg/r/">Overview</a></li>
+                                        <li><a class="dropdown-item" href="https://genai.gd.edu.kg/r/documentation/">Documentation</a></li>
+                                    </ul>
+                                </li>
+                                <li class="dropdown"> 
+                                    <a class="dropdown-toggle"><i class="fa-brands fa-python"></i></a>
+                                    <ul class="dropdown-menu">
+                                        <li><a class="dropdown-item" href="https://genai.gd.edu.kg/python/">Overview</a></li>
+                                        <li><a class="dropdown-item" href="https://genai.gd.edu.kg/python/documentation/">Documentation</a></li>
+                                    </ul>
+                                </li>
+                                <li>
+                                    <a href="https://github.com/GitData-GA/GenAI/tree/main/" target="_blank"><i class="fa-brands fa-github"></i></a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </nav>
+            </header>
+            <div id="content" role="main">
+                <div class="idocs-navigation bg-light">
+                    <ul class="nav flex-column">
+                        <li class="nav-item">
+                            <a class="nav-link active" href="#start">Chat History Import<br><code>chat.history.import</code></a>
+                            <ul class="nav flex-column">
+                                <li class="nav-item"><a class="nav-link" href="#Usage">Usage</a></li>
+                                <li class="nav-item"><a class="nav-link" href="#Arguments">Arguments</a></li>
+                                <li class="nav-item"><a class="nav-link" href="#Description">Description</a></li>
+                                <li class="nav-item"><a class="nav-link" href="#Details">Details</a></li>
+                                <li class="nav-item"><a class="nav-link" href="#Examples">Examples</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+                <div class="idocs-content">
+                    <div class="container">
+                        <section id="start">
+                            <h1>Chat History Import<br><code>chat.history.import</code></h1>
+                            <h3>R Package "GenAI" Documentation</h3>
+                            <p>
+                                <a href="https://cran.r-project.org/package=GenAI" target="_blank"><img src="https://img.shields.io/cran/v/GenAI?color=green" alt="CRAN"></a>
+                                <a href="https://github.com/GitData-GA/GenAI/blob/main/R/src/R/chat.history.import.R" target="_blank"><img src="https://genai.gd.edu.kg/assets/img/github-badge.svg" alt="Open in GitHub"></a>
+                                <a target="_blank" href="https://colab.research.google.com/github/GitData-GA/GenAI/blob/gh-pages/r/example/chat_history_import.ipynb">
+                                  <img src="https://genai.gd.edu.kg/assets/img/colab-badge.svg" alt="Open In Colab"/>
+                                </a>
+                            </p>
+                            <p><i>Last update: 2024/02/15</i></p>
+                        </section>
+                        <hr>
+                        <section id="Usage">
+                            <h3>Usage</h3>
+                            <pre><code class="language-r">chat.history.import(genai.object, new.chat.history)</code></pre>
+                        </section>
+                        <hr>
+                        <section id="Arguments">
+                            <h3>Arguments</h3>
+                            <ul>
+                                <li><code>genai.object</code>: A generative AI object containing necessary and correct information.</li>
+                                <li><code>new.chat.history</code>: A list containing a chat history in correct format.</li>
+                            <ul>
+                        </section>
+                        <hr>
+                        <section id="Description">
+                            <h3>Description</h3>
+                            <p>
+                                This function imports a chat history in list format to a generative AI object.
+                            </p>
+                        </section>
+                        <hr>
+                        <section id="Details">
+                            <h3>Details</h3>
+                            <p>
+                                Providing accurate and valid information for each argument is crucial for successful chat
+                                generation by the generative AI model. If any parameter is incorrect, the function responds with an
+                                error message based on the API feedback. To view all supported generative AI models, use the
+                                function <a href="https://genai.gd.edu.kg/r/documentation/available.models/"><code>available.models</code></a>.
+                            </p>
+                        </section>
+                        <hr>
+                        <section id="Examples">
+                            <h3>Examples</h3>
+                            <a target="_blank" href="https://colab.research.google.com/github/GitData-GA/GenAI/blob/gh-pages/r/example/chat_history_import.ipynb">
+                              <img src="https://genai.gd.edu.kg/assets/img/colab-badge.svg" alt="Open In Colab"/>
+                            </a>
+                            <pre><code class="language-r"># Method 1 (recommended): use the pipe operator "%>%"
+genai.model %>%
+  chat.history.import(new.chat.history = new.history)
+
+# Method 2: use the reference operator "$"
+genai.model$chat.history.import(new.chat.history = new.history)
+
+# Method 3: use the function chat.history.import() directly
+chat.history.import(genai.object = genai.model,
+                    new.chat.history = new.history)
+</code></pre>
+                        </section>
+                    </div>
+                </div>
+            </div>
+            <footer id="footer" class="section bg-dark footer-text-light">
+                <div class="container">
+                    <p class="text-center">
+                        &copy; <script type="text/JavaScript"> document.write(new Date().getFullYear()) </script> GitData
+                    </p>
+                </div>
+            </footer>
+        </div>
+        <a id="back-to-top" data-toggle="tooltip" title="Back to Top" href="javascript:void(0)"><i class="fa fa-chevron-up"></i></a> 
+        <script src="https://static.gd.edu.kg/js/kb/jquery.min.js"></script> 
+        <script src="https://static.gd.edu.kg/js/kb/bootstrap.bundle.min.js"></script> 
+        <script src="https://static.gd.edu.kg/js/kb/highlight.min.js"></script> 
+        <script src="https://static.gd.edu.kg/js/kb/jquery.easing.min.js"></script> 
+        <script src="https://static.gd.edu.kg/js/kb/jquery.magnific-popup.min.js"></script> 
+        <script src="https://static.gd.edu.kg/js/kb/theme.js"></script>
+        <script src="https://static.gd.edu.kg/js/fontawesome.js"></script>
+        <script src="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.9.0/build/highlight.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.9.0/build/languages/r.min.js"></script>
+        <script>hljs.highlightAll();</script>
+    </body>
+</html>
