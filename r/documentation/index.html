@@ -1,0 +1,338 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1.0, shrink-to-fit=no">
+        <link rel="icon" type="image/x-icon" href="https://static.gd.edu.kg/images/logo.svg">
+        <meta itemprop="image" content="https://genai.gd.edu.kg/assets/img/bg.png">
+        <title>GenAI - R Package "GenAI" Documentation</title>
+        <meta name="description" content="This document provides detailed function reference manual of the GenAI package in the R programming language.">
+
+        <!-- Google / Search Engine Tags -->
+        <meta itemprop="name" content='GenAI - R Package "GenAI" Documentation'>
+        <meta itemprop="description" content="This document provides detailed function reference manual of the GenAI package in the R programming language.">
+        <meta itemprop="image" content="https://genai.gd.edu.kg/assets/img/bg.png">
+        
+        <!-- Facebook Meta Tags -->
+        <meta property="og:url" content="https://genai.gd.edu.kg/r/documentation/">
+        <meta property="og:type" content="website">
+        <meta property="og:title" content='GenAI - R Package "GenAI" Documentation'>
+        <meta property="og:description" content="This document provides detailed function reference manual of the GenAI package in the R programming language.">
+        <meta property="og:image" content="https://genai.gd.edu.kg/assets/img/bg.png">
+        
+        <!-- Twitter Meta Tags -->
+        <meta name="twitter:card" content="summary_large_image">
+        <meta name="twitter:title" content='GenAI - R Package "GenAI" Documentation'>
+        <meta name="twitter:description" content="This document provides detailed function reference manual of the GenAI package in the R programming language.">
+        <meta name="twitter:image" content="https://genai.gd.edu.kg/assets/img/bg.png">
+
+        <!-- Analytics -->
+        <script async src="https://www.googletagmanager.com/gtag/js?id=G-ELSZ3SFQ2D"></script><script>window.dataLayer=window.dataLayer || []; function gtag(){dataLayer.push(arguments);}gtag('js', new Date()); gtag('config', 'G-ELSZ3SFQ2D');</script>
+
+        <!-- CSS -->
+        <link rel="stylesheet" type="text/css" href="https://static.gd.edu.kg/css/kb/bootstrap.min.css" />
+        <link rel="stylesheet" type="text/css" href="https://static.gd.edu.kg/css/kb/all.min.css" />
+        <link rel="stylesheet" type="text/css" href="https://static.gd.edu.kg/css/kb/magnific-popup.min.css" />
+        <link rel="stylesheet" type="text/css" href="https://static.gd.edu.kg/css/kb/github.css" />
+        <link rel="stylesheet" type="text/css" href="https://static.gd.edu.kg/css/kb/stylesheet.css" />
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.9.0/build/styles/default.min.css">
+    </head>
+    <body data-spy="scroll" data-target=".idocs-navigation" data-offset="125">
+        <div class="preloader">
+            <div class="lds-ellipsis">
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+            </div>
+        </div>
+        <div id="main-wrapper">
+            <header id="header" class="sticky-top">
+                <nav class="primary-menu navbar navbar-expand-lg navbar-dropdown-dark">
+                    <div class="container-fluid">
+                        <button id="sidebarCollapse" class="navbar-toggler d-block d-md-none" type="button"><span></span><span class="w-75"></span><span class="w-50"></span></button>
+                        <a class="logo ml-md-3" href="https://genai.gd.edu.kg/"> <img src="https://genai.gd.edu.kg/assets/img/logo.svg" height=50px/> </a> 
+                        <span class="text-2 ml-2"></span> 
+                        <button class="navbar-toggler ml-auto" type="button" data-toggle="collapse" data-target="#header-nav"><span></span><span></span><span></span></button>
+                        <div id="header-nav" class="collapse navbar-collapse justify-content-end">
+                            <ul class="navbar-nav">
+                                <li>
+                                    <a href="https://genai.gd.edu.kg/api/">API Proxy Service</a>
+                                </li>
+                                <li class="dropdown"> 
+                                    <a class="dropdown-toggle"><i class="fa-brands fa-r-project"></i></a>
+                                    <ul class="dropdown-menu">
+                                        <li><a class="dropdown-item" href="https://genai.gd.edu.kg/r/">Overview</a></li>
+                                        <li><a class="dropdown-item" href="https://genai.gd.edu.kg/r/documentation/">Documentation</a></li>
+                                    </ul>
+                                </li>
+                                <li class="dropdown"> 
+                                    <a class="dropdown-toggle"><i class="fa-brands fa-python"></i></a>
+                                    <ul class="dropdown-menu">
+                                        <li><a class="dropdown-item" href="https://genai.gd.edu.kg/python/">Overview</a></li>
+                                        <li><a class="dropdown-item" href="https://genai.gd.edu.kg/python/documentation/">Documentation</a></li>
+                                    </ul>
+                                </li>
+                                <li>
+                                    <a href="https://github.com/GitData-GA/GenAI/tree/main/" target="_blank"><i class="fa-brands fa-github"></i></a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </nav>
+            </header>
+            <div id="content" role="main">
+                <div class="idocs-navigation bg-light">
+                    <ul class="nav flex-column ">
+                        <li class="nav-item">
+                            <a class="nav-link active" href="#start">GenAI - R Package "GenAI" Documentation</a>
+                            <ul class="nav flex-column">
+                                <li class="nav-item"><a class="nav-link" href="#prerequisites">Prerequisites</a></li>
+                                <li class="nav-item"><a class="nav-link" href="#installation">Installation</a></li>
+                                <li class="nav-item"><a class="nav-link active" href="#setup">Setup</a></li>
+                                <li class="nav-item"><a class="nav-link active" href="#text_generation">Text Generation</a></li>
+                                <li class="nav-item"><a class="nav-link active" href="#chat_generation">Chat Generation</a></li>
+                                <li class="nav-item"><a class="nav-link active" href="#image_generation">Image Generation</a></li>
+                                <li class="nav-item"><a class="nav-link active" href="#appendix">Appendix</a>
+                                    <ul class="nav flex-column">
+                                        <li class="nav-item"><a class="nav-link" href="#capability">Capability</a></li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+                <div class="idocs-content">
+                    <div class="container">
+                        <section id="start">
+                            <h1>GenAI - R Package "GenAI" Documentation</h1>
+                            <p><i>Last update: 2024/02/15</i></p>
+                            <p>
+                               Utilizing 'Generative Artificial Intelligence' models like 'GPT-4' and 'Gemini Pro' as coding and writing assistants for 'R' users. Through these models, 'GenAI' offers a variety of functions, encompassing text generation, code optimization, natural language processing, chat, and image interpretation. The goal is to aid 'R' users in streamlining laborious coding and language processing tasks. 
+                            </p>
+                        </section>
+                        <hr>
+                        <section id="prerequisites">
+                            <h3>Prerequisites</h3>
+                            <p>Prior to utilizing the GenAI package, several prerequisites must be met.</p>
+                            <ol>
+                                <li>
+                                    <p>Ensure that you possess an eligible device equipped with R.</p>
+                                </li>
+                                <li>
+                                    <p>Access to the internet is essential to generate text or engage in chat through GenAI.</p>
+                                </li>
+                                <li>
+                                    <p>Obtain an API key from the selected Generative AI service provider. GenAI currently supports Generative AI models from Google, Moonshot AI, and OpenAI.</p>
+                                    <ul>
+                                        <li>To acquire an API key for Google's models, refer to: <a href="https://ai.google.dev/tutorials/setup" target="_blank">Google Generative AI - API key</a></li>
+                                        <li>To acquire an API key for Moonshot AI's models, refer to: <a href="https://platform.moonshot.cn/console/api-keys" target="_blank">Moonshot AI - API Key</a></li>
+                                        <li>To acquire an API key for OpenAI's models, refer to: <a href="https://platform.openai.com/api-keys" target="_blank">OpenAI - API Key</a></li>
+                                    </ul>
+                                </li>
+                            </ol>
+                        <section>
+                        <hr>
+                        <section id="installation">
+                            <h2>Installation</h2>
+                            <p>1. Install the package from <a href="https://cran.r-project.org/package=GenAI" target="_blank">The Comprehensive R Archive Network (CRAN)</a>.</p>
+                            <pre><code class="language-r">install.packages("GenAI")</code></pre>
+                            <p>2. Install the package from GenAI official website.</p>
+                            <pre><code class="language-r">remotes::install_url("https://genai.gd.edu.kg/release/R/GenAI_latest.tar.gz",
+                     dependencies = TRUE,
+                     method = "libcurl")</code></pre>
+                        </section>
+                        <hr>
+                        <section id="setup">
+                            <h2>Setup</h2>
+                            <ul>
+                                <li id="available.models">
+                                    <a href="https://genai.gd.edu.kg/r/documentation/available.models/">
+                                        <h4>
+                                            Get Supported Generative AI Models
+                                            <br>
+                                            <code>available.models</code>
+                                        </h4>
+                                    </a>
+                                </li>
+                                <li id="genai.google">
+                                    <a href="https://genai.gd.edu.kg/r/documentation/genai.google/">
+                                        <h4>
+                                            Google Generative AI Object Creation
+                                            <br>
+                                            <code>genai.google</code>
+                                        </h4>
+                                    </a>
+                                </li>
+                                <li id="genai.moonshot">
+                                    <a href="https://genai.gd.edu.kg/r/documentation/genai.moonshot/">
+                                        <h4>
+                                            Moonshot AI Object Creation
+                                            <br>
+                                            <code>genai.moonshot</code>
+                                        </h4>
+                                    </a>
+                                </li>
+                                <li id="genai.openai">
+                                    <a href="https://genai.gd.edu.kg/r/documentation/genai.openai/">
+                                        <h4>
+                                            OpenAI Object Creation
+                                            <br>
+                                            <code>genai.openai</code>
+                                        </h4>
+                                    </a>
+                                </li>
+                            </ul>
+                        </section>
+                        <hr>
+                        <section id="text_generation">
+                            <h2>Text Generation</h2>
+                            <ul>
+                                <li id="txt">
+                                    <a href="https://genai.gd.edu.kg/r/documentation/txt/">
+                                        <h4>
+                                            Text Generation with Text as the Input
+                                            <br>
+                                            <code>txt</code>
+                                        </h4>
+                                    </a>
+                                </li>
+                                <li id="txt.image">
+                                    <a href="https://genai.gd.edu.kg/r/documentation/txt.image/">
+                                        <h4>
+                                            Text Generation with Text and Image as the Input
+                                            <br>
+                                            <code>txt.image</code>
+                                        </h4>
+                                    </a>
+                                </li>
+                            </ul>
+                        </section>
+                        <hr>
+                        <section id="chat_generation">
+                            <h2>Chat Generation</h2>
+                            <ul>
+                                <li id="chat">
+                                    <a href="https://genai.gd.edu.kg/r/documentation/chat/">
+                                        <h4>
+                                            Chat Generation with Text as the Input
+                                            <br>
+                                            <code>chat</code>
+                                        </h4>
+                                    </a>
+                                </li>
+                                <li id="chat.edit">
+                                    <a href="https://genai.gd.edu.kg/r/documentation/chat.edit/">
+                                        <h4>
+                                            Chat Edit with New Text as the Input
+                                            <br>
+                                            <code>chat.edit</code>
+                                        </h4>
+                                    </a>
+                                </li>
+                                <li id="chat.history.convert">
+                                    <a href="https://genai.gd.edu.kg/r/documentation/chat.history.convert/">
+                                        <h4>
+                                            Chat History Convert 
+                                            <br>
+                                            <code>chat.history.convert</code>
+                                        </h4>
+                                    </a>
+                                </li>
+                                <li id="chat.history.export">
+                                    <a href="https://genai.gd.edu.kg/r/documentation/chat.history.export/">
+                                        <h4>
+                                            Chat History Export
+                                            <br>
+                                            <code>chat.history.export</code>
+                                        </h4>
+                                    </a>
+                                </li>
+                                <li id="chat.history.import">
+                                    <a href="https://genai.gd.edu.kg/r/documentation/chat.history.import/">
+                                        <h4>
+                                            Chat History Import 
+                                            <br>
+                                            <code>chat.history.import</code>
+                                        </h4>
+                                    </a>
+                                </li>
+                                <li id="chat.history.print">
+                                    <a href="https://genai.gd.edu.kg/r/documentation/chat.history.print/">
+                                        <h4>
+                                            Chat History Print 
+                                            <br>
+                                            <code>chat.history.print</code>
+                                        </h4>
+                                    </a>
+                                </li>
+                                <li id="chat.history.reset">
+                                    <a href="https://genai.gd.edu.kg/r/documentation/chat.history.reset/">
+                                        <h4>
+                                            Chat History Reset 
+                                            <br>
+                                            <code>chat.history.reset</code>
+                                        </h4>
+                                    </a>
+                                </li>
+                                <li id="chat.history.save">
+                                    <a href="https://genai.gd.edu.kg/r/documentation/chat.history.save/">
+                                        <h4>
+                                            Chat History Save 
+                                            <br>
+                                            <code>chat.history.save</code>
+                                        </h4>
+                                    </a>
+                                </li>
+                            </ul>
+                        </section>
+                        <hr>
+                        <section id="image_generation">
+                            <h2>Image Generation</h2>
+                            <ul>
+                                <li id="img">
+                                    <a href="https://genai.gd.edu.kg/r/documentation/img/">
+                                        <h4>
+                                            Image Generation with Text as the Input
+                                            <br>
+                                            <code>img</code>
+                                        </h4>
+                                    </a>
+                                </li>
+                            </ul>
+                        </section>
+                        <hr>
+                        <section id="appendix">
+                            <h2>Appendix</h2>
+                            <section id="capability">
+                                <h4>Capability</h4>
+                                <a class="popup-img" href="https://genai.gd.edu.kg/assets/img/capability.png">
+                                  <img src="https://genai.gd.edu.kg/assets/img/capability.png" width="30%" loading="lazy" class="img-fluid img-thumbnail" alt="capability">
+                                </a>
+                            </section>
+                        </section>
+                    </div>
+                </div>
+            </div>
+            <footer id="footer" class="section bg-dark footer-text-light">
+                <div class="container">
+                    <p class="text-center">
+                        &copy; <script type="text/JavaScript"> document.write(new Date().getFullYear()) </script> GitData
+                    </p>
+                </div>
+            </footer>
+        </div>
+        <a id="back-to-top" data-toggle="tooltip" title="Back to Top" href="javascript:void(0)"><i class="fa fa-chevron-up"></i></a> 
+        <script src="https://static.gd.edu.kg/js/kb/jquery.min.js"></script> 
+        <script src="https://static.gd.edu.kg/js/kb/bootstrap.bundle.min.js"></script> 
+        <script src="https://static.gd.edu.kg/js/kb/highlight.min.js"></script> 
+        <script src="https://static.gd.edu.kg/js/kb/jquery.easing.min.js"></script> 
+        <script src="https://static.gd.edu.kg/js/kb/jquery.magnific-popup.min.js"></script> 
+        <script src="https://static.gd.edu.kg/js/kb/theme.js"></script>
+        <script src="https://static.gd.edu.kg/js/fontawesome.js"></script>
+        <script src="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.9.0/build/highlight.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.9.0/build/languages/r.min.js"></script>
+        <script>hljs.highlightAll();</script>
+    </body>
+</html>
