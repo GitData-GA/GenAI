@@ -1,0 +1,346 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1.0, shrink-to-fit=no">
+        <link rel="icon" type="image/x-icon" href="https://static.gd.edu.kg/images/logo.svg">
+        <meta itemprop="image" content="https://genai.gd.edu.kg/assets/img/bg.png">
+        <title>GenAI - txt | R Package "GenAI" Documentation</title>
+        <meta name="description" content="This document provides detailed function reference manual of the GenAI package in the R programming language.">
+
+        <!-- Google / Search Engine Tags -->
+        <meta itemprop="name" content='GenAI - txt | R Package "GenAI" Documentation'>
+        <meta itemprop="description" content="This document provides detailed function reference manual of the GenAI package in the R programming language.">
+        <meta itemprop="image" content="https://genai.gd.edu.kg/assets/img/bg.png">
+        
+        <!-- Facebook Meta Tags -->
+        <meta property="og:url" content="https://genai.gd.edu.kg/r/documentation/">
+        <meta property="og:type" content="website">
+        <meta property="og:title" content='GenAI - txt | R Package "GenAI" Documentation'>
+        <meta property="og:description" content="This document provides detailed function reference manual of the GenAI package in the R programming language.">
+        <meta property="og:image" content="https://genai.gd.edu.kg/assets/img/bg.png">
+        
+        <!-- Twitter Meta Tags -->
+        <meta name="twitter:card" content="summary_large_image">
+        <meta name="twitter:title" content='GenAI - txt | R Package "GenAI" Documentation'>
+        <meta name="twitter:description" content="This document provides detailed function reference manual of the GenAI package in the R programming language.">
+        <meta name="twitter:image" content="https://genai.gd.edu.kg/assets/img/bg.png">
+
+        <!-- Analytics -->
+        <script async src="https://www.googletagmanager.com/gtag/js?id=G-ELSZ3SFQ2D"></script><script>window.dataLayer=window.dataLayer || []; function gtag(){dataLayer.push(arguments);}gtag('js', new Date()); gtag('config', 'G-ELSZ3SFQ2D');</script>
+
+        <!-- CSS -->
+        <link rel="stylesheet" type="text/css" href="https://static.gd.edu.kg/css/kb/bootstrap.min.css" />
+        <link rel="stylesheet" type="text/css" href="https://static.gd.edu.kg/css/kb/all.min.css" />
+        <link rel="stylesheet" type="text/css" href="https://static.gd.edu.kg/css/kb/magnific-popup.min.css" />
+        <link rel="stylesheet" type="text/css" href="https://static.gd.edu.kg/css/kb/github.css" />
+        <link rel="stylesheet" type="text/css" href="https://static.gd.edu.kg/css/kb/stylesheet.css" />
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.9.0/build/styles/default.min.css">
+    </head>
+    <body data-spy="scroll" data-target=".idocs-navigation" data-offset="125">
+        <div class="preloader">
+            <div class="lds-ellipsis">
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+            </div>
+        </div>
+        <div id="main-wrapper">
+            <header id="header" class="sticky-top">
+                <nav class="primary-menu navbar navbar-expand-lg navbar-dropdown-dark">
+                    <div class="container-fluid">
+                        <button id="sidebarCollapse" class="navbar-toggler d-block d-md-none" type="button"><span></span><span class="w-75"></span><span class="w-50"></span></button>
+                        <a class="logo ml-md-3" href="https://genai.gd.edu.kg/"> <img src="https://genai.gd.edu.kg/assets/img/logo.svg" height=50px/> </a> 
+                        <span class="text-2 ml-2"></span> 
+                        <button class="navbar-toggler ml-auto" type="button" data-toggle="collapse" data-target="#header-nav"><span></span><span></span><span></span></button>
+                        <div id="header-nav" class="collapse navbar-collapse justify-content-end">
+                            <ul class="navbar-nav">
+                                <li>
+                                    <a href="https://genai.gd.edu.kg/api/">API Proxy Service</a>
+                                </li>
+                                <li class="dropdown"> 
+                                    <a class="dropdown-toggle"><i class="fa-brands fa-r-project"></i></a>
+                                    <ul class="dropdown-menu">
+                                        <li><a class="dropdown-item" href="https://genai.gd.edu.kg/r/">Overview</a></li>
+                                        <li><a class="dropdown-item" href="https://genai.gd.edu.kg/r/documentation/">Documentation</a></li>
+                                    </ul>
+                                </li>
+                                <li class="dropdown"> 
+                                    <a class="dropdown-toggle"><i class="fa-brands fa-python"></i></a>
+                                    <ul class="dropdown-menu">
+                                        <li><a class="dropdown-item" href="https://genai.gd.edu.kg/python/">Overview</a></li>
+                                        <li><a class="dropdown-item" href="https://genai.gd.edu.kg/python/documentation/">Documentation</a></li>
+                                    </ul>
+                                </li>
+                                <li>
+                                    <a href="https://github.com/GitData-GA/GenAI/tree/main/" target="_blank"><i class="fa-brands fa-github"></i></a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </nav>
+            </header>
+            <div id="content" role="main">
+                <div class="idocs-navigation bg-light">
+                    <ul class="nav flex-column">
+                        <li class="nav-item">
+                            <a class="nav-link active" href="#start">Text Generation with Text as the Input<br><code>txt</code></a>
+                            <ul class="nav flex-column">
+                                <li class="nav-item"><a class="nav-link" href="#Usage">Usage</a></li>
+                                <li class="nav-item"><a class="nav-link" href="#Arguments">Arguments</a></li>
+                                <li class="nav-item"><a class="nav-link" href="#Value">Value</a></li>
+                                <li class="nav-item"><a class="nav-link" href="#Description">Description</a></li>
+                                <li class="nav-item"><a class="nav-link" href="#Details">Details</a></li>
+                                <li class="nav-item"><a class="nav-link" href="#Examples">Examples</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+                <div class="idocs-content">
+                    <div class="container">
+                        <section id="start">
+                            <h1>Text Generation with Text as the Input<br><code>txt</code></h1>
+                            <h3>R Package "GenAI" Documentation</h3>
+                            <p>
+                                <a href="https://cran.r-project.org/package=GenAI" target="_blank"><img src="https://img.shields.io/cran/v/GenAI?color=green" alt="CRAN"></a>
+                                <a href="https://github.com/GitData-GA/GenAI/blob/main/R/src/R/txt.R" target="_blank"><img src="https://genai.gd.edu.kg/assets/img/github-badge.svg" alt="Open in GitHub"></a>
+                                <a target="_blank" href="https://colab.research.google.com/github/GitData-GA/GenAI/blob/gh-pages/r/example/txt.ipynb">
+                                  <img src="https://genai.gd.edu.kg/assets/img/colab-badge.svg" alt="Open In Colab"/>
+                                </a>
+                            </p>
+                            <p><i>Last update: 2024/02/15</i></p>
+                        </section>
+                        <hr>
+                        <section id="Usage">
+                            <h3>Usage</h3>
+                            <pre><code class="language-r">txt(genai.object, prompt, verbose = FALSE, config = list())</code></pre>
+                        </section>
+                        <hr>
+                        <section id="Arguments">
+                            <h3>Arguments</h3>
+                            <ul>
+                                <li><code>genai.object</code>: A generative AI object containing necessary and correct information.</li>
+                                <li><code>prompt</code>: A character string representing the query for chat generation.</li>
+                                <li><code>verbose</code>: Optional. Default to <code>FALSE</code>. A boolean value determining whether or not to print out the details of the chat request.</li>
+                                <li><code>config</code>: Optional. Default to <code>list()</code>. A list of configuration parameters for chat generation.</li>
+                            <ul>
+                        </section>
+                        <hr>
+                        <section id="Value">
+                            <h3>Value</h3>
+                            <p>
+                                If successful, a text response will be returned. If the API response indicates an error, the function halts execution and provides an error message.
+                            </p>
+                        </section>
+                        <hr>
+                        <section id="Description">
+                            <h3>Description</h3>
+                            <p>
+                                This function establishes a connection to a generative AI model through a generative AI object. It generates a text response based on the provided prompt.
+                            </p>
+                        </section>
+                        <hr>
+                        <section id="Details">
+                            <h3>Details</h3>
+                            <p>
+                                Providing accurate and valid information for each argument is crucial for successful text
+                                generation by the generative AI model. If any parameter is incorrect, the function responds with an
+                                error message based on the API feedback. To view all supported generative AI models, use the
+                                function <a href="https://genai.gd.edu.kg/r/documentation/available.models/"><code>available.models</code></a>.
+                            </p>
+                            <p>
+                                For <strong>Google Generative AI</strong> models, available configurations are as follows. For more detail, please refer to <a href="https://ai.google.dev/api/rest/v1/HarmCategory" target="_blank">https://ai.google.dev/api/rest/v1/HarmCategory</a>, <a href="https://ai.google.dev/api/rest/v1/SafetySetting" target="_blank">https://ai.google.dev/api/rest/v1/SafetySetting</a>, and <a href="https://ai.google.dev/api/rest/v1/GenerationConfig" target="_blank">https://ai.google.dev/api/rest/v1/GenerationConfig</a>.
+                            </p>
+                            <ul>
+                               <li>
+                                  <code>harm.category.dangerous.content</code>
+                                  <br />
+                                  Optional. An integer, from 1 to 5 inclusive, representing the threshold for dangerous content, with a higher value representing a lower probability of being blocked.
+                               </li>
+                               <li>
+                                  <code>harm.category.harassment</code>
+                                  <br />
+                                  Optional. An integer, from 1 to 5 inclusive, representing the threshold for harassment content, with a higher value representing a lower probability of being blocked.
+                               </li>
+                               <li>
+                                  <code>harm.category.hate.speech</code>
+                                  <br />
+                                  Optional. An integer, from 1 to 5 inclusive, representing the threshold for hate speech and content, with a higher value representing a lower probability of being blocked.
+                               </li>
+                               <li>
+                                  <code>harm.category.sexually.explicit</code>
+                                  <br />
+                                  Optional. An integer, from 1 to 5 inclusive, representing the threshold for sexually explicit content, with a higher value representing a lower probability of being blocked.
+                               </li>
+                               <li>
+                                  <code>stop.sequences</code>
+                                  <br />
+                                  Optional. A list of character sequences (up to 5) that will stop output generation. If specified, the API will stop at the first appearance of a stop sequence. The stop sequence will not be included as part of the response.
+                               </li>
+                               <li>
+                                  <code>max.output.tokens</code>
+                                  <br />
+                                  Optional. An integer, value varies by model, representing maximum number of tokens to include in a candidate.
+                               </li>
+                               <li>
+                                  <code>temperature</code>
+                                  <br />
+                                  Optional. A number, from 0.0 to 1.0 inclusive, controlling the randomness of the output.
+                               </li>
+                               <li>
+                                  <code>top.p</code>
+                                  <br />
+                                  Optional. A number, value varies by model, representing maximum cumulative probability of tokens to consider when sampling.
+                               </li>
+                               <li>
+                                  <code>top.k</code>
+                                  <br />
+                                  Optional. A number, value varies by model, representing maximum number of tokens to consider when sampling.
+                               </li>
+                            </ul>
+                            <p>
+                                For <strong>Moonshot AI</strong> models, available configurations are as follows. For more detail, please refer to
+                                <a href="https://platform.moonshot.cn/api.html#chat-completion" target="_blank">https://platform.moonshot.cn/api.html#chat-completion</a>.
+                            </p>
+
+                            <ul>
+                                <li>
+                                    <code>max.tokens</code>
+                                    <br />
+                                    Optional. An integer. The maximum number of tokens that will be generated when the chat completes. If the chat is not finished by the maximum number of tokens generated, the finish reason will be "length", otherwise it will be "stop".
+                                </li>
+                                <li>
+                                    <code>temperature</code>
+                                    <br />
+                                    Optional. A number. What sampling temperature to use, between 0 and 1. Higher values (e.g. 0.7) will make the output more random, while lower values (e.g. 0.2) will make it more focused and deterministic.
+                                </li>
+                                <li>
+                                    <code>top.p</code>
+                                    <br />
+                                    Optional. A number. Another sampling temperature.
+                                </li>
+                            </ul>
+
+                            <p>
+                                For <strong>OpenAI</strong> models, available configurations are as follows. For more detail, please refer to <a href="https://platform.openai.com/docs/api-reference/chat/create" target="_blank">https://platform.openai.com/docs/api-reference/chat/create</a>.
+                            </p>
+
+                            <ul>
+                                <li>
+                                    <code>frequency.penalty</code>
+                                    <br />
+                                    Optional. A number from -2.0 to 2.0 inclusive. Positive values penalize new tokens based on their existing frequency in the text so far, decreasing the model's likelihood to repeat the same line verbatim.
+                                </li>
+                                <li>
+                                    <code>logit.bias</code>
+                                    <br />
+                                    Optional. A map. Modify the likelihood of specified tokens appearing in the completion. Accepts a JSON object that maps tokens (specified by their token ID in the tokenizer) to an associated bias value from -100 to 100. Mathematically, the bias is added to the logits generated by the model prior to sampling. The exact effect will vary per model, but values between -1 and 1 should decrease or increase likelihood of selection; values like -100 or 100 should result in a ban or exclusive selection of the relevant token.
+                                </li>
+                                <li>
+                                    <code>logprobs</code>
+                                    <br />
+                                    Optional. A boolean value. Whether to return log probabilities of the output tokens or not. If true, returns the log probabilities of each output token returned in the content of message
+                                </li>
+                                <li>
+                                    <code>top.logprobs</code>
+                                    <br />
+                                    Optional. An integer between 0 and 5 specifying the number of most likely tokens to return at each token position, each with an associated log probability. <code>logprobs</code> must be set to <code>TRUE</code> if this parameter is used.
+                                </li>
+                                <li>
+                                    <code>max.tokens</code>
+                                    <br />
+                                    Optional. An integer. The maximum number of tokens that can be generated in the chat completion. The total length of input tokens and generated tokens is limited by the model's context length.
+                                </li>
+                                <li>
+                                    <code>presence.penalty</code>
+                                    <br />
+                                    Optional. A Number between -2.0 and 2.0. Positive values penalize new tokens based on whether they appear in the text so far, increasing the model's likelihood to talk about new topics.
+                                </li>
+                                <li>
+                                    <code>response.format</code>
+                                    <br />
+                                    Optional. An object specifying the format that the model must output. Compatible with GPT-4 Turbo and all GPT-3.5 Turbo models newer than <code>gpt-3.5-turbo-1106</code>.
+                                </li>
+                                <li>
+                                    <code>seed</code>
+                                    <br />
+                                    Optional. An integer. If specified, our system will make a best effort to sample deterministically, such that repeated requests with the same seed and parameters should return the same result.
+                                </li>
+                                <li>
+                                    <code>stop</code>
+                                    <br />
+                                    Optional. A character string or list contains up to 4 sequences where the API will stop generating further tokens.
+                                </li>
+                                <li>
+                                    <code>temperature</code>
+                                    <br />
+                                    Optional. A number. What sampling temperature to use, between 0 and 2. Higher values like 0.8 will make the output more random, while lower values like 0.2 will make it more focused and deterministic.
+                                </li>
+                                <li>
+                                    <code>top.p</code>
+                                    <br />
+                                    Optional. A number. An alternative to sampling with temperature, called nucleus sampling, where the model considers the results of the tokens with <code>top.p</code> probability mass. So 0.1 means only the tokens comprising the top 10% probability mass are considered.
+                                </li>
+                                <li>
+                                    <code>tools</code>
+                                    <br />
+                                    Optional. A list of tools the model may call. Currently, only functions are supported as a tool. Use this to provide a list of functions the model may generate JSON inputs for.
+                                </li>
+                                <li>
+                                    <code>tool.choice</code>
+                                    <br />
+                                    Optional. A character string or object. Controls which (if any) function is called by the model. <code>none</code> means the model will not call a function and instead generates a message. <code>auto</code> means the model can pick between generating a message or calling a function.
+                                </li>
+                                <li>
+                                    <code>user</code>
+                                    <br />
+                                    Optional. A character string. A unique identifier representing your end-user, which can help OpenAI to monitor and detect abuse.
+                                </li>
+                            </ul>
+                        </section>
+                        <hr>
+                        <section id="Examples">
+                            <h3>Examples</h3>
+                            <a target="_blank" href="https://colab.research.google.com/github/GitData-GA/GenAI/blob/gh-pages/r/example/txt.ipynb">
+                              <img src="https://genai.gd.edu.kg/assets/img/colab-badge.svg" alt="Open In Colab"/>
+                            </a>
+                            <pre><code class="language-r"># Method 1 (recommended): use the pipe operator "%>%"
+genai.model %>%
+  txt(prompt = "Write a story about Mars in 50 words.") %>%
+  cat()
+
+# Method 2: use the reference operator "$"
+cat(genai.model$txt(prompt = "Write a story about Jupiter in 50 words."))
+
+# Method 3: use the function txt() directly
+# Set verbose to TRUE to see the detail
+cat(txt(genai.object = genai.model,
+        prompt = "Write a story about Earth in 50 words."))
+</code></pre>
+                        </section>
+                    </div>
+                </div>
+            </div>
+            <footer id="footer" class="section bg-dark footer-text-light">
+                <div class="container">
+                    <p class="text-center">
+                        &copy; <script type="text/JavaScript"> document.write(new Date().getFullYear()) </script> GitData
+                    </p>
+                </div>
+            </footer>
+        </div>
+        <a id="back-to-top" data-toggle="tooltip" title="Back to Top" href="javascript:void(0)"><i class="fa fa-chevron-up"></i></a> 
+        <script src="https://static.gd.edu.kg/js/kb/jquery.min.js"></script> 
+        <script src="https://static.gd.edu.kg/js/kb/bootstrap.bundle.min.js"></script> 
+        <script src="https://static.gd.edu.kg/js/kb/highlight.min.js"></script> 
+        <script src="https://static.gd.edu.kg/js/kb/jquery.easing.min.js"></script> 
+        <script src="https://static.gd.edu.kg/js/kb/jquery.magnific-popup.min.js"></script> 
+        <script src="https://static.gd.edu.kg/js/kb/theme.js"></script>
+        <script src="https://static.gd.edu.kg/js/fontawesome.js"></script>
+        <script src="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.9.0/build/highlight.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.9.0/build/languages/r.min.js"></script>
+        <script>hljs.highlightAll();</script>
+    </body>
+</html>
