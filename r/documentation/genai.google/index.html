@@ -185,7 +185,7 @@
                             <pre><code class="language-r"># Please change YOUR_GOOGLE_API to your own API key of Google Generative AI
 Sys.setenv(GOOGLE_API = "YOUR_GOOGLE_API")
 
-all.models = available.models() \%>\% print()
+all.models = available.models() %>% print()
 
 # Create a Google Generative AI object
 google = genai.google(api = Sys.getenv("GOOGLE_API"),
