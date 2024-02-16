@@ -191,39 +191,38 @@
                                           <pre><code class="language-r"># Import the library
 library("GenAI")
 
-# Get supported models
-models = available.models()
+all.models = available.models() %>% print()
 
-# Select a model and connect, replace API_KEY with your api key
-google.model = connect.genai("google",
-                             models$google$model[1],
-                             models$google$version[1],
-                             "API_KEY",
-                             FALSE)
+# Please change YOUR_GOOGLE_API to your own API key of Google Generative AI
+Sys.setenv(GOOGLE_API = "YOUR_GOOGLE_API")
 
-# Text generation
-google.text = txt(google.model,
-                  0.9,
-                  "Write a story about a magic backpack.")
-cat(google.text)
+# Create a Google Generative AI object
+google = genai.google(api = Sys.getenv("GOOGLE_API"),
+                      model = all.models$google$model[1],
+                      version = all.models$google$version[1],
+                      proxy = FALSE)
 
-# Chat generation                                            
-# Setup a chat session
-google.history = chat.setup(google.model)
+# Text Generation
+google %>%
+  txt("Please write a story about Mars in 50 words.") %>%
+  cat()
 
-# Send the first message and get the response
-google.history = chat(google.model,
-                      0.9,
-                      google.history,
-                      "Write a story about a magic backpack")
-cat(chat.recent(google.model, google.history))
+# Chat Generation                                            
+google %>%
+  chat("Please write a story about Mars in 50 words.") %>%
+  cat()
 
-# Send the second message and get the response
-google.history = chat(google.model,
-                      0.9,
-                      google.history,
-                      "What is the word count of the story you just wrote?")
-cat(chat.recent(google.model, google.history))</code></pre>
+google %>%
+  chat("Please write a story about Jupiter in 50 words.") %>%
+  cat()
+
+google %>%
+  chat("Please write a story about Earth in 50 words.") %>%
+  cat()
+
+# Print Chat History
+google %>%
+  chat.history.print()</code></pre>
                                       </div>
                                       <div class="tab-pane fade" id="openai-code" role="tabpanel" aria-labelledby="openai-tab">
                                           <a target="_blank" href="https://colab.research.google.com/github/GitData-GA/GenAI/blob/gh-pages/r/example/quickstart_openai.ipynb">
