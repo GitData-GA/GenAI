@@ -177,11 +177,14 @@
                                     <p>Setup and get your first AI generated response using GenAI</p>
                                     <ul class="nav nav-tabs" id="quickstart_3" role="tablist">
                                         <li class="nav-item" role="presentation">
-                                            <a class="nav-link active" id="google-tab" data-toggle="tab" href="#google-code" role="tab" aria-controls="google-code" aria-selected="true">Google Models</a>
-                                          </li>
-                                          <li class="nav-item" role="presentation">
-                                            <a class="nav-link" id="openai-tab" data-toggle="tab" href="#openai-code" role="tab" aria-controls="openai-code" aria-selected="false">OpenAI Models</a>
-                                          </li>
+                                          <a class="nav-link active" id="google-tab" data-toggle="tab" href="#google-code" role="tab" aria-controls="google-code" aria-selected="true">Google Models</a>
+                                        </li>
+                                        <li class="nav-item" role="presentation">
+                                          <a class="nav-link" id="openai-tab" data-toggle="tab" href="#openai-code" role="tab" aria-controls="openai-code" aria-selected="false">OpenAI Models</a>
+                                        </li>
+                                        <li class="nav-item" role="presentation">
+                                          <a class="nav-link" id="moonshot-tab" data-toggle="tab" href="#moonshot-code" role="tab" aria-controls="moonshot-code" aria-selected="false">Moonshot AI Models</a>
+                                        </li>
                                     </ul>
                                     <div class="tab-content my-3" id="quickstart_3_content">
                                       <div class="tab-pane fade show active" id="google-code" role="tabpanel" aria-labelledby="google-tab">
@@ -266,6 +269,46 @@ openai %>%
                                     
 # Print Chat History
 openai %>%
+  chat.history.print()</code></pre>
+                                      </div>
+                                      <div class="tab-pane fade" id="moonshot-code" role="tabpanel" aria-labelledby="moonshot-tab">
+                                          <a target="_blank" href="https://colab.research.google.com/github/GitData-GA/GenAI/blob/gh-pages/r/example/quickstart_moonshot.ipynb">
+                                              <img src="https://genai.gd.edu.kg/assets/img/colab-badge.svg" alt="Open In Colab"/>
+                                          </a>
+                                          <pre><code class="language-r"># Import the library
+library("GenAI")
+
+all.models = available.models() %>% print()
+
+# Please change YOUR_MOONSHOT_API to your own API key of Moonshot AI
+Sys.setenv(MOONSHOT_API = "YOUR_MOONSHOT_API")
+
+# Create a Moonshot AI object
+moonshot = genai.moonshot(api = Sys.getenv("MOONSHOT_API"),
+                          model = all.models$moonshot$model[1],
+                          version = all.models$moonshot$version[1],
+                          proxy = FALSE)
+
+# Text Generation
+moonshot %>%
+  txt("Please write a story about Mars in 50 words.") %>%
+  cat()
+
+# Chat Generation                                            
+moonshot %>%
+  chat("Please write a story about Mars in 50 words.") %>%
+  cat()
+                                          
+moonshot %>%
+  chat("Please write a story about Jupiter in 50 words.") %>%
+  cat()
+                                          
+moonshot %>%
+  chat("Please write a story about Earth in 50 words.") %>%
+  cat()
+                                    
+# Print Chat History
+moonshot %>%
   chat.history.print()</code></pre>
                                       </div>
                                     </div>
