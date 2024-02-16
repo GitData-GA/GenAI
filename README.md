@@ -13,9 +13,9 @@ Now, you can seamlessly utilize both ChatGPT from OpenAI and Gemini Pro from Goo
 | [Documentation](https://genai.gd.edu.kg/r/documentation/) | [Documentation](https://genai.gd.edu.kg/python/documentation/) |
 
 
-> 💡 Upcoming update for R package "GenAI" 💡
+> 💡 R Package Update: version 0.2.0 💡
 >
-> We are enhancing the structure of the R package to enhance its user-friendliness. The upcoming version is scheduled for release on CRAN in the coming weeks.
+> Utilizing R6 class, enhancing user friendiliness. Support one more generative AI - Moonshot AI. Moreover, you can now generate image using this package!
 
 
 > ⚠️ NOTICE for Python package "GeAI" ⚠️
