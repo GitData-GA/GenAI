@@ -106,7 +106,7 @@
                     <div class="container">
                         <section id="start">
                             <h1>GenAI - Generative Artificial Intelligence API Proxy Service</h1>
-                            <p><i>Last update: 2024/01/26</i></p>
+                            <p><i>Last update: 2024/02/15</i></p>
                             <p class="alert alert-info">
                                 NOTICE:<br>
                                 Please be aware that although GenAI and its affiliated organization - GitData - do not gather user information through this service, the server 
@@ -139,7 +139,7 @@
                             <p>
                                 This service is expressly designed for individuals contending with geographical restrictions imposed by Generative AI service 
                                 providers, which may entail limitations on API usage in specific countries or regions. Notably, GenAI's Generative AI API proxy 
-                                service currently extends support to two prominent generative AI service providers: Google and OpenAI.
+                                service currently extends support to three prominent generative AI service providers: Google, Moonshot AI, and OpenAI.
                             </p>
                             <p>
                                 It is designed to address the needs of users who hold a valid 
@@ -189,12 +189,13 @@
                                     <strong><p id="general">General usage</p></strong>
                                     <ul>
                                         <li>To proxy an API request for Google's models, substitute the original URL <code>https://generativelanguage.googleapis.com/</code> with the proxied URL <code>https://api.genai.gd.edu.kg/google/</code>.</li>
+                                        <li>To proxy an API request for Moonshot AI's models, substitute the original URL <code>https://api.moonshot.cn/</code> with the proxied URL <code>https://api.genai.gd.edu.kg/moonshot/</code>.</li>
                                         <li>To proxy an API request for OpenAI's models, substitute the original URL <code>https://api.openai.com/</code> with the proxied URL <code>https://api.genai.gd.edu.kg/openai/</code>.</li>
                                     </ul>
                                 </li>
                                 <li>
                                     <strong><p id="r-package">R package "GenAI"</p></strong>
-                                    <p>Set <code>TRUE</code> to parameter <code>proxy</code> in function <a href="https://genai.gd.edu.kg/r/documentation/#connect_genai"><code>connect.genai</code></a> and use the returned model parameter for text generations and chat generations.</p>
+                                    <p>Set <code>TRUE</code> to parameter <code>proxy</code> in functions <a href="https://genai.gd.edu.kg/r/documentation/genai.google/"><code>genai.google</code></a>, <a href="https://genai.gd.edu.kg/r/documentation/genai.moonshot/"><code>genai.moonshot</code></a>, and <a href="https://genai.gd.edu.kg/r/documentation/genai.openai/"><code>genai.openai</code></a>.</p>
                                 </li>
                                 <li>
                                     <strong><p id="python-package">Python package "GeAI"</p></strong>
