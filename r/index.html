@@ -231,39 +231,42 @@ google %>%
                                           <pre><code class="language-r"># Import the library
 library("GenAI")
 
-# Get supported models
-models = available.models()
+all.models = available.models() %>% print()
 
-# Select a model and connect, replace API_KEY with your api key
-openai.model = connect.genai("openai",
-                             models$openai$model[1],
-                             models$openai$version[1],
-                             "API_KEY",
-                             FALSE)
+# Please change YOUR_OPENAI_API to your own API key of OpenAI
+Sys.setenv(OPENAI_API = "YOUR_OPENAI_API")
 
-# Text generation
-openai.text = txt(openai.model,
-                  0.9,
-                  "Write a story about a magic backpack.")
-cat(openai.text)
+# (Optional) Please change YOUR_OPENAI_ORG to your own organization ID for OpenAI
+Sys.setenv(OPENAI_ORG = "YOUR_OPENAI_ORG")
 
-# Chat generation                                            
-# Setup a chat session
-openai.history = chat.setup(openai.model)
+# Create an OpenAI object
+openai = genai.openai(api = Sys.getenv("OPENAI_API"),
+                      model = all.models$openai$model[1],
+                      version = all.models$openai$version[1],
+                      proxy = FALSE,
+                      organization.id = Sys.getenv("OPENAI_ORG"))
 
-# Send the first message and get the response
-openai.history = chat(openai.model,
-                      0.9,
-                      openai.history,
-                      "Write a story about a magic backpack")
-cat(chat.recent(openai.model, openai.history))
+# Text Generation
+openai %>%
+  txt("Please write a story about Mars in 50 words.") %>%
+  cat()
 
-# Send the second message and get the response
-openai.history = chat(openai.model,
-                      0.9,
-                      openai.history,
-                      "What is the word count of the story you just wrote?")
-cat(chat.recent(openai.model, openai.history))</code></pre>
+# Chat Generation                                            
+openai %>%
+  chat("Please write a story about Mars in 50 words.") %>%
+  cat()
+                                          
+openai %>%
+  chat("Please write a story about Jupiter in 50 words.") %>%
+  cat()
+                                          
+openai %>%
+  chat("Please write a story about Earth in 50 words.") %>%
+  cat()
+                                    
+# Print Chat History
+openai %>%
+  chat.history.print()</code></pre>
                                       </div>
                                     </div>
                                 </li>
