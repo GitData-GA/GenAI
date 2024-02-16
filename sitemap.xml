@@ -9,33 +9,108 @@
 
 <url>
   <loc>https://genai.gd.edu.kg/</loc>
-  <lastmod>2024-01-27T05:45:05+00:00</lastmod>
+  <lastmod>2024-02-16T02:03:45+00:00</lastmod>
   <priority>1.00</priority>
 </url>
 <url>
   <loc>https://genai.gd.edu.kg/api/</loc>
-  <lastmod>2024-01-27T05:45:05+00:00</lastmod>
+  <lastmod>2024-02-16T02:03:45+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
   <loc>https://genai.gd.edu.kg/r/</loc>
-  <lastmod>2024-01-27T05:45:05+00:00</lastmod>
+  <lastmod>2024-02-16T02:03:45+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
   <loc>https://genai.gd.edu.kg/r/documentation/</loc>
-  <lastmod>2024-01-27T05:45:05+00:00</lastmod>
+  <lastmod>2024-02-16T02:03:45+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
   <loc>https://genai.gd.edu.kg/python/</loc>
-  <lastmod>2024-01-27T05:45:05+00:00</lastmod>
+  <lastmod>2024-02-16T02:03:45+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
   <loc>https://genai.gd.edu.kg/python/documentation/</loc>
-  <lastmod>2024-01-27T05:45:05+00:00</lastmod>
+  <lastmod>2024-02-16T02:03:45+00:00</lastmod>
   <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://genai.gd.edu.kg/r/documentation/img/</loc>
+  <lastmod>2024-02-16T02:03:45+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://genai.gd.edu.kg/r/documentation/available.models/</loc>
+  <lastmod>2024-02-16T02:03:45+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://genai.gd.edu.kg/r/documentation/genai.google/</loc>
+  <lastmod>2024-02-16T02:03:45+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://genai.gd.edu.kg/r/documentation/genai.moonshot/</loc>
+  <lastmod>2024-02-16T02:03:45+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://genai.gd.edu.kg/r/documentation/genai.openai/</loc>
+  <lastmod>2024-02-16T02:03:45+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://genai.gd.edu.kg/r/documentation/txt/</loc>
+  <lastmod>2024-02-16T02:03:45+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://genai.gd.edu.kg/r/documentation/txt.image/</loc>
+  <lastmod>2024-02-16T02:03:45+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://genai.gd.edu.kg/r/documentation/chat/</loc>
+  <lastmod>2024-02-16T02:03:45+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://genai.gd.edu.kg/r/documentation/chat.edit/</loc>
+  <lastmod>2024-02-16T02:03:45+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://genai.gd.edu.kg/r/documentation/chat.history.convert/</loc>
+  <lastmod>2024-02-16T02:03:45+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://genai.gd.edu.kg/r/documentation/chat.history.export/</loc>
+  <lastmod>2024-02-16T02:03:45+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://genai.gd.edu.kg/r/documentation/chat.history.import/</loc>
+  <lastmod>2024-02-16T02:03:45+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://genai.gd.edu.kg/r/documentation/chat.history.print/</loc>
+  <lastmod>2024-02-16T02:03:45+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://genai.gd.edu.kg/r/documentation/chat.history.reset/</loc>
+  <lastmod>2024-02-16T02:03:45+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://genai.gd.edu.kg/r/documentation/chat.history.save/</loc>
+  <lastmod>2024-02-16T02:03:45+00:00</lastmod>
+  <priority>0.64</priority>
 </url>
 
 
