@@ -1,11 +1,11 @@
 {
   "google": {
     "version": ["v1", "v1beta"],
-    "model": ["gemini-pro", "gemini-pro-vision", "gemini-1.0-pro", "gemini-1.0-pro-001", "gemini-1.0-pro-latest", "gemini-1.0-pro-vision-latest"]
+    "model": ["gemini-pro", "gemini-pro-vision", "gemini-1.0-pro", "gemini-1.0-pro-001", "gemini-1.0-pro-latest", "gemini-1.0-pro-vision-latest", "gemini-1.5-pro", "gemini-1.5-flash"]
   },
   "openai": {
     "version": ["v1"],
-    "model": ["gpt-3.5-turbo", "gpt-3.5-turbo-1106", "gpt-3.5-turbo-16k", "gpt-4", "gpt-4-1106-preview", "gpt-4-32k", "gpt-4-vision-preview", "dall-e-2", "dall-e-3", "gpt-4o"]
+    "model": ["gpt-3.5-turbo", "gpt-3.5-turbo-1106", "gpt-3.5-turbo-16k", "gpt-4", "gpt-4-1106-preview", "gpt-4-32k", "gpt-4-vision-preview", "dall-e-2", "dall-e-3", "gpt-4o", "gpt-4-turbo"]
   },
   "moonshot": {
     "version": ["v1"],
