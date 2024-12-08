@@ -16,6 +16,9 @@ export default defineNitroConfig({
         },
         '/moonshot/**': {
             proxy: 'https://api.moonshot.cn/**'
+        },
+        '/login/**': {
+            proxy: "https://login.microsoftonline.com/**"
         }
     }
 });
