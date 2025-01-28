@@ -17,5 +17,8 @@ export default defineNitroConfig({
         '/moonshot/**': {
             proxy: 'https://api.moonshot.cn/**'
         },
+        '/deepseek/**': {
+            proxy: 'https://api.deepseek.com/**'
+        }
     }
 });
