@@ -2,7 +2,7 @@
 
 <img src="https://genai.gd.edu.kg/assets/img/logo.jpg" width="300px" alt="Logo">
 
-*Last update: 2024/02/15*
+*Last update: 2025/01/28*
 
 Now, you can seamlessly utilize both ChatGPT from OpenAI and Gemini Pro from Google! Enjoy enhanced chat conversion and the ability to engage in multiple chat sessions with ease.
 
