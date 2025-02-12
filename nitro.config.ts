@@ -19,6 +19,9 @@ export default defineNitroConfig({
         },
         '/deepseek/**': {
             proxy: 'https://api.deepseek.com/**'
-        }
+        },
+        '/github/**': {
+            proxy: 'https://api.github.com/**'  
+        },
     }
 });
