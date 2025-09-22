@@ -536,7 +536,7 @@ const prefersDarkScheme = window.matchMedia('(prefers-color-scheme: dark)');
 const applyTheme = (theme) => {
     body.classList.remove('light-mode', 'dark-mode');
     body.classList.add(theme + '-mode');
-    logoBanner.src = (theme === 'dark') ? '../../assets/img/logo/logo-banner-white.svg' : '../../assets/img/logo/logo-banner-black.svg';
+    logoBanner.src = (theme === 'dark') ? 'assets/img/logo/logo-banner-white.svg' : 'assets/img/logo/logo-banner-black.svg';
 };
 const savedTheme = localStorage.getItem('theme');
 if (savedTheme) applyTheme(savedTheme);
