@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/x-icon" href="https://static.gd.edu.kg/images/logo.svg">
+    <title>GitData GenAI Lab - Google Gemini</title>
+    <meta name="description" content="Welcome to GitData GenAI Lab for Google Gemini!" />
+    <meta itemprop="name" content="GitData GenAI Lab - Google Gemini" />
+    <meta itemprop="description" content="Welcome to GitData GenAI Lab for Google Gemini!" />
+    <meta itemprop="image" content="https://genai.gd.edu.kg/assets/img/bg.png" />
+    <meta property="og:url" content="https://genai.gd.edu.kg/lab/google/" />
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="GitData GenAI Lab - Google Gemini" />
+    <meta property="og:description" content="Welcome to GitData GenAI Lab for Google Gemini!" />
+    <meta property="og:image" content="https://genai.gd.edu.kg/assets/img/bg.png" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="GitData GenAI Lab - Google Gemini" />
+    <meta name="twitter:description" content="Welcome to GitData GenAI Lab for Google Gemini!" />
+    <meta name="twitter:image" content="https://genai.gd.edu.kg/assets/img/bg.png" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <script src="../../assets/js/tailwindcss.3.4.17.js"></script>
+    <link href="../../assets/css/theme.css" rel="stylesheet">
+  </head>
+  <body class="dark-mode">
+    <div class="flex h-screen" id="app-container">
+      <!-- Sidebar -->
+      <aside id="sidebar" class="flex flex-col sidebar">
+        <div class="p-4 flex-1 flex flex-col min-h-0">
+          <div class="flex items-center justify-between mb-4">
+            <h2 class="text-lg font-semibold">GenAI Lab - Google Gemini</h2>
+            <button id="sidebar-toggle-close" class="p-2 rounded-md hover:bg-gray-200 dark:hover:bg-gray-700 md:hidden">
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
+              </svg>
+            </button>
+          </div>
+          <!-- Model Selector -->
+          <div class="mb-4">
+            <label for="model-select" class="block text-sm font-medium mb-1">Model</label>
+            <select id="model-select" class="w-full p-1 border rounded-md sidebar-input"></select>
+          </div>
+          <!-- Action Buttons -->
+          <div class="flex gap-2 mb-4">
+            <button id="new-chat-button" class="flex-1 flex items-center justify-center gap-2 p-1 rounded-md border sidebar-button">
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M12 6v6m0 0v6m0-6h6m-6 0H6" />
+              </svg> New Chat </button>
+            <button id="import-chat-button" class="p-1 rounded-md border sidebar-button disabled:opacity-50 disabled:cursor-not-allowed" disabled>
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
+                <path fill-rule="evenodd" d="M3 17a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM6.293 6.707a1 1 0 010-1.414l3-3a1 1 0 011.414 0l3 3a1 1 0 01-1.414 1.414L11 5.414V13a1 1 0 11-2 0V5.414L7.707 6.707a1 1 0 01-1.414 0z" clip-rule="evenodd" />
+              </svg>
+            </button>
+            <input type="file" id="import-chat-input" class="hidden" accept="application/json">
+          </div>
+          <!-- Conversation History -->
+          <div id="conversation-history" class="flex-1 overflow-y-auto space-y-2 pr-1 gap-2 mb-4">
+            <!-- History items will be injected here by JS after API key verification -->
+          </div>
+          <!-- Clear Storage Button -->
+          <button id="clear-storage-button" class="w-full flex items-center justify-center gap-2 p-1 rounded-md border border-red-500 bg-red-500/10 text-red-500 hover:bg-red-500/20 disabled:opacity-50 disabled:cursor-not-allowed" disabled>
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16" />
+            </svg> Clear All Data </button>
+        </div>
+        <!-- Sidebar Footer -->
+        <div class="p-4 border-t sidebar-footer-border">
+          <div class="flex items-center gap-1">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="currentColor" viewBox="0 0 33 33" stroke="currentColor">
+              <path d="M16.114-0.011c-6.559 0-12.114 5.587-12.114 12.204 0 6.93 6.439 14.017 10.77 18.998 0.017 0.020 0.717 0.797 1.579 0.797h0.076c0.863 0 1.558-0.777 1.575-0.797 4.064-4.672 10-12.377 10-18.998 0-6.618-4.333-12.204-11.886-12.204zM16.515 29.849c-0.035 0.035-0.086 0.074-0.131 0.107-0.046-0.032-0.096-0.072-0.133-0.107l-0.523-0.602c-4.106-4.71-9.729-11.161-9.729-17.055 0-5.532 4.632-10.205 10.114-10.205 6.829 0 9.886 5.125 9.886 10.205 0 4.474-3.192 10.416-9.485 17.657zM16.035 6.044c-3.313 0-6 2.686-6 6s2.687 6 6 6 6-2.687 6-6-2.686-6-6-6zM16.035 16.044c-2.206 0-4.046-1.838-4.046-4.044s1.794-4 4-4c2.207 0 4 1.794 4 4 0.001 2.206-1.747 4.044-3.954 4.044z" />
+              </g>
+            </svg>
+            <p class="text-sm font-medium">
+              <span id="user-country">Loading...</span>
+            </p>
+          </div>
+          <p class="text-xs text-gray-500 dark:text-gray-400 mt-1">From your <a href="https://genai.gd.edu.kg/cdn-cgi/trace" target="_blank" class="text-blue-500 hover:underline">IP address</a>. </p>
+          <p class="text-xs text-gray-500 dark:text-gray-400 mt-1" id="proxy-status-footer"></p>
+        </div>
+      </aside>
+      <!-- Mobile Sidebar Overlay -->
+      <div id="sidebar-overlay" class="fixed inset-0 bg-black/50 z-40 hidden md:hidden"></div>
+      <!-- Main container -->
+      <div id="main-content-wrapper" class="flex flex-col h-screen flex-1 transition-all duration-300">
+        <!-- Header -->
+        <header class="flex items-center justify-between p-4 main-header">
+          <div class="flex items-center gap-2">
+            <button id="sidebar-toggle-open" class="p-2 rounded-full theme-switch">
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16" />
+              </svg>
+            </button>
+            <h1 class="text-xl font-bold app-name flex flex-col items-start sm:flex-row sm:items-center sm:gap-2">
+              <a href="https://genai.gd.edu.kg/">
+                <img id="logo-banner" src="../../assets/img/logo/logo-banner-white.svg" width="125px" alt="GitData GenAI">
+              </a>
+            </h1>
+          </div>
+          <div class="flex items-center gap-4">
+            <button id="theme-toggle" class="p-2 rounded-full theme-switch">
+              <svg class="h-6 w-6 moon-icon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z" />
+              </svg>
+              <svg class="h-6 w-6 sun-icon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z" />
+              </svg>
+            </button>
+          </div>
+        </header>
+        <!-- Main content area container -->
+        <div class="relative flex-1 overflow-hidden">
+          <!-- Loading Verifier -->
+          <div id="loading-verifier" class="absolute inset-0 bg-black/80 z-40 flex-col hidden items-center justify-center p-4 backdrop-blur-sm">
+            <svg class="animate-spin h-10 w-10 text-white mb-4" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
+              <circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle>
+              <path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
+            </svg>
+            <p class="text-white text-lg">Verifying API Key...</p>
+          </div>
+          <!-- API Key Modal -->
+          <div id="api-key-modal" class="absolute inset-0 bg-black/80 z-40 flex items-center justify-center p-4 backdrop-blur-sm">
+            <div class="w-full max-w-md rounded-xl p-6 md:p-8 api-key-modal-content">
+              <h1 class="text-xl font-bold mb-4">Welcome to GitData GenAI Lab for Google Gemini!</h1>
+              <p class="mb-6 text-sm api-key-text"> To start chatting, enter your <a href="https://aistudio.google.com/app/apikey" target="_blank" class="text-blue-500 hover:underline">Google AI Studio API key</a>. Once verified, your API key and chat history will be stored in your browser's local storage. </p>
+              <input type="password" id="api-key-input" class="w-full p-3 rounded-lg mb-4 api-key-input" placeholder="API Key">
+              <p id="api-key-error" class="text-red-500 text-sm mt-2 mb-4 hidden"></p>
+              <div id="proxy-container" class="mt-4 hidden">
+                <div class="flex items-start p-3 rounded-lg border border-yellow-500/50 bg-yellow-500/10">
+                  <input id="proxy-toggle" type="checkbox" class="h-4 w-4 mt-1 rounded text-blue-600 focus:ring-blue-500 border-gray-300 dark:border-gray-600 dark:bg-gray-700">
+                  <label for="proxy-toggle" class="ml-3 text-sm api-key-text">You are in <span id="show-country"></span>, which is not in Google Gemini's service region list. Accept <a href="https://genai.gd.edu.kg/api/" target="_blank" class="text-blue-500 hover:underline">the terms and risks</a> of using public proxy to bypass the geolocation restriction. </label>
+                </div>
+              </div>
+              <div class="mt-4">
+                <div class="flex items-start">
+                  <input id="terms-agree" type="checkbox" class="h-4 w-4 mt-1 rounded text-blue-600 focus:ring-blue-500 border-gray-300 dark:border-gray-600 dark:bg-gray-700">
+                  <label for="terms-agree" class="ml-3 text-sm api-key-text">I agree to the <a href="https://www.gd.edu.kg/cookie-policy/" target="_blank" class="text-blue-500 hover:underline">Cookie Policy</a> and <a href="https://www.gd.edu.kg/privacy-policy/" target="_blank" class="text-blue-500 hover:underline">Privacy Policy</a>. </label>
+                </div>
+              </div>
+              <button id="save-api-key-button" class="w-full bg-blue-600 text-white font-bold py-3 rounded-lg hover:bg-blue-700 transition-colors disabled:bg-blue-400 dark:disabled:bg-blue-800 disabled:cursor-not-allowed mt-6" disabled> Start Chatting </button>
+            </div>
+          </div>
+          <!-- Main Content (Chat interface) -->
+          <div id="main-content" class="flex flex-col h-full invisible">
+            <!-- Chat Messages -->
+            <main id="chat-container" class="flex-1 overflow-y-auto chat-container">
+              <div id="chat-messages" class="max-w-4xl mx-auto p-4 md:p-8"></div>
+            </main>
+            <!-- Message Input -->
+            <footer class="p-4 message-input-container">
+              <div class="max-w-4xl mx-auto">
+                <div id="image-preview-container" class="flex items-center mb-2"></div>
+                <div class="relative flex flex-col p-4 border rounded-3xl message-input">
+                  <textarea id="message-input" placeholder="Send a message" class="w-full bg-transparent focus:outline-none resize-none" rows="1"></textarea>
+                  <div class="flex items-center justify-between mt-2">
+                    <button id="upload-image-button" class="p-2 rounded-full icon-button hover:bg-gray-200 dark:hover:bg-gray-700 transition-colors">
+                      <svg class="w-6 h-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="m2.25 15.75 5.159-5.159a2.25 2.25 0 0 1 3.182 0l5.159 5.159m-1.5-1.5 1.409-1.409a2.25 2.25 0 0 1 3.182 0l2.909 2.909m-18 3.75h16.5a1.5 1.5 0 0 0 1.5-1.5V6a1.5 1.5 0 0 0-1.5-1.5H3.75A1.5 1.5 0 0 0 2.25 6v12a1.5 1.5 0 0 0 1.5 1.5Zm10.5-11.25h.008v.008h-.008V8.25Zm.375 0a.375.375 0 1 1-.75 0 .375.375 0 0 1 .75 0Z" />
+                      </svg>
+                    </button>
+                    <button id="send-button" class="p-2 rounded-full send-button hover:bg-gray-200 dark:hover:bg-gray-700 transition-colors opacity-50 cursor-not-allowed" disabled>
+                      <svg class="w-6 h-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M4.5 10.5 12 3m0 0 7.5 7.5M12 3v18" />
+                      </svg>
+                    </button>
+                  </div>
+                  <input type="file" id="image-upload-input" class="hidden" accept="image/jpeg, image/png, image/webp, image/heic, image/heif" multiple>
+                  <button id="enlarge-button" class="absolute top-2 right-5 p-1 rounded-full text-gray-400 hover:text-gray-600 dark:hover:text-gray-200 focus:outline-none hidden">
+                    <svg class="w-5 h-5 enlarge-icon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor">
+                      <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 3.75v4.5m0-4.5h4.5m-4.5 0L9 9M20.25 3.75v4.5m0-4.5h-4.5m4.5 0L15 9m-11.25 6v4.5m0-4.5h4.5m-4.5 0L9 15m11.25 6v-4.5m0 4.5h-4.5m4.5 0L15 15" />
+                    </svg>
+                    <svg class="w-5 h-5 shrink-icon hidden" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor">
+                      <path stroke-linecap="round" stroke-linejoin="round" d="M9 9V4.5M9 9H4.5M9 9 3.75 3.75M9 15v4.5M9 15H4.5M9 15l-5.25 5.25M15 9V4.5M15 9h4.5M15 9l5.25-5.25M15 15v4.5M15 15h4.5M15 15l5.25 5.25" />
+                    </svg>
+                  </button>
+                </div>
+                <p class="text-xs text-center mt-2 helper-text"> Google Gemini can make mistakes, please double-check it.</p>
+              </div>
+            </footer>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- Image Modal -->
+    <div id="image-modal" class="fixed inset-0 bg-black/80 z-50 hidden items-center justify-center p-4">
+      <img id="modal-image" src="" alt="Full-size view" class="max-w-full max-h-full rounded-lg">
+      <button id="modal-close-button" class="absolute top-4 right-4 text-white text-4xl font-bold">&times;</button>
+    </div>
+    <script src="../../assets/js/marked.min.js"></script>
+    <script>
+      window.MathJax = {
+        tex: {
+          inlineMath: [
+            ['$', '$'],
+            ['\\(', '\\)']
+          ],
+          displayMath: [
+            ['$$', '$$'],
+            ['\\[', '\\]']
+          ]
+        },
+        svg: {
+          fontCache: 'global'
+        }
+      };
+    </script>
+    <!-- MathJax for Math Typesetting -->
+    <script id="MathJax-script" async src="../../assets/js/tex-mml-chtml.js"></script>
+    <script src="../../assets/js/theme.js"></script>
+  </body>
+</html>
