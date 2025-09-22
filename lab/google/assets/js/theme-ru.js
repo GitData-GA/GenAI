@@ -190,8 +190,8 @@ const handleEditMessage = (messageIndex) => {
     const editActions = document.createElement('div');
     editActions.className = 'edit-actions';
     editActions.innerHTML = `
-        <button class="cancel-edit-btn">Cancel</button>
-        <button class="save-edit-btn" data-index="${messageIndex}">Save & Submit</button>
+        <button class="cancel-edit-btn">Отмена</button>
+        <button class="save-edit-btn" data-index="${messageIndex}">Сохранить & отправить</button>
     `;
 
     editContainer.appendChild(editTextarea);
@@ -375,10 +375,10 @@ const importChat = (event) => {
                 renderChatMessages();
                 renderConversationHistory();
             } else {
-                alert('Invalid JSON format for chat history.');
+                alert('Недопустимый формат JSON для истории чата.');
             }
         } catch (error) {
-            alert('Failed to parse JSON file.');
+            alert('Не удалось проанализировать JSON-файл.');
             console.error(error);
         }
     };
@@ -422,7 +422,7 @@ const verifyApiKey = async (key) => {
         console.error("Verification fetch error:", error);
         return {
             success: false,
-            message: 'Network error or CORS issue. Check the console.'
+            message: 'Ошибка сети или проблема с CORS. Проверьте консоль.'
         };
     }
 };
@@ -454,7 +454,7 @@ const handleSuccessfulVerification = (key) => {
 const handleVerificationClick = async () => {
     const key = apiKeyInput.value.trim();
     saveApiKeyButton.disabled = true;
-    saveApiKeyButton.textContent = 'Verifying...';
+    saveApiKeyButton.textContent = 'Проверка...';
     apiKeyError.classList.add('hidden');
 
     let result = await verifyApiKey(key);
@@ -468,11 +468,11 @@ const handleVerificationClick = async () => {
     if (result.success) {
         handleSuccessfulVerification(key);
     } else {
-        apiKeyError.textContent = `Verification failed: ${result.message}`;
+        apiKeyError.textContent = `Проверка не пройдена: ${result.message}`;
         apiKeyError.classList.remove('hidden');
     }
     saveApiKeyButton.disabled = !termsAgreeCheckbox.checked;
-    saveApiKeyButton.textContent = 'Start Chatting';
+    saveApiKeyButton.textContent = 'Начать чат';
 };
 
 document.addEventListener('DOMContentLoaded', async () => {
@@ -506,7 +506,7 @@ document.addEventListener('DOMContentLoaded', async () => {
             handleSuccessfulVerification(storedApiKey);
         } else {
             apiKeyModal.classList.remove('hidden');
-            apiKeyError.textContent = `Verification failed: ${result.message}`;
+            apiKeyError.textContent = `Проверка не пройдена: ${result.message}`;
             apiKeyError.classList.remove('hidden');
 
             if (result.message?.includes("User location is not supported")) {
@@ -886,7 +886,7 @@ const handleImageUpload = (event) => {
         return;
     }
     for (const file of files) {
-        if (!['image/jpeg', 'image/png', 'image/webp', 'image/heic', 'image/heif'].includes(file.type)) {
+        if (!['image/jpeg', 'image/png'].includes(file.type)) {
             alert(`Недопустимый тип файла: ${file.type}. Загрузите корректное изображение.`);
             continue;
         }

@@ -100,7 +100,7 @@ async function fetchUserCountryName() {
         if (!code) return "Unknown";
         if (typeof Intl?.DisplayNames === "function") {
             try {
-                const enNames = new Intl.DisplayNames(["en"], {
+                const enNames = new Intl.DisplayNames(["zh-CN"], {
                     type: "region"
                 });
                 return enNames.of(code) || code;
@@ -117,7 +117,7 @@ async function fetchUserCountryName() {
 
 const updateProxyStatusFooter = () => {
     if (proxyToggle.checked) {
-        proxyStatusFooter.innerHTML = `Using public proxy. See the <a href="https://genai.gd.edu.kg/api/" target="_blank" class="text-blue-500 hover:underline">risks and terms</a>.`;
+        proxyStatusFooter.innerHTML = `使用公共代理。请查看<a href="https://genai.gd.edu.kg/api/" target="_blank" class="text-blue-500 hover:underline">风险和条款</a>。`;
     } else {
         proxyStatusFooter.innerHTML = '';
     }
@@ -190,8 +190,8 @@ const handleEditMessage = (messageIndex) => {
     const editActions = document.createElement('div');
     editActions.className = 'edit-actions';
     editActions.innerHTML = `
-        <button class="cancel-edit-btn">Cancel</button>
-        <button class="save-edit-btn" data-index="${messageIndex}">Save & Submit</button>
+        <button class="cancel-edit-btn">取消</button>
+        <button class="save-edit-btn" data-index="${messageIndex}">保存 & 提交</button>
     `;
 
     editContainer.appendChild(editTextarea);
@@ -266,7 +266,7 @@ const renderConversationHistory = () => {
     const sortedIds = Object.keys(conversations).sort((a, b) => b - a);
 
     if (sortedIds.length === 0 && (chatHistory.length === 0 || !currentChatId)) {
-        conversationHistoryContainer.innerHTML = '<p class="text-sm text-center text-gray-500 dark:text-gray-400">No chat history yet.</p>';
+        conversationHistoryContainer.innerHTML = '<p class="text-sm text-center text-gray-500 dark:text-gray-400">尚无聊天记录。</p>';
         return;
     }
 
@@ -375,10 +375,10 @@ const importChat = (event) => {
                 renderChatMessages();
                 renderConversationHistory();
             } else {
-                alert('Invalid JSON format for chat history.');
+                alert('聊天记录的 JSON 格式无效。');
             }
         } catch (error) {
-            alert('Failed to parse JSON file.');
+            alert('无法解析 JSON 文件。');
             console.error(error);
         }
     };
@@ -390,7 +390,7 @@ const importChat = (event) => {
 const verifyApiKey = async (key) => {
     if (!key) return {
         success: false,
-        message: 'API key is empty.'
+        message: 'API 密钥为空。'
     };
     const baseUrl = proxyToggle.checked ? PROXY_API_BASE : GOOGLE_API_BASE;
     const API_URL = `${baseUrl}v1beta/models?key=${key}`;
@@ -400,7 +400,7 @@ const verifyApiKey = async (key) => {
             success: true
         };
 
-        let errorMessage = `HTTP Error: ${response.status} ${response.statusText}`;
+        let errorMessage = `HTTP 错误: ${response.status} ${response.statusText}`;
         try {
             const errorData = await response.json();
             errorMessage = errorData.error?.message || errorMessage;
@@ -422,7 +422,7 @@ const verifyApiKey = async (key) => {
         console.error("Verification fetch error:", error);
         return {
             success: false,
-            message: 'Network error or CORS issue. Check the console.'
+            message: '网络错误或 CORS 问题。请检查控制台。'
         };
     }
 };
@@ -454,7 +454,7 @@ const handleSuccessfulVerification = (key) => {
 const handleVerificationClick = async () => {
     const key = apiKeyInput.value.trim();
     saveApiKeyButton.disabled = true;
-    saveApiKeyButton.textContent = 'Verifying...';
+    saveApiKeyButton.textContent = '验证中...';
     apiKeyError.classList.add('hidden');
 
     let result = await verifyApiKey(key);
@@ -468,11 +468,11 @@ const handleVerificationClick = async () => {
     if (result.success) {
         handleSuccessfulVerification(key);
     } else {
-        apiKeyError.textContent = `Verification failed: ${result.message}`;
+        apiKeyError.textContent = `验证失败：${result.message}`;
         apiKeyError.classList.remove('hidden');
     }
     saveApiKeyButton.disabled = !termsAgreeCheckbox.checked;
-    saveApiKeyButton.textContent = 'Start Chatting';
+    saveApiKeyButton.textContent = '开始聊天';
 };
 
 document.addEventListener('DOMContentLoaded', async () => {
@@ -506,7 +506,7 @@ document.addEventListener('DOMContentLoaded', async () => {
             handleSuccessfulVerification(storedApiKey);
         } else {
             apiKeyModal.classList.remove('hidden');
-            apiKeyError.textContent = `Verification failed: ${result.message}`;
+            apiKeyError.textContent = `验证失败：${result.message}`;
             apiKeyError.classList.remove('hidden');
 
             if (result.message?.includes("User location is not supported")) {
@@ -563,8 +563,8 @@ const updateSendButtonState = () => {
 const showWelcomeMessage = () => {
     chatMessages.innerHTML = `
         <div class="welcome-container">
-            <h1 class="text-xl font-semibold welcome-text">Welcome to GitData GenAI Lab for Google Gemini!</h1>
-            <p class="mt-2 welcome-text">Feel free to ask anything!</p>
+            <h1 class="text-xl font-semibold welcome-text">欢迎来到 Google Gemini 专用的 GitData GenAI 实验室！</h1>
+            <p class="mt-2 welcome-text">有任何问题都可以随意询问！</p>
         </div>
     `;
     chatMessages.style.height = '100%';
@@ -635,7 +635,7 @@ const showTypingIndicator = () => {
     const typingElement = document.createElement('div');
     typingElement.id = 'typing-indicator';
     typingElement.className = 'flex items-start gap-4 mb-6 chat-message bot';
-    typingElement.innerHTML = `<div class="flex-shrink-0"><img src="https://static.gd.edu.kg/images/logo.svg" alt="Bot" width="32px" /></div><div class="flex-1 p-4 rounded-xl message-bubble flex items-center"><div class="typing-indicator">Thinking <span></span><span></span><span></span></div></div>`;
+    typingElement.innerHTML = `<div class="flex-shrink-0"><img src="https://static.gd.edu.kg/images/logo.svg" alt="Bot" width="32px" /></div><div class="flex-1 p-4 rounded-xl message-bubble flex items-center"><div class="typing-indicator">思考中 <span></span><span></span><span></span></div></div>`;
     chatMessages.appendChild(typingElement);
     scrollToBottom();
 };
@@ -700,7 +700,7 @@ const callGeminiApi = async (text, images) => {
         system_instruction: {
           parts: [
             {
-              text: "You are a friendly and helpful assistant. Ensure your answers are complete, unless the user requests a more concise approach. When generating code, offer explanations for code segments as necessary and maintain good coding practices. When presented with inquiries seeking information, provide answers that reflect a deep understanding of the field, guaranteeing their correctness. For any non-english queries, respond in the same language as the prompt unless otherwise specified by the user. For prompts involving reasoning, provide a clear explanation of each step in the reasoning process before presenting the final answer."
+              text: "您是一位友善且乐于助人的助手。请确保您的答案完整，除非用户要求更简洁的表达方式。生成代码时，请根据需要对代码段进行解释，并保持良好的编码习惯。当用户提出信息咨询时，请提供能够反映您对该领域深刻理解的答案，并保证其正确性。对于任何非中文的查询，除非用户另有说明，否则请使用与提示相同的语言进行回复。对于涉及推理的提示，请在提供最终答案之前，清晰地解释推理过程的每个步骤。"
             }
           ]
         },
@@ -795,7 +795,7 @@ const callGeminiApi = async (text, images) => {
         hideTypingIndicator();
         if (responseContentContainer) responseContentContainer.parentElement.classList.remove('streaming');
         const errorContainer = addBotMessage(``, false, true, -1);
-        renderContent(errorContainer, `Sorry, something went wrong.\n\n**Error:**\n\`\`\`\n${error.message}\n\`\`\``);
+        renderContent(errorContainer, `抱歉，出了点问题。\n\n**错误：**\n\`\`\`\n${error.message}\n\`\`\``);
         scrollToBottom();
     }
 };
@@ -882,16 +882,16 @@ const handleImageUpload = (event) => {
     const files = event.target.files;
     if (!files) return;
     if (uploadedImagesData.length + files.length > 5) {
-        alert("You can upload a maximum of 5 images.");
+        alert("您最多可以上传 5 张图片。");
         return;
     }
     for (const file of files) {
         if (!['image/jpeg', 'image/png'].includes(file.type)) {
-            alert(`Invalid file type: ${file.type}. Please upload a valid image.`);
+            alert(`无效的文件类型：${file.type}。请上传有效的图片。`);
             continue;
         }
         if (file.size > 5 * 1024 * 1024) {
-            alert(`File ${file.name} is too large. Maximum size is 5MB.`);
+            alert(`文件 ${file.name} 太大。最大尺寸为 5MB。`);
             continue;
         }
         const reader = new FileReader();
@@ -1011,7 +1011,7 @@ importChatButton.addEventListener('click', () => importChatInput.click());
 importChatInput.addEventListener('change', importChat);
 
 clearStorageButton.addEventListener('click', () => {
-    if (confirm('Are you sure you want to clear all data? This will remove your API key and all chat history.')) {
+    if (confirm('您确定要清除所有数据吗？这将删除您的 API 密钥和所有聊天记录。')) {
         localStorage.clear();
         location.reload();
     }
