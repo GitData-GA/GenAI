@@ -20,5 +20,8 @@ export default defineNitroConfig({
         '/deepseek/**': {
             proxy: 'https://api.deepseek.com/**'
         },
+        '/claude/**': {
+            proxy: 'https://api.anthropic.com/**'  
+        },
     }
 });
